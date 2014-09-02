@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  
+  <title>My App</title>  
+  
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">  
+  <link rel="stylesheet" href="styles/app.css"/>
+
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script> 
+  
+</head>
+
+<body>    
+  
+  <ons-tabbar>
+    <ons-tabbar-item
+      active="true"
+      label="Home"
+      icon="home"
+      page="page1.html">
+    </ons-tabbar-item>
+
+    <ons-tabbar-item
+      label="Blrb"
+      icon="fa-microphone"
+      page="page2.html">
+    </ons-tabbar-item>
+
+    <ons-tabbar-item
+      label="Settings"
+      icon="gear"
+      spin="true"
+      page="page3.html">
+    </ons-tabbar-item>
+  </ons-tabbar>
+
+
+
+  <script type="text/ons-template" id="page1.html">
+    <ons-navigator>
+      <ons-page>
+        <ons-toolbar>
+          <div class="center">Home</div>
+        </ons-toolbar>
+<div>some fish</div>
+        <ons-row style="margin-top: 100px;">
+          <ons-col align="center">
+            <ons-button modifier="light" ng-click="ons.navigator.pushPage('login.html')">
+              Push New Page
+            </ons-button>
+          </ons-col>
+        </ons-row>
+      </ons-page>
+    </ons-navigator>
+  </script>
+
+  <script type="text/ons-template" id="page2.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">Page 2</div>
+      </ons-toolbar>
+
+<p>I'm page 2</p>
+
+
+
+    </ons-page>
+  </script>
+
+  <script type="text/ons-template" id="page3.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">Page 3</div>
+      </ons-toolbar>
+    </ons-page>
+  </script>
+
+  <script type="text/ons-template" id="login.html">
+    <ons-page class="center">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Login with Twitter</div>
+      </ons-toolbar>
+
+      <ons-row style="margin-top: 100px;">
+        <ons-col align="center">
+          <ons-button modifier="light" ng-click="ons.navigator.popPage();">Pop Page</ons-button>
+        </ons-col>
+      </ons-row>
+    </ons-page>
+  </script>
+ 
+</body>
+</html>
