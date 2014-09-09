@@ -1,103 +1,532 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  
-  <title>My App</title>  
-  
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
-  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">  
-  <link rel="stylesheet" href="styles/app.css"/>
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>My App</title>
 
-  <script src="lib/onsen/js/angular/angular.js"></script>    
-  <script src="lib/onsen/js/onsenui.js"></script>    
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
 
-  <script src="cordova.js"></script>
-  <script src="js/app.js"></script> 
-  
-</head>
+		<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+		<link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+		<link rel="stylesheet" href="styles/app.css"/>
 
-<body>    
-  
-  <ons-tabbar>
-    <ons-tabbar-item
-      active="true"
-      label="Home"
-      icon="home"
-      page="page1.html">
-    </ons-tabbar-item>
+		<script src="lib/onsen/js/angular/angular.js"></script>
+		<script src="lib/onsen/js/onsenui.js"></script>
 
-    <ons-tabbar-item
-      label="Blrb"
-      icon="fa-microphone"
-      page="page2.html">
-    </ons-tabbar-item>
+		<script src="cordova.js"></script>
+		<script src="js/app.js"></script>
 
-    <ons-tabbar-item
-      label="Settings"
-      icon="gear"
-      spin="true"
-      page="page3.html">
-    </ons-tabbar-item>
-  </ons-tabbar>
+	</head>
 
+	<body>
 
+		<ons-sliding-menu
+		menu-page="menu.html" main-page="create.html" side="left"
+		type="reveal" max-slide-distance="200px" swipable="true"></ons-sliding-menu>
 
-  <script type="text/ons-template" id="page1.html">
-    <ons-navigator>
-      <ons-page>
-        <ons-toolbar>
-          <div class="center">Home</div>
-        </ons-toolbar>
-<div>some fish</div>
-        <ons-row style="margin-top: 100px;">
-          <ons-col align="center">
-            <ons-button modifier="light" ng-click="ons.navigator.pushPage('login.html')">
-              Push New Page
-            </ons-button>
-          </ons-col>
-        </ons-row>
-      </ons-page>
-    </ons-navigator>
-  </script>
+		<script type="text/ons-template" id="menu.html">
+			<ons-page style="background-color: white">
 
-  <script type="text/ons-template" id="page2.html">
-    <ons-page>
-      <ons-toolbar>
-        <div class="center">Page 2</div>
-      </ons-toolbar>
+			<ons-list style="text-align: center;">
+			<ons-list-item
+			style="background-color: #4A6FB6"
+			modifier="chevron"
+			ng-click="ons.slidingMenu.setMainPage('home.html', {closeMenu: true})">
 
-<p>I'm page 2</p>
+			<i class="fa fa-home fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
+			</ons-list-item>
 
+			<ons-list-item
+			style="background-color: #F26722"
+				modifier="chevron"
+			ng-click="ons.slidingMenu.setMainPage('page2.html', {closeMenu: true})">
 
+			<i class="fa fa-list-ul fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
+			</ons-list-item>
+		
+				<ons-list-item
+			style="background-color: #6FBF46"
+				modifier="chevron"
+			ng-click="ons.slidingMenu.setMainPage('http://blrbr.co', {closeMenu: true})">
 
-    </ons-page>
-  </script>
+			<i class="fa fa-headphones fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
+			</ons-list-item>
+			
+		<ons-list-item
+			style="background-color: #F1EB55;"
+			modifier="chevron"
+			ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 
-  <script type="text/ons-template" id="page3.html">
-    <ons-page>
-      <ons-toolbar>
-        <div class="center">Page 3</div>
-      </ons-toolbar>
-    </ons-page>
-  </script>
+			<i class="fa fa-microphone fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
+			</ons-list-item>
+			</ons-list>
 
-  <script type="text/ons-template" id="login.html">
-    <ons-page class="center">
-      <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Login with Twitter</div>
-      </ons-toolbar>
+			</ons-page>
 
-      <ons-row style="margin-top: 100px;">
-        <ons-col align="center">
-          <ons-button modifier="light" ng-click="ons.navigator.popPage();">Pop Page</ons-button>
-        </ons-col>
-      </ons-row>
-    </ons-page>
-  </script>
- 
-</body>
+		</script>
+
+		<script type="text/ons-template" id="page1.html">
+			<ons-page>
+			<ons-toolbar>
+			<div class="center">Page 1</div>
+			</ons-toolbar>
+
+			<ons-row style="margin-top: 100px;">
+			<ons-col align="center">
+			<ons-button modifier="light" ng-click="ons.slidingMenu.toggleMenu()">
+			Toggle Menu
+			</ons-button>
+			<p style="color: #999">Click "Toggle Menu" to close/open menu, You can also swipe the page left/right.</p>
+			</ons-col>
+			</ons-row>
+			</ons-page>
+		</script>
+
+		<script type="text/ons-template" id="page2.html">
+			<ons-page>
+			<ons-toolbar>
+			<div class="center">Page 2</div>
+			</ons-toolbar>
+
+			<ons-row style="margin-top: 100px;">
+			<ons-col align="center">
+			<ons-button modifier="light" ng-click="ons.slidingMenu.toggleMenu()">
+			Toggle Menu
+			</ons-button>
+			</ons-col>
+			</ons-row>
+
+			</ons-page>
+		</script>
+
+		<script type="text/ons-template" id="home.html">
+			<div id="homePage" style="text-align: center;" >
+			<br>
+			<br>
+			<img src="images/blrbrfish_logo_nobubble.png" width="90%"/>
+			<br>
+			<br>
+			<br>
+			<img src="images/blrbr_logo_50.png"/>
+			<div id="deviceready">
+			<p class="event listening">
+			loading
+			</p>
+			<div class="event received">
+			<!-- <div class="full-width-button" style="background-color: #DB5FA5" onclick="route('firstblrbever')">
+			<div>
+			<span class="glyphicon glyphicon-align-right"></span> brws chnnls <span class="glyphicon glyphicon-align-left"></span>
+			</div>
+			</div>
+			<div class="full-width-button" style="background-color: #6FBF46" onclick="route('account/login')">
+			<div>
+			<span class="glyphicon glyphicon-headphones"></span> blrb strm <span class="glyphicon glyphicon-headphones"></span>
+			</div>
+			</div>
+			</div> -->
+			</div>
+			</div>
+		</script>
+
+		<script type="text/ons-template" id="create.html">
+
+			<div id="createPage" style="font-size: 70px;text-align: center;">
+
+			<div class='row' style="margin:0px;">
+			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;width: 49%" ng-click="ons.slidingMenu.toggleMenu()">
+			<div>
+			<span class="fa fa-bars"></span>
+			</div>
+			</div>
+			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden">
+			<div>
+			<span class="ion-upload"></span>
+			</div>
+			</div>
+			<div id="blrbBtnOff" class="col-xs-6" style="background-color: lightgrey;" >
+			<div>
+			<span class="ion-upload"></span>
+			</div>
+			</div>
+
+			</div>
+			<div class='row' style="position: absolute;bottom: 175px;top:100px;width:100%;margin:0px;">
+			<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
+			</div>
+			<div id="loading" class='row'>
+			<p>
+			blrbn...
+			</p>
+			<div>
+			<span class="ion-upload"></span>
+			</div>
+			</div>
+			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
+			<div style="text-align: center; font-size: xx-large; padding:0px;" class="col-xs-12">
+			<div id="twitterYes" style="background-color: #DB60A3 ;height:75px;" onclick="twitterToggle('no');">
+			<img src="images/bird_blue_48.png" style="padding-top: 20px;"/>
+			</div>
+			<div id="twitterNo" style="background-color: lightgrey;height:75px;" onclick="twitterToggle('yes');" hidden="hidden">
+			<img src="images/bird_gray_48.png" style="padding-top: 20px;"/>
+			</div>
+			<!-- <div >
+			<input type="radio" name="radioGroup" value="true" id="twitter-yes" checked>
+			tweet
+			<br>
+			<input type="radio" name="radioGroup" value="false">
+			no tweet
+
+			</div> -->
+
+			</div>
+			<div id="recordBtn" class="col-xs-6" style="background-color: #F26722" >
+			<div>
+			<span class="glyphicon glyphicon-record"></span>
+			</div>
+			</div>
+			<div id="stopBtn" class="col-xs-6" style="background-color: red " hidden="hidden">
+			<div>
+			<span class="glyphicon glyphicon-stop"></span>
+			</div>
+			</div>
+			<div id="playBtn" class="col-xs-6" style="background-color: #6FBF46" hidden="hidden">
+			<div>
+			<span class="glyphicon glyphicon-play"></span>
+			</div>
+			</div>
+			<div id="playBtnOff" class="col-xs-6" style="background-color: lightgrey">
+			<div>
+			<span class="glyphicon glyphicon-play"></span>
+			</div>
+			</div>
+			</div>
+			<!-- <div id="buttonGroup">
+			<button class="btn btn-default btn-lg" style="float:right" name="blrbBtn" id="blrbBtn">
+			<span class="glyphicon glyphicon-cloud-upload"></span> blrb
+			</button>
+			<button class="btn btn-default btn-lg" style="float:left" name="backBtn" id="backBtn">
+			<span class="glyphicon glyphicon-hand-left"></span> back
+			</button>
+
+			<div style="text-align: center; padding-top: 100px;">
+			<button class="btn btn-default btn-lg" name="recordBtn" id="recordBtn">
+			<span class="glyphicon glyphicon-record"></span> record
+			</button>
+			<button class="btn btn-default btn-lg" name="stopBtn" id="stopBtn">
+			<span class="glyphicon glyphicon-stop"></span> stop
+			</button>
+			<button class="btn btn-default btn-lg" name="playBtn" id="playBtn">
+			<span class="glyphicon glyphicon-play"></span> play
+			</button>
+			<p id="audio_position" style="padding-top: 40px;"></p>
+			</div>
+			</div> -->
+
+			</div>
+
+		</script>
+			<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/deviceCheck.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+
+		<script type="text/javascript">
+			var deviceready = false;
+			var mediaVar = null;
+			var status = null;
+			var recordFileName = "recording.amr";
+			var isTweet = true;
+
+			function onBodyLoad() {
+				document.addEventListener("deviceready", onDeviceReady, false);
+				deviceready = true;
+				if (phoneCheck.ios != null) {
+					recordFileName = "recording.wav";
+				}
+
+			}
+
+			function resetView() {
+				$("#recordBtn").show();
+				$("#backBtn").show();
+				$("#stopBtn").hide();
+				$("#twitterYes").show();
+				$("#playBtn").hide();
+				$("#playBtnOff").show();
+				$("#blrbBtn").hide();
+				$("#blrbBtnOff").show();
+				$("#twitterNo").hide();
+				$("#text_textarea").show();
+				$("#text_textarea").val('');
+				$("#loading").hide();
+			};
+
+			$(document).ready(function() {
+				resetView();
+				try {
+					var href = decodeURIComponent(window.location.href);
+					var p = href.split('username=')[1];
+					var q = p.split('&channel=')[1];
+					window.username = p.split('&channel=')[0];
+					window.channel = q.split('&text=')[0];
+					if (window.channel == " ") {
+						window.channel = "";
+					}
+					window.text = q.split('&text=')[1];
+					if (window.text == " " || window.text == "  ") {
+						window.text = "";
+					}
+
+					$("#text_textarea").val(window.text);
+				} catch(err) {
+					//alert("data transfer error: " + err);
+					//window.location="index.html";
+
+				}
+
+				//validation to check if device is ready is skipped
+
+				$("#recordBtn").click(function() {
+					//alert("record");
+					record();
+				});
+
+				$("#backBtn").click(function() {
+					//route('blrb/me');
+					//window.location = "index.html";
+				});
+
+				$("#playBtn").click(function() {
+					//alert("play");
+					play();
+				});
+
+				$("#stopBtn").click(function() {
+					//alert("stop");
+					stop();
+				});
+				$("#blrbBtn").click(function() {
+					uploadVoice();
+				});
+			});
+			// Set audio position
+			//
+			function setAudioPosition(position) {
+			}
+
+			function record() {
+				//alert("in record");
+				createMedia(function() {
+					//alert("status recording");
+					status = "recording";
+					mediaVar.startRecord();
+					$("#recordBtn").hide();
+					$("#stopBtn").show();
+					$("#playBtn").hide();
+					$("#playBtnOff").show();
+					$("#blrbBtn").hide();
+					$("#blrbBtnOff").show();
+
+					// Stop recording after 6 sec
+					var recTime = 0;
+					setAudioPosition(recTime + " sec");
+					var recInterval = setInterval(function() {
+						if (status == 'recording') {
+							recTime = recTime + 1;
+							setAudioPosition(recTime + " sec");
+						}
+						if (recTime >= 6 || status != 'recording') {
+							clearInterval(recInterval);
+							stop();
+						}
+					}, 1000);
+				}, onStatusChange);
+			}
+
+			function createMedia(onMediaCreated, mediaStatusCallback) {
+				//alert("createMedia");
+				if (mediaVar != null) {
+					onMediaCreated();
+					return;
+				}
+
+				if ( typeof mediaStatusCallback == 'undefined')
+					mediaStatusCallback = null;
+				if (phoneCheck.ios != null) {
+					//alert("ios");
+					//first create the file
+					window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function(fileSystem) {
+						// save the file system for later access
+						fileSystem.root.getFile(recordFileName, {
+							create : true,
+							exclusive : false
+						}, function(fileEntry) {
+							mediaVar = new Media(fileEntry.fullPath, function() {
+								//alert("File " + recordFileName + " created at " + fileEntry.fullPath);
+								//alert("Media created successfully");
+								//uploadVoice();
+							}, null, mediaStatusCallback);
+							//of new Media
+							onMediaCreated();
+						}, onError);
+						//of getFile
+					}, onError);
+					//of requestFileSystem
+				} else//it's Android
+				{
+					mediaVar = new Media(recordFileName, function() {
+						//alert("Media created successfully: " + recordFileName);
+					}, onError, mediaStatusCallback);
+					onMediaCreated();
+				}
+			}
+
+			function stop() {
+				//alert("mediavar: "+mediaVar);
+				if (mediaVar == null)
+					return;
+				//alert("status: "+status);
+				if (status == 'recording') {
+					mediaVar.stopRecord();
+
+					log("Recording stopped");
+				} else if (status == 'playing') {
+					mediaVar.stop();
+					log("Play stopped");
+				} else {
+					log("Nothing stopped");
+				}
+				$("#recordBtn").show();
+				$("#stopBtn").hide();
+				$("#playBtn").show();
+				$("#playBtnOff").hide();
+				$("#blrbBtn").show();
+				$("#blrbBtnOff").hide();
+				status = 'stopped';
+			}
+
+			function play() {
+				//playAudio("recording.amr");
+				//alert("getting media");
+				var media = new Media(recordFileName, function() {
+					//alert( "Media Success" );
+				}, function() {
+					//alert("Media Failure, reason: " + err);
+				});
+				//alert("playing");
+				media.play();
+				//alert("done");
+			}
+
+			function onStatusChange() {
+				if (arguments[0] == 4)//play stopped
+				{
+					$("#recordBtn").show();
+					$("#stopBtn").hide();
+					$("#playBtn").show();
+					$("#playBtnOff").hide();
+					$("#blrbBtn").show();
+					$("#blrbBtnOff").hide();
+				}
+			}
+
+			function onSuccess() {
+				//do nothing
+			}
+
+			function onError(err) {
+				if ( typeof err.message != 'undefined')
+					err = err.message;
+				alert("Error : " + err.message);
+			}
+
+			function log(message) {
+				//alert(message);
+			}
+
+			function onDeviceReady() {
+
+			}
+
+			function twitterToggle(val) {
+				if (val == "yes") {
+					isTweet = true;
+					$('#twitterYes').show();
+					$('#twitterNo').hide();
+				} else {
+					isTweet = false;
+					$('#twitterYes').hide();
+					$('#twitterNo').show();
+				}
+
+			}
+
+			function uploadVoice() { debugger;
+				alert("upload");
+				var audioURI = "mnt/sdcard/recording.amr";
+
+				var options = new FileUploadOptions();
+				options.fileKey = "file";
+				options.fileName = "recording.amr";
+				options.mimeType = "audio/amr";
+
+				if (phoneCheck.ios != null) {
+					alert("ios");
+					//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+					//		var directoryReader = fs.root.createReader();
+					//		directoryReader.readEntries(function(entries) {
+					//			audioURI = "cdvfile://localhost/persistent/recording.wav";
+					//				audioURI = entries[1].toURI();
+					//	alert(audioURI);
+					//		});
+					//	});
+
+					audioURI = "cdvfile://localhost/temporary/recording.wav";
+					options.fileName = "recording.wav";
+					options.mimeType = "audio/wav";
+					options.chunkedMode = false;
+				}
+
+				var params = new Object();
+				//params.channel = window.channel;
+				params.channel = localStorage.channel;
+				params.text = $("#text_textarea").val();
+				//params.username = window.username;
+				params.username = localStorage.username;
+				params.isTweet = isTweet;
+				alert(params.username + params.channel + params.isTweet + params.text);
+				options.params = params;
+				var ft = new FileTransfer();
+				//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
+				//ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
+				ft.upload(audioURI, "http://blrbrdev.azurewebsites.net/Blrb/UploadAudio", win, fail, options);
+				$("#backBtn").hide();
+				$("#recordBtn").hide();
+				$("#stopBtn").hide();
+				$("#playBtn").hide();
+				$("#blrbBtn").hide();
+				$("#text_textarea").hide();
+				$("#twitterYes").hide();
+				$("#twitterNo").hide();
+				$("#loading").show();
+				//document.getElementById('audio_position').innerHTML = "blrbing...";
+
+			}
+
+			function win(r) {
+				//alert("Code = " + r.responseCode);
+				//alert("Response = " + r.response);
+				//app.initialize();
+				route('blrb/me');
+			}
+
+			function fail(error) {
+				alert("blrb error: " + error.code);
+				route('blrb/me');
+			}
+
+		</script>
+	</body>
 </html>
