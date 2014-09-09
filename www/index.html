@@ -257,7 +257,7 @@
 				//validation to check if device is ready is skipped
 
 				$("#recordBtn").click(function() {
-					//alert("record");
+					alert("record");
 					record();
 				});
 
@@ -285,9 +285,9 @@
 			}
 
 			function record() {
-				//alert("in record");
+				alert("in record");
 				createMedia(function() {
-					//alert("status recording");
+					alert("status recording");
 					status = "recording";
 					mediaVar.startRecord();
 					$("#recordBtn").hide();
