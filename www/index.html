@@ -25,7 +25,7 @@
 
 		<ons-sliding-menu
 		menu-page="menu.html" main-page="create.html" side="left"
-		type="reveal" max-slide-distance="200px" swipable="true"></ons-sliding-menu>
+		type="push" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
 
 		<script type="text/ons-template" id="menu.html">
 			<ons-page style="background-color: white">
@@ -33,7 +33,6 @@
 			<ons-list style="text-align: center;">
 			<ons-list-item
 			style="background-color: #4A6FB6"
-			modifier="chevron"
 			ng-click="ons.slidingMenu.setMainPage('home.html', {closeMenu: true})">
 
 			<i class="fa fa-home fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
@@ -41,7 +40,6 @@
 
 			<ons-list-item
 			style="background-color: #F26722"
-				modifier="chevron"
 			ng-click="ons.slidingMenu.setMainPage('page2.html', {closeMenu: true})">
 
 			<i class="fa fa-list-ul fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
@@ -49,7 +47,6 @@
 		
 				<ons-list-item
 			style="background-color: #6FBF46"
-				modifier="chevron"
 			ng-click="ons.slidingMenu.setMainPage('http://blrbr.co', {closeMenu: true})">
 
 			<i class="fa fa-headphones fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
@@ -57,7 +54,6 @@
 			
 		<ons-list-item
 			style="background-color: #F1EB55;"
-			modifier="chevron"
 			ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 
 			<i class="fa fa-microphone fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
