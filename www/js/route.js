@@ -19,7 +19,7 @@
 
 var gotoRoute=function(r) {
 	 debugger;
-	 alert("gotoroute");
+	 alert("gotoroute: "+r);
     var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
 	ref.addEventListener('loadstart', function(event) {
 		debugger;
