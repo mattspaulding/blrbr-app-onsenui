@@ -46,6 +46,8 @@
 
 		};
 
+	var res = $scope.response.get();
+
 	});
 
 	app.controller('CreateCtrl', function($scope) {
