@@ -30,13 +30,10 @@ var gotoRoute=function(r) {
 
 	if (event.url.indexOf('Blrb/me') != -1) {
 			ref.close();
-			window.location = "stream.html?" + event.url.split('?')[1];
+			ons.slidingMenu.setMainPage('stream.html', {closeMenu: true});
+			//window.location = "stream.html?" + event.url.split('?')[1];
 		}
 
-if (event.url.indexOf('Blrb/Stream') != -1) {
-			ref.close();
-			window.location = "stream.html?" + event.url.split('?')[1];
-		}
 
 		var segs = event.url.split("/");
 		if (segs[3] == "") {
