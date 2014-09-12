@@ -10,11 +10,11 @@
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				alert("AJAX success!");
 				alert("data: "+data.NumberOfBlrbs);
-				$scope.myData.fromServer = data.NumberOfBlrbs;
+				$scope.BlrbStreamResponse = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
-				alert("AJAX failed! "+status);
-				debugger;
+				// alert("AJAX failed! "+status);
+				// debugger;
 				gotoRoute("Account/Login");
 			});
 

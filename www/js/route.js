@@ -20,8 +20,8 @@
 var gotoRoute=function(r) {
 	   var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
 	ref.addEventListener('loadstart', function(event) {
-		debugger;
-		alert("url: " + event.url);
+		// debugger;
+		// alert("url: " + event.url);
 		
 		if (event.url.indexOf('Blrb/Create') != -1) {
 			ref.close();
@@ -49,7 +49,7 @@ if (event.url.indexOf('Blrb/Stream') != -1) {
 		alert('error: ' + event.message);
 	});
 	ref.addEventListener('exit', function(event) {
-		alert("Exit");
+		//alert("Exit");
 	});
 
 };
