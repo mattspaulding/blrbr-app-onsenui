@@ -5,13 +5,14 @@
 		$scope.response = {};
 		$scope.response.get = function() {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson");
+			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				alert("name: " + data);
 				localStorage.isLoggedIn=true;
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
+			$('#loginBtn').hide();
 			$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
