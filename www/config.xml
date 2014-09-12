@@ -26,7 +26,7 @@ version   = "1.0.0">
 	<!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
 	<preference name="ios-statusbarstyle"         value="black-opaque" />
 	<!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
-	<preference name="StatusBarOverlaysWebView"   value="false" />
+	<preference name="StatusBarOverlaysWebView"   value="true" />
 	<!-- ios 7:  -->
 	<preference name="StatusBarBackgroundColor"   value="#CCCCCC" />
 	<!-- ios 7: -->
@@ -48,6 +48,8 @@ version   = "1.0.0">
 	<gap:plugin name="org.apache.cordova.file-transfer" />
 	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 	
+	
+        
 	<!-- Define app icon for each platform. -->
 	<icon src="icon.png" />
 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
