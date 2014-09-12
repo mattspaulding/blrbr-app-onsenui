@@ -21,9 +21,8 @@ var gotoRoute=function(r) {
 	   var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
 	ref.addEventListener('loadstart', function(event) {
 		debugger;
-		alert("in gotroute: " + r);
-		alert("localStorate:" + localStorage.route);
-
+		alert("url: " + event.url);
+		
 		if (event.url.indexOf('Blrb/Create') != -1) {
 			ref.close();
 			window.location = "create.html?" + event.url.split('?')[1];
