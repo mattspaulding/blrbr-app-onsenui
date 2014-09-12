@@ -11,8 +11,8 @@
 				alert("AJAX success!");
 				alert("data: " + data.NumberOfBlrbs);
 				localStorage.isLoggedIn=true;
-				$('isLoggedInTrue').show();
-				$('isLoggedInFalse').hide();
+				$('#isLoggedInTrue').show();
+				$('#isLoggedInFalse').hide();
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
 				// alert("AJAX failed! "+status);
