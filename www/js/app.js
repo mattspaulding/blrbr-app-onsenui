@@ -9,24 +9,23 @@
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				alert("name: " + data);
-				localStorage.isLoggedIn=true;
+				localStorage.isLoggedIn = true;
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
-			$('#loginBtn').hide();
-			$scope.response = data;
+				$('#loginBtn').hide();
+				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
 				// alert("AJAX failed! "+status);
-				 debugger;
-				localStorage.isLoggedIn=false;
-			$('#isLoggedInTrue').hide();
+				debugger;
+				localStorage.isLoggedIn = false;
+				$('#isLoggedInTrue').hide();
 				$('#isLoggedInFalse').show();
 				$('#loginBtn').show();
 			});
 
-		};
-		debugger;
-		var res= $scope.response.get();
+		}; debugger;
+		var res = $scope.response.get();
 
 	});
 
