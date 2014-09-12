@@ -2,18 +2,18 @@
 	var app = angular.module('myApp', ['onsen.directives']);
 
 	app.controller('HomeCtrl', function($scope, $http) { 
-		StatusBar.hide();
+		//StatusBar.hide();
 		$scope.response = {};
 		$scope.response.get = function() {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
+			var responsePromise = $http.get("http://localhost:49379/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { 
 				localStorage.isLoggedIn = true;
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
 				$('#loginBtn').hide();
-				$scope.response = data;
+				$scope.response = data.Identity.Name;
 			});
 			responsePromise.error(function(data, status, headers, config) { 
 				localStorage.isLoggedIn = false;
