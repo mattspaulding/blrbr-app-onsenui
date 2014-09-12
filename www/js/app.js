@@ -8,11 +8,11 @@
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson");
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
-				alert("AJAX success!");
-				alert("data: " + data.NumberOfBlrbs);
+				alert("name: " + data);
 				localStorage.isLoggedIn=true;
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
+			$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
 				// alert("AJAX failed! "+status);
@@ -20,6 +20,7 @@
 				localStorage.isLoggedIn=false;
 			$('#isLoggedInTrue').hide();
 				$('#isLoggedInFalse').show();
+				$('#loginBtn').show();
 			});
 
 		};
