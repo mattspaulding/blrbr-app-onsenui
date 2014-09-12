@@ -2,6 +2,7 @@
 	var app = angular.module('myApp', ['onsen.directives']);
 
 	app.controller('HomeCtrl', function($scope, $http) { 
+		StatusBar.hide();
 		$scope.response = {};
 		$scope.response.get = function() {
 
