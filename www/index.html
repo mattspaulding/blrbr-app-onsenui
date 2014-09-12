@@ -99,7 +99,7 @@
 		</script>
 
 		<script type="text/ons-template" id="home.html">
-			<div id="homePage" style="text-align: center;" >
+			<div id="homePage" ng-controller="HomeCtrl" style="text-align: center;" >
 			<br>
 			<br>
 			<img src="images/blrbrfish_logo_nobubble.png" width="90%"/>
@@ -107,29 +107,13 @@
 			<br>
 			<br>
 			<img src="images/blrbr_logo_50.png"/>
-			<div id="deviceready">
-			<p class="event listening">
-			loading
-			</p>
-			<div class="event received">
-			<!-- <div class="full-width-button" style="background-color: #DB5FA5" onclick="route('firstblrbever')">
-			<div>
-			<span class="glyphicon glyphicon-align-right"></span> brws chnnls <span class="glyphicon glyphicon-align-left"></span>
-			</div>
-			</div>
-			<div class="full-width-button" style="background-color: #6FBF46" onclick="route('account/login')">
-			<div>
-			<span class="glyphicon glyphicon-headphones"></span> blrb strm <span class="glyphicon glyphicon-headphones"></span>
-			</div>
-			</div>
-			</div> -->
-			</div>
-			</div>
+			<div id="isLoggedInTrue" hidden="hidden">logged in</div>
+		<div id="isLoggedInFalse">logged out</div>
 		</script>
 
 		<script type="text/ons-template" id="stream.html">
 
-			<div id="streamPage" ng-controller="StreamCtrl" style="font-size: 70px;text-align: center;">
+			<div id="streamPage" ng-controller="StreamCtrl" >
 
 			<div class='row' style="margin:0px;">
 			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;width: 49%" ng-click="ons.slidingMenu.toggleMenu()">
