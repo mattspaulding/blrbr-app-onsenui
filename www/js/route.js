@@ -30,7 +30,7 @@ var gotoRoute=function(r) {
 
 	if (event.url.indexOf('Blrb/me') != -1) {
 			ref.close();
-			ons.slidingMenu.setMainPage('stream.html', {closeMenu: true});
+			ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
 			//window.location = "stream.html?" + event.url.split('?')[1];
 		}
 
