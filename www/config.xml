@@ -32,7 +32,7 @@ version   = "1.0.0">
 	<!-- ios 7: -->
 	<preference name="DisallowOverscroll" value="true" />
 	<!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
-	<preference name="exit-on-suspend"            value="false" />
+	<preference name="exit-on-suspend"            value="true" />
 	<!-- ios: if set to true, app will terminate when home button is pressed -->
 	<preference name="auto-hide-splash-screen"    value="true" />
 	<!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
@@ -47,7 +47,7 @@ version   = "1.0.0">
 	<gap:plugin name="org.apache.cordova.file" />
 	<gap:plugin name="org.apache.cordova.file-transfer" />
 	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
-	
+	<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
 
 	<!-- Define app icon for each platform. -->
 	<icon src="icon.png" />
