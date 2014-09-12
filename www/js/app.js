@@ -6,7 +6,7 @@
 		$scope.response = {};
 		$scope.response.get = function() {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
+			var responsePromise = $http.get("http://localhost:49379/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { 
 				alert("success "+status);
@@ -14,7 +14,7 @@
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
 				$('#loginBtn').hide();
-				$scope.response = data.Identity.Name;
+				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { 
 				alert("error "+status);
