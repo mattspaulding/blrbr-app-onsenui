@@ -48,7 +48,9 @@ version   = "1.0.0">
 	<gap:plugin name="org.apache.cordova.file-transfer" />
 	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 	
-	
+	 <feature name="StatusBar">
+            <param name="ios-package" value="CDVStatusBar" onload="true" />
+        </feature>
         
 	<!-- Define app icon for each platform. -->
 	<icon src="icon.png" />
