@@ -107,12 +107,24 @@
 			<br>
 			<br>
 			<img src="images/blrbr_logo_50.png"/>
+			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
 			<div id="isLoggedInTrue" hidden="hidden">hello {{response}}</div>
-			<div id="isLoggedInFalse" hidden="hidden">logged out</div>
-		<div id="loginBtn"  onclick="gotoRoute('Account/Login');" hidden="hidden" style="background-color: #F1EB55; height:50px;" > Login
-			</script>
+			<div  style="font-size: 70px;text-align: center;width:100%;">
 
-		<script type="text/ons-template" id="stream.html">
+			<div id="loginBtn" style="background-color: #F1EB55;margin:0px;ont-size: 70px;text-align: center;" ng-click="gotoRoute('Account/Login');" hidden="hidden">
+			<div>
+			<span class="fa fa-sign-in"></span>
+			</div>
+			</div>
+
+			<div id="loginBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="ons.slidingMenu.toggleMenu()">
+			<div>
+			<span class="fa fa-bars"></span>
+			</div>
+			</div>
+			</div>
+
+			<script type="text/ons-template" id="stream.html">
 
 			<div id="streamPage" ng-controller="StreamCtrl" >
 
