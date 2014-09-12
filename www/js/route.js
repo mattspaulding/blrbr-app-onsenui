@@ -43,7 +43,7 @@ var gotoRoute=function(r) {
 
 	});
 	ref.addEventListener('loaderror', function(event) {
-		alert('error: ' + event.message);
+		//alert('error: ' + event.message);
 	});
 	ref.addEventListener('exit', function(event) {
 		//alert("Exit");

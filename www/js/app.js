@@ -9,6 +9,7 @@
 			var responsePromise = $http.get("http://localhost:49379/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { 
+				alert("success");
 				localStorage.isLoggedIn = true;
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
@@ -16,6 +17,7 @@
 				$scope.response = data.Identity.Name;
 			});
 			responsePromise.error(function(data, status, headers, config) { 
+				alert("error");
 				localStorage.isLoggedIn = false;
 				$('#isLoggedInTrue').hide();
 				$('#isLoggedInFalse').show();
