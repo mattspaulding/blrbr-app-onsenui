@@ -4,7 +4,8 @@
 	app.controller('HomeCtrl', function($scope, $http) { 
 		$scope.response = {};
 		$scope.response.get = function() {
-
+	StatusBar.hide();
+		
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { 
