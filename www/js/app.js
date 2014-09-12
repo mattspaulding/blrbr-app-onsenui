@@ -20,7 +20,7 @@
 		};
 	$scope.myData.doUser = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/TestUserJson");
+			var responsePromise = $http.get("http://localhost:49379/Blrb/TestUserJson");
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				alert("AJAX success!");
@@ -35,7 +35,7 @@
 		};
 	$scope.myData.doNoUser = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/TestNoUserJson");
+			var responsePromise = $http.get("http://localhost:49379/Blrb/TestNoUserJson");
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				alert("AJAX success!");
