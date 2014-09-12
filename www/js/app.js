@@ -13,7 +13,7 @@
 			responsePromise.error(function(data, status, headers, config) { debugger;
 				alert("AJAX failed!");
 				debugger;
-				route("Account/Login");
+				gotoRoute("Account/Login");
 			});
 
 		};
