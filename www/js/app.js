@@ -18,6 +18,8 @@
 				// alert("AJAX failed! "+status);
 				 debugger;
 				localStorage.isLoggedIn=false;
+			$('#isLoggedInTrue').hide();
+				$('#isLoggedInFalse').show();
 			});
 
 		};
