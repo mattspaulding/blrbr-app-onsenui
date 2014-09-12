@@ -9,7 +9,6 @@
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { 
-				alert("success "+status);
 				localStorage.isLoggedIn = true;
 				$('#isLoggedInTrue').show();
 				$('#isLoggedInFalse').hide();
@@ -17,7 +16,6 @@
 				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { 
-				alert("error "+status);
 				localStorage.isLoggedIn = false;
 				$('#isLoggedInTrue').hide();
 				$('#isLoggedInFalse').show();
@@ -36,8 +34,6 @@
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson");
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
-				alert("AJAX success!");
-				alert("data: " + data.NumberOfBlrbs);
 				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
