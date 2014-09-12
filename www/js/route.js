@@ -19,6 +19,7 @@
 
 var gotoRoute=function(r) {
 	 debugger;
+	 alert("gotoroute");
     var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
 	ref.addEventListener('loadstart', function(event) {
 		debugger;
@@ -46,6 +47,7 @@ var gotoRoute=function(r) {
 		alert('error: ' + event.message);
 	});
 	ref.addEventListener('exit', function(event) {
+		alert("Exit");
 	});
 
 };
