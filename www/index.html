@@ -47,7 +47,7 @@
 		
 				<ons-list-item
 			style="background-color: #6FBF46"
-			ng-click="ons.slidingMenu.setMainPage('http://blrbr.co', {closeMenu: true})">
+			ng-click="ons.slidingMenu.setMainPage('stream.html', {closeMenu: true})">
 
 			<i class="fa fa-headphones fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
 			</ons-list-item>
@@ -127,9 +127,49 @@
 			</div>
 		</script>
 
+		<script type="text/ons-template" id="stream.html">
+
+			<div id="streamPage" ng-controller="StreamCtrl" style="font-size: 70px;text-align: center;">
+
+			<div class='row' style="margin:0px;">
+			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;width: 49%" ng-click="ons.slidingMenu.toggleMenu()">
+			<div>
+			<span class="fa fa-bars"></span>
+			</div>
+			</div>
+			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden">
+			<div>
+			<span class="ion-upload"></span>
+			</div>
+			</div>
+			<div id="blrbBtnOff" class="col-xs-6" style="background-color: lightgrey;" >
+			<div>
+			<span class="ion-upload"></span>
+			</div>
+			</div>
+
+			</div>
+			
+			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
+				<button ng-click="myData.doClick(item, $event)">Send AJAX Request</button>
+    <br/>
+		<ul>
+			<li ng-repeat="blrb in blrbs">
+				{{blrb.text}}
+			</li>
+		</ul>
+			</div>
+			
+			<div class='row' style="position: absolute;bottom: 175px;top:100px;width:100%;margin:0px;min-height: 300px;">
+			<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
+			</div>
+		
+						</div>
+
+		</script>
 		<script type="text/ons-template" id="create.html">
 
-			<div id="createPage" style="font-size: 70px;text-align: center;">
+			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
 
 			<div class='row' style="margin:0px;">
 			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;width: 49%" ng-click="ons.slidingMenu.toggleMenu()">
@@ -196,7 +236,8 @@
 						</div>
 
 		</script>
-			<script type="text/javascript" src="js/jquery.js"></script>
+			
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/deviceCheck.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 
@@ -208,6 +249,7 @@
 			var isTweet = true;
 
 			function onBodyLoad() {
+				debugger;
 				document.addEventListener("deviceready", onDeviceReady, false);
 				deviceready = true;
 				if (phoneCheck.ios != null) {
@@ -231,8 +273,8 @@
 				$("#loading").hide();
 			};
 
-			$(document).ready(function() {
-				resetView();
+			//$(document).ready(function() {
+				//resetView();
 				try {
 					var href = decodeURIComponent(window.location.href);
 					var p = href.split('username=')[1];
@@ -278,7 +320,7 @@
 				$("#blrbBtn").click(function() {
 					uploadVoice();
 				});
-			});
+			//});
 			// Set audio position
 			//
 			function setAudioPosition(position) {
