@@ -18,9 +18,7 @@
  */
 
 var gotoRoute=function(r) {
-	 debugger;
-	 alert("gotoroute: "+r);
-    var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
+	   var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
 	ref.addEventListener('loadstart', function(event) {
 		debugger;
 		alert("in gotroute: " + r);
@@ -32,6 +30,11 @@ var gotoRoute=function(r) {
 		}
 
 	if (event.url.indexOf('Blrb/Me') != -1) {
+			ref.close();
+			window.location = "stream.html?" + event.url.split('?')[1];
+		}
+
+if (event.url.indexOf('Blrb/Stream') != -1) {
 			ref.close();
 			window.location = "stream.html?" + event.url.split('?')[1];
 		}
@@ -52,9 +55,9 @@ var gotoRoute=function(r) {
 
 };
 
-
-debugger;
-	var route = localStorage.route;
-	localStorage.route = null;
-
-	var web= gotoRoute(route);
+// 
+// debugger;
+	// var route = localStorage.route;
+	// localStorage.route = null;
+// 
+	// var web= gotoRoute(route);
