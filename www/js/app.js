@@ -9,6 +9,7 @@
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				alert("AJAX success!");
+				alert("data: "+data);
 				$scope.myData.fromServer = data.title;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
