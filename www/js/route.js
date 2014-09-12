@@ -28,7 +28,7 @@ var gotoRoute=function(r) {
 			window.location = "create.html?" + event.url.split('?')[1];
 		}
 
-	if (event.url.indexOf('Blrb/Me') != -1) {
+	if (event.url.indexOf('Blrb/me') != -1) {
 			ref.close();
 			window.location = "stream.html?" + event.url.split('?')[1];
 		}
