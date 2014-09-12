@@ -44,15 +44,15 @@
 
 			<i class="fa fa-list-ul fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
 			</ons-list-item>
-		
-				<ons-list-item
+
+			<ons-list-item
 			style="background-color: #6FBF46"
 			ng-click="ons.slidingMenu.setMainPage('stream.html', {closeMenu: true})">
 
 			<i class="fa fa-headphones fa-5x fa-fw" style="color: #000; margin: 20px;"></i>
 			</ons-list-item>
-			
-		<ons-list-item
+
+			<ons-list-item
 			style="background-color: #F1EB55;"
 			ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 
@@ -149,16 +149,58 @@
 			</div>
 
 			</div>
-			
+
 			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
-				<button ng-click="myData.doClick(item, $event)">Send AJAX Request</button>
-  			    <br/>
-	{{BlrbStreamResponse.NumberOfBlrbs}}
+			<button ng-click="response.get(item, $event)">Request</button>
+			<div class="row">
+			<div class="col-md-4">
+			
+			<div id="profile">
+			<div class="row">
+			<div class="col-xs-3" style="padding:0;">
+			<img src={{response.UserProfile.ProfileImageUrlBigger}} />
+			</div>
+			<div class="col-xs-9 border">
+			<h3>{{response.UserProfile.ScreenName}}</h3>
+			<h5>@{{response.UserProfile.Username}}</h5>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-xs-4 border">
+			<div id="numberOfBlrbs">
+			{{response.NumberOfBlrbs}}
+			</div>
+			<div>
+			blrbs
+			</div>
+			</div>
+			<div class="col-xs-4 border">
+			<div>
+			{{response.UserProfile.NumberOfBlrbrFriends}}
+			</div>
+			<div>
+			following
+			</div>
+			</div>
+			<div class="col-xs-4 border">
+			<div>
+			{{response.UserProfile.NumberOfBlrbrFollowers}}
+			</div>
+			<div>
+			followers
+			</div>
+			</div>
 			</div>
 			
+			</div>
 			
-		
-						</div>
+			</div>
+
+			<br/>
+			
+			</div>
+
+			</div>
 
 		</script>
 		<script type="text/ons-template" id="create.html">
@@ -183,7 +225,7 @@
 			</div>
 
 			</div>
-				<div id="loading" class='row'>
+			<div id="loading" class='row'>
 			<p>
 			blrbn...
 			</p>
@@ -199,7 +241,7 @@
 			<div id="twitterNo" style="background-color: lightgrey;height:75px;" onclick="twitterToggle('yes');" hidden="hidden">
 			<img src="images/bird_gray_48.png" style="padding-top: 20px;"/>
 			</div>
-			
+
 			</div>
 			<div id="recordBtn" class="col-xs-6" style="background-color: #F26722" >
 			<div>
@@ -222,22 +264,22 @@
 			</div>
 			</div>
 			</div>
-			
+
 			<div class='row' style="position: absolute;bottom: 175px;top:100px;width:100%;margin:0px;min-height: 300px;">
 			<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
 			</div>
-		
-						</div>
+
+			</div>
 
 		</script>
-			
+
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/deviceCheck.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/route.js"></script>
+		<script type="text/javascript" src="js/route.js"></script>
 
 		<script type="text/javascript">
-				StatusBar.hide();
+			StatusBar.hide();
 
 			var deviceready = false;
 			var mediaVar = null;
@@ -245,8 +287,7 @@
 			var recordFileName = "recording.amr";
 			var isTweet = true;
 
-			function onBodyLoad() {
-				debugger;
+			function onBodyLoad() { debugger;
 				document.addEventListener("deviceready", onDeviceReady, false);
 				deviceready = true;
 				if (phoneCheck.ios != null) {
@@ -271,52 +312,52 @@
 			};
 
 			//$(document).ready(function() {
-				//resetView();
-				try {
-					var href = decodeURIComponent(window.location.href);
-					var p = href.split('username=')[1];
-					var q = p.split('&channel=')[1];
-					window.username = p.split('&channel=')[0];
-					window.channel = q.split('&text=')[0];
-					if (window.channel == " ") {
-						window.channel = "";
-					}
-					window.text = q.split('&text=')[1];
-					if (window.text == " " || window.text == "  ") {
-						window.text = "";
-					}
-
-					$("#text_textarea").val(window.text);
-				} catch(err) {
-					//alert("data transfer error: " + err);
-					//window.location="index.html";
-
+			//resetView();
+			try {
+				var href = decodeURIComponent(window.location.href);
+				var p = href.split('username=')[1];
+				var q = p.split('&channel=')[1];
+				window.username = p.split('&channel=')[0];
+				window.channel = q.split('&text=')[0];
+				if (window.channel == " ") {
+					window.channel = "";
+				}
+				window.text = q.split('&text=')[1];
+				if (window.text == " " || window.text == "  ") {
+					window.text = "";
 				}
 
-				//validation to check if device is ready is skipped
+				$("#text_textarea").val(window.text);
+			} catch(err) {
+				//alert("data transfer error: " + err);
+				//window.location="index.html";
 
-				$("#recordBtn").click(function() {
-					alert("record");
-					record();
-				});
+			}
 
-				$("#backBtn").click(function() {
-					//route('blrb/me');
-					//window.location = "index.html";
-				});
+			//validation to check if device is ready is skipped
 
-				$("#playBtn").click(function() {
-					//alert("play");
-					play();
-				});
+			$("#recordBtn").click(function() {
+				alert("record");
+				record();
+			});
 
-				$("#stopBtn").click(function() {
-					//alert("stop");
-					stop();
-				});
-				$("#blrbBtn").click(function() {
-					uploadVoice();
-				});
+			$("#backBtn").click(function() {
+				//route('blrb/me');
+				//window.location = "index.html";
+			});
+
+			$("#playBtn").click(function() {
+				//alert("play");
+				play();
+			});
+
+			$("#stopBtn").click(function() {
+				//alert("stop");
+				stop();
+			});
+			$("#blrbBtn").click(function() {
+				uploadVoice();
+			});
 			//});
 			// Set audio position
 			//
