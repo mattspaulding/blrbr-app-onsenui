@@ -992,7 +992,7 @@ function PagePlayer() {
       '   </div>',
       '  </div>',
 
-      '  <div class="timing">',
+      '  <div class="timing" style="width:100%;">',
       '   <div id="sm2_timing" class="timing-data">',
       '    <span class="sm2_position">%s1</span> / <span class="sm2_total">%s2</span>',
       '   </div>',
