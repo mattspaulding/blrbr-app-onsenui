@@ -251,7 +251,6 @@
 
 			function record() {
 				createMedia(function() {
-					alert("status recording");
 					status = "recording";
 					mediaVar.startRecord();
 					$("#recordBtn").hide();
@@ -396,7 +395,6 @@
 			}
 
 			function uploadVoice() { debugger;
-				alert("upload");
 				var audioURI = "mnt/sdcard/recording.amr";
 
 				var options = new FileUploadOptions();
@@ -423,12 +421,12 @@
 
 				var params = new Object();
 				//params.channel = window.channel;
-				params.channel = localStorage.channel;
+				params.channel = "";
 				params.text = $("#text_textarea").val();
 				//params.username = window.username;
-				params.username = localStorage.username;
+				params.username = "";
 				params.isTweet = isTweet;
-				alert("params: "+params.username + params.channel + params.isTweet + params.text);
+				//alert("params: "+params.username + params.channel + params.isTweet + params.text);
 				options.params = params;
 				var ft = new FileTransfer();
 				//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
