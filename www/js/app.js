@@ -11,7 +11,7 @@
 				localStorage.isLoggedIn = true;
 					$('#loginBtn').hide();
 					$('#loadingBtn').hide();
-				$('#isLoggedInTrue').fadeIn();
+				$('#isLoggedInTrue').fadeIn("slow");
 				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { 
@@ -447,7 +447,7 @@
 
 			function win(r) {
 				//alert("Code = " + r.responseCode);
-				alert("Response = " + r.response);
+				//alert("Response = " + r.response);
 				//app.initialize();
 				ons.slidingMenu.toggleMenu();
 			}

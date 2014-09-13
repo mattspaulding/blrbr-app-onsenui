@@ -28,7 +28,7 @@
 
 		<ons-sliding-menu
 		menu-page="menu.html" main-page="home.html" side="left"
-		type="push" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
+		type="push" max-slide-distance="200px" swipable="true"></ons-sliding-menu>
 
 		<script type="text/ons-template" id="menu.html">
 			<ons-page style="background-color: white">
@@ -145,7 +145,7 @@
 			<span class="fa fa-bars"></span>
 			</div>
 			</div>
-			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;">
+			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 			<div>
 			<span class="fa fa-microphone"></span>
 			</div>
