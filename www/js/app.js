@@ -34,6 +34,7 @@
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
+				$scope.response.BlrbStreamItems[0].TextWithMarkup="\u003ca href=http://blrbrdev.azurewebsites.net/FirstBlrbEver\u003eFirstBlrbEver\u003c/a\u003e"
 			});
 			responsePromise.error(function(data, status, headers, config) { 
 				// alert("AJAX failed! "+status);
@@ -161,24 +162,11 @@
 
 	});
 	app.controller('ChannelCtrl', function($scope, $http) { 
-		$scope.response = {};
-		$scope.response.get = function(item, event) {
-
-			var responsePromise = $http.get("http://localhost:49379/Blrb/StreamJson/firstblrbever");
-
-			responsePromise.success(function(data, status, headers, config) { 
-				$scope.response = data;
-			});
-			responsePromise.error(function(data, status, headers, config) { 
-				 alert("AJAX failed! "+status);
-							});
-
-		};
-
-	var res = $scope.response.get();
-
+		///TODO add channels
 	});
 
 	app.controller('CreateCtrl', function($scope) {
+		
+		
 	});
 })();
