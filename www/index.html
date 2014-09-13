@@ -111,7 +111,7 @@
 			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
 			<div  style="font-size: 70px;text-align: center;width:100%;">
 
-			<div id="isLoggedInTrue" style="font-size:50px;" hidden="hidden">{{response}}</div>
+			<div id="isLoggedInTrue" style="font-size:50px;" hidden="hidden">hi {{response}}</div>
 
 			<div id="loadingBtn" style="background-color: #F1EB55;margin:0px;ont-size: 70px;text-align: center;">
 			<div>
@@ -125,7 +125,7 @@
 			</div>
 			</div>
 
-			<div id="loginBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="ons.slidingMenu.toggleMenu()">
+			<div id="menuBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="ons.slidingMenu.toggleMenu()">
 			<div>
 			<span class="fa fa-bars"></span>
 			</div>
@@ -157,12 +157,12 @@
 			</div>
 
 			</div>
-			
-				<div class='row' >
+
+			<div class='row' >
 			<div class="col-md-4">
 
 			<div id="profile">
-			<div class="row">
+			<div class="row" style="margin:0px;">
 			<div class="col-xs-3" style="padding:0;">
 			<img src={{response.UserProfile.ProfileImageUrlBigger}} />
 			</div>
@@ -258,7 +258,7 @@
 			</div>
 
 			<div class='row'>
-		channels go here
+			channels go here
 
 			</div>
 
@@ -289,6 +289,7 @@
 
 			</div>
 			<div id="loading" class='row'>
+			<br>
 			<p>
 			blrbn...
 			</p>
@@ -340,8 +341,6 @@
 		<script type="text/javascript" src="js/deviceCheck.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/route.js"></script>
-
-		
 
 		<!--Script references. -->
 		<!--The jQuery library is required and is referenced by default in _Layout.cshtml. -->
