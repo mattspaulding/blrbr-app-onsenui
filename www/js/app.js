@@ -9,9 +9,9 @@
 
 			responsePromise.success(function(data, status, headers, config) { 
 				localStorage.isLoggedIn = true;
-				$('#isLoggedInTrue').show();
 					$('#loginBtn').hide();
 					$('#loadingBtn').hide();
+				$('#isLoggedInTrue').fadeIn();
 				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { 
