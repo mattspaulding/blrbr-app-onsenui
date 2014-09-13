@@ -30,11 +30,10 @@
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/firstblrbever");
+			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson");
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
-				$scope.response.BlrbStreamItems[0].TextWithMarkup="\u003ca href=http://blrbrdev.azurewebsites.net/FirstBlrbEver\u003eFirstBlrbEver\u003c/a\u003e"
 			});
 			responsePromise.error(function(data, status, headers, config) { 
 				// alert("AJAX failed! "+status);
@@ -173,14 +172,14 @@
 			var recordFileName = "recording.amr";
 			var isTweet = true;
 
-			function onBodyLoad() { debugger;
+			//function onBodyLoad() { debugger;
 				document.addEventListener("deviceready", onDeviceReady, false);
 				deviceready = true;
 				if (phoneCheck.ios != null) {
 					recordFileName = "recording.wav";
 				}
 
-			}
+			//}
 
 			function resetView() {
 				$("#recordBtn").show();
@@ -223,7 +222,7 @@
 			//validation to check if device is ready is skipped
 
 			$("#recordBtn").click(function() {
-				alert("record");
+				//alert("record");
 				record();
 			});
 
@@ -251,7 +250,6 @@
 			}
 
 			function record() {
-				alert("in record");
 				createMedia(function() {
 					alert("status recording");
 					status = "recording";
