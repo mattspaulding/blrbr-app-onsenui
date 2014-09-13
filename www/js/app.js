@@ -428,7 +428,7 @@
 				//params.username = window.username;
 				params.username = localStorage.username;
 				params.isTweet = isTweet;
-				alert(params.username + params.channel + params.isTweet + params.text);
+				alert("params: "+params.username + params.channel + params.isTweet + params.text);
 				options.params = params;
 				var ft = new FileTransfer();
 				//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
@@ -449,14 +449,14 @@
 
 			function win(r) {
 				//alert("Code = " + r.responseCode);
-				//alert("Response = " + r.response);
+				alert("Response = " + r.response);
 				//app.initialize();
-				route('blrb/me');
+				ons.slidingMenu.toggleMenu();
 			}
 
 			function fail(error) {
 				alert("blrb error: " + error.code);
-				route('blrb/me');
+				ons.slidingMenu.toggleMenu();
 			}
 
 	});
