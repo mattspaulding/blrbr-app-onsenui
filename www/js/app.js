@@ -34,17 +34,16 @@ app.controller('HomeCtrl', function($scope, $http) {
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) { 
-			var channel=localStorage.channel;
-		//localStorage.channel="";
-		//channel="firstblrbever";
-		$scope.response = {};
+				$("#profile").hide();
+			$scope.response = {};
 		$scope.response.get = function(item, event) {
 
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/"+channel);
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
-				if(channel="")
+				debugger;
+				if(localStorage.channel==="")
 				{
 					$("#profile").show();
 				}
