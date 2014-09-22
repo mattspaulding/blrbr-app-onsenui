@@ -135,99 +135,99 @@
 			</div>
 		</script>
 
-		<script type="text/ons-template" id="stream.html">
+		<ons-template id="stream.html">
 
 			<div id="streamPage" ng-controller="StreamCtrl" >
 
-			<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
-			<div>
-			<span class="fa fa-bars"></span>
-			</div>
-			</div>
-			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
-			<div>
-			<span class="fa fa-microphone"></span>
-			</div>
-			</div>
+				<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
+					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
+						<div>
+							<span class="fa fa-bars"></span>
+						</div>
+					</div>
+					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+						<div>
+							<span class="fa fa-microphone"></span>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="channel" hidden="hidden" style="text-align: center;">
+					<img src="{{response.Channel.BannerImg}}" style="width:100%;"/>
+					<div>
+						{{response.Channel.Name}}
+					</div>
+					<div>
+						#{{response.Channel.Hashtag}}
+					</div>
+				</div>
+
+				<div id="profile" hidden="hidden" style="margin: 0px;">
+					<div class="row">
+						<div class="col-xs-3" style="padding:0;">
+							<img src={{response.UserProfile.ProfileImageUrlBigger}} />
+						</div>
+						<div class="col-xs-9 border">
+							<h3>{{response.UserProfile.ScreenName}}</h3>
+							<h5>@{{response.UserProfile.Username}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 border">
+							<div id="numberOfBlrbs">
+								{{response.NumberOfBlrbs}}
+							</div>
+							<div>
+								blrbs
+							</div>
+						</div>
+						<div class="col-xs-4 border">
+							<div>
+								{{response.UserProfile.NumberOfBlrbrFriends}}
+							</div>
+							<div>
+								following
+							</div>
+						</div>
+						<div class="col-xs-4 border">
+							<div>
+								{{response.UserProfile.NumberOfBlrbrFollowers}}
+							</div>
+							<div>
+								followers
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<ul class="playlist">
+					<li ng-repeat="blrb in response.BlrbStreamItems" style="background-color:#{{blrb.Color}};" class="blrbItem" id="{{blrb.Id}}">
+
+						<a href="{{blrb.Sound}}" class="clip">
+						<div class="row" style="background-color:white;margin:0px; ">
+							<div class="col-xs-2" style="padding:0;">
+								<img src="images/pause.png" alt="pause" class="pause" width="48" />
+								<img src="images/play.png" alt="play" class="play" width="48" />
+							</div>
+							<div class="col-xs-9">
+								<img src="{{blrb.Img}}" />
+								{{blrb.ScreenName}}
+							</div>
+						</div> </a>
+
+						<div style="background-color: white;">
+							<div ng-bind-html="{{blrb.TextWithMarkup}} | sanitize"></div>
+						</div>
+
+					</li>
+
+				</ul>
 
 			</div>
 
-			<div id="channel" hidden="hidden" style="text-align: center;">
-			<img src="{{response.Channel.BannerImg}}" style="width:100%;"/>
-			<div>{{response.Channel.Name}}</div>
-			<div>#{{response.Channel.Hashtag}}</div>
-			</div>
-
-			<div id="profile" hidden="hidden" style="margin: 0px;"
-			<div class="row">
-			<div class="col-xs-3" style="padding:0;">
-			<img src={{response.UserProfile.ProfileImageUrlBigger}} />
-			</div>
-			<div class="col-xs-9 border">
-			<h3>{{response.UserProfile.ScreenName}}</h3>
-			<h5>@{{response.UserProfile.Username}}</h5>
-			</div>
-			</div>
-			<div class="row">
-			<div class="col-xs-4 border">
-			<div id="numberOfBlrbs">
-			{{response.NumberOfBlrbs}}
-			</div>
-			<div>
-			blrbs
-			</div>
-			</div>
-			<div class="col-xs-4 border">
-			<div>
-			{{response.UserProfile.NumberOfBlrbrFriends}}
-			</div>
-			<div>
-			following
-			</div>
-			</div>
-			<div class="col-xs-4 border">
-			<div>
-			{{response.UserProfile.NumberOfBlrbrFollowers}}
-			</div>
-			<div>
-			followers
-			</div>
-			</div>
-			</div>
-
-			</div>
-
-			<div >
-			<ul class="playlist">
-			<li ng-repeat="blrb in response.BlrbStreamItems" style="background-color:#{{blrb.Color}};" class="blrbItem" id="{{blrb.Id}}">
-
-			<a href="{{blrb.Sound}}" class="clip">
-			<div class="row" style="background-color:white;margin:0px; ">
-			<div class="col-xs-2" style="padding:0;">
-			<img src="images/pause.png" alt="pause" class="pause" width="48" />
-			<img src="images/play.png" alt="play" class="play" width="48" />
-			</div>
-			<div class="col-xs-9">
-			<img src="{{blrb.Img}}" />
-			{{blrb.ScreenName}}
-			</div>
-			</div>
-			</a>
-
-			<div style="background-color: white;">
-			<div ng-bind-html="{{blrb.TextWithMarkup}} | sanitize"></div>
-			</div>
-
-			</li>
-
-			</ul>
-
-			</div>
-
-			</div>
-
-		</script>
+		</ons-template>
 		<script type="text/ons-template" id="channel.html">
 
 			<div id="channelPage" ng-controller="ChannelCtrl" >
