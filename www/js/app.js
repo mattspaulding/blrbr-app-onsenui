@@ -27,13 +27,20 @@
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) { 
+			var channel=localStorage.channel;
+		localStorage.channel="";
+		//channel="firstblrbever";
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson");
+			var responsePromise = $http.get("http://localhost:49379/Blrb/StreamJson/"+channel);
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
+				if(channel="")
+				{
+					$("#profile").show();
+				}
 			});
 			responsePromise.error(function(data, status, headers, config) { 
 				// alert("AJAX failed! "+status);
@@ -161,7 +168,31 @@
 
 	});
 	app.controller('ChannelCtrl', function($scope, $http) { 
-		///TODO add channels
+			$scope.response = {};
+		$scope.response.get = function(item, event) {
+
+			var responsePromise = $http.get("http://localhost:49379/Channel/FeaturedChannels");
+
+			responsePromise.success(function(data, status, headers, config) { 
+					$scope.response = data;
+				
+			});
+			responsePromise.error(function(data, status, headers, config) { 
+				// alert("AJAX failed! "+status);
+				 debugger;
+				//gotoRoute("Account/Login");
+			});
+
+		};
+
+	var res = $scope.response.get();
+	
+	$scope.gotoChannel=function (channel) {
+				localStorage.channel=channel; 
+				ons.slidingMenu.setMainPage('stream.html', {closeMenu: true}); 
+		};
+		
+
 	});
 
 	app.controller('CreateCtrl', function($scope) {
