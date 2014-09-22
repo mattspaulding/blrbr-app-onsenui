@@ -153,8 +153,13 @@
 
 			</div>
 
-		
-			<div id="profile">
+			<div id="channel" hidden="hidden" style="text-align: center;">
+			<img src="{{response.Channel.BannerImg}}" style="width:100%;"/>
+			<div>{{response.Channel.Name}}</div>
+			<div>#{{response.Channel.Hashtag}}</div>
+			</div>
+
+			<div id="profile" hidden="hidden">
 			<div class="row">
 			<div class="col-xs-3" style="padding:0;">
 			<img src={{response.UserProfile.ProfileImageUrlBigger}} />
@@ -191,7 +196,6 @@
 			</div>
 			</div>
 
-		
 			</div>
 
 			<div >

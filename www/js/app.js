@@ -34,11 +34,10 @@ app.controller('HomeCtrl', function($scope, $http) {
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) { 
-				$("#profile").hide();
 			$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/"+channel);
+			var responsePromise = $http.get("http://localhost:49379/Blrb/StreamJson/"+localStorage.channel);
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
@@ -46,6 +45,10 @@ app.controller('HomeCtrl', function($scope, $http) {
 				if(localStorage.channel==="")
 				{
 					$("#profile").show();
+				}
+				else
+				{
+					$("#channel").show();
 				}
 			});
 			responsePromise.error(function(data, status, headers, config) { 
@@ -208,6 +211,7 @@ app.controller('HomeCtrl', function($scope, $http) {
 			var status = null;
 			var recordFileName = "recording.amr";
 			var isTweet = true;
+			if(localStorage.channel!="")
 				$("#text_textarea").val('#'+localStorage.channel);
 			
 
