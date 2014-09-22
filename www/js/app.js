@@ -33,7 +33,7 @@
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://localhost:49379/Blrb/StreamJson/"+channel);
+			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/"+channel);
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
@@ -171,7 +171,7 @@
 			$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://localhost:49379/Channel/FeaturedChannels");
+			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Channel/FeaturedChannels");
 
 			responsePromise.success(function(data, status, headers, config) { 
 					$scope.response = data;
