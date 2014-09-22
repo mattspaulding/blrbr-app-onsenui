@@ -162,7 +162,7 @@
 						#{{response.Channel.Hashtag}}
 					</div>
 				</div>
-
+				<div ng-bind-html="<a href=http://blrbrdev.azurewebsites.net/1mcstp>#1mcstp</a>" class="ng-binding"></div>
 				<div id="profile" hidden="hidden" style="margin: 0px;">
 					<div class="row">
 						<div class="col-xs-3" style="padding:0;">
@@ -218,7 +218,7 @@
 						</div> </a>
 
 						<div style="background-color: white;">
-							<div ng-bind-html="{{blrb.TextWithMarkup}} | sanitize"></div>
+							<htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
 						</div>
 
 					</li>

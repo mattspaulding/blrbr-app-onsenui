@@ -1,6 +1,18 @@
 (function() {'use strict';
 	var app = angular.module('myApp', ['onsen.directives']);
 
+app.directive('htmldiv', function($compile, $parse) {
+    return {
+      restrict: 'E',
+      link: function(scope, element, attr) {
+        scope.$watch(attr.content, function() {
+          element.html($parse(attr.content)(scope));
+          $compile(element.contents())(scope);
+        }, true);
+      }
+    }
+  });
+
 	app.controller('MenuCtrl', function($scope) { 
 		$scope.gotoPage=function (page) {
 				localStorage.channel=""; 
@@ -42,6 +54,7 @@ app.controller('HomeCtrl', function($scope, $http) {
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
 				debugger;
+				
 				if(localStorage.channel==="")
 				{
 					$("#profile").show();
@@ -50,6 +63,8 @@ app.controller('HomeCtrl', function($scope, $http) {
 				{
 					$("#channel").show();
 				}
+				$state.reload();
+				
 			});
 			responsePromise.error(function(data, status, headers, config) { 
 				// alert("AJAX failed! "+status);
@@ -61,7 +76,11 @@ app.controller('HomeCtrl', function($scope, $http) {
 
 	var res = $scope.response.get();
 
-
+$scope.gotoChannel=function (channel) {
+	debugger;
+				localStorage.channel=channel; 
+				ons.slidingMenu.setMainPage('stream.html', {closeMenu: true}); 
+		};
 
         var channel = "";
         // @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
