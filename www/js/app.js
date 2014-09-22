@@ -489,12 +489,12 @@ app.controller('HomeCtrl', function($scope, $http) {
 				//alert("Code = " + r.responseCode);
 				//alert("Response = " + r.response);
 				//app.initialize();
-				ons.slidingMenu.toggleMenu();
+				ons.slidingMenu.setMainPage('stream.html', {closeMenu: true}); 
 			}
 
 			function fail(error) {
 				alert("blrb error: " + error.code);
-				ons.slidingMenu.toggleMenu();
+				ons.slidingMenu.setMainPage('stream.html', {closeMenu: true}); 
 			}
 
 	});
