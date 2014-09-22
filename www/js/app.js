@@ -37,7 +37,7 @@ app.controller('HomeCtrl', function($scope, $http) {
 			$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://localhost:49379/Blrb/StreamJson/"+localStorage.channel);
+			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/"+localStorage.channel);
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
