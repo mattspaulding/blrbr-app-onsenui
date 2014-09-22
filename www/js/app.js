@@ -1,7 +1,14 @@
 (function() {'use strict';
 	var app = angular.module('myApp', ['onsen.directives']);
 
-	app.controller('HomeCtrl', function($scope, $http) { 
+	app.controller('MenuCtrl', function($scope) { 
+		$scope.gotoPage=function (page) {
+				localStorage.channel=""; 
+				ons.slidingMenu.setMainPage(page+'.html', {closeMenu: true}); 
+		};
+	});
+
+app.controller('HomeCtrl', function($scope, $http) { 
 		$scope.response = {};
 		$scope.response.get = function() {
 		
