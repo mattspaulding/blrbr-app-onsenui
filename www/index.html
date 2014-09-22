@@ -27,8 +27,36 @@
 	<body>
 
 		<ons-sliding-menu
-		menu-page="menu.html" main-page="home.html" side="left"
-		type="push" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
+		menu-page="menu-right.html"
+		main-page="page.html"
+		side="right"
+		type="overlay"
+		max-slide-distance="250px"
+		swipable="true"
+		var="rightMenu"></ons-sliding-menu>
+
+		<script type="text/ons-template" id="page.html">
+			<ons-sliding-menu
+			main-page="home.html"
+			menu-page="menu.html"
+			side="left"
+			max-slide-distance="100%"
+			swipable="true"
+			type="reveal"
+			var="mainMenu">
+			</ons-sliding-menu>
+		</script>
+		
+		<script type="text/ons-template" id="menu-right.html">
+
+			<ons-toolbar>
+			<div class="center">Right</div>
+			</ons-toolbar>
+
+			<p style="text-align: center; padding-top: 100px;">
+			<ons-button modifier="light" ng-click="rightMenu.close()">Close</ons-button>
+			</p>
+		</script>
 
 		<script type="text/ons-template" id="menu.html">
 			<ons-page style="background-color: white">
@@ -36,28 +64,28 @@
 			<ons-list style="text-align: center;height:100%;">
 			<ons-list-item
 			style="background-color: #4A6FB6; height:25%;"
-			ng-click="ons.slidingMenu.setMainPage('home.html', {closeMenu: true}); ">
+			ng-click="mainMenu.setMainPage('home.html', {closeMenu: true}); ">
 
 			<i class="fa fa-home fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 			</ons-list-item>
 
 			<ons-list-item
 			style="background-color: #F26722; height:25%;"
-			ng-click="ons.slidingMenu.setMainPage('channel.html', {closeMenu: true})">
+			ng-click="mainMenu.setMainPage('channel.html', {closeMenu: true})">
 
 			<i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 			</ons-list-item>
 
 			<ons-list-item
 			style="background-color: #6FBF46; height:25%;"
-			ng-click="ons.slidingMenu.setMainPage('stream.html', {closeMenu: true})">
+			ng-click="mainMenu.setMainPage('stream.html', {closeMenu: true})">
 
 			<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 			</ons-list-item>
 
 			<ons-list-item
 			style="background-color: #F1EB55; height:25%;"
-			ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+			ng-click="mainMenu.setMainPage('create.html', {closeMenu: true});">
 
 			<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 			</ons-list-item>
@@ -75,7 +103,7 @@
 
 			<ons-row style="margin-top: 100px;">
 			<ons-col align="center">
-			<ons-button modifier="light" ng-click="ons.slidingMenu.toggleMenu()">
+			<ons-button modifier="light" ng-click="mainMenu.toggleMenu()">
 			Toggle Menu
 			</ons-button>
 			<p style="color: #999">Click "Toggle Menu" to close/open menu, You can also swipe the page left/right.</p>
@@ -92,7 +120,7 @@
 
 			<ons-row style="margin-top: 100px;">
 			<ons-col align="center">
-			<ons-button modifier="light" ng-click="ons.slidingMenu.toggleMenu()">
+			<ons-button modifier="light" ng-click="mainMenu.toggleMenu()">
 			Toggle Menu
 			</ons-button>
 			</ons-col>
@@ -125,7 +153,7 @@
 			</div>
 			</div>
 
-			<div id="menuBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="ons.slidingMenu.toggleMenu()">
+			<div id="menuBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="mainMenu.toggleMenu()">
 			<div>
 			<span class="fa fa-bars"></span>
 			</div>
@@ -140,12 +168,12 @@
 			<div id="streamPage" ng-controller="StreamCtrl" >
 
 			<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
+			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="mainMenu.toggleMenu()">
 			<div>
 			<span class="fa fa-bars"></span>
 			</div>
 			</div>
-			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="mainMenu.setMainPage('create.html', {closeMenu: true});">
 			<div>
 			<span class="fa fa-microphone"></span>
 			</div>
@@ -153,7 +181,6 @@
 
 			</div>
 
-		
 			<div id="profile" hidden="hidden">
 			<div class="row">
 			<div class="col-xs-3" style="padding:0;">
@@ -191,7 +218,6 @@
 			</div>
 			</div>
 
-		
 			</div>
 
 			<div >
@@ -229,7 +255,7 @@
 			<div id="channelPage" ng-controller="ChannelCtrl" >
 
 			<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
+			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="mainMenu.toggleMenu()">
 			<div>
 			<span class="fa fa-bars"></span>
 			</div>
@@ -256,12 +282,14 @@
 
 		</script>
 
+		
+
 		<script type="text/ons-template" id="create.html">
 
 			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
 
 			<div class='row' style="margin:0px;">
-			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
+			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="mainMenu.toggleMenu()">
 			<div>
 			<span class="fa fa-bars"></span>
 			</div>
