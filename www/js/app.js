@@ -28,12 +28,12 @@
 
 	app.controller('StreamCtrl', function($scope, $http) { 
 			var channel=localStorage.channel;
-		localStorage.channel="";
+		//localStorage.channel="";
 		//channel="firstblrbever";
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/"+channel);
+			var responsePromise = $http.get("http://localhost:49379/Blrb/StreamJson/"+channel);
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
@@ -171,7 +171,7 @@
 			$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Channel/FeaturedChannels");
+			var responsePromise = $http.get("http://localhost:49379/Channel/FeaturedChannels");
 
 			responsePromise.success(function(data, status, headers, config) { 
 					$scope.response = data;
@@ -202,6 +202,8 @@
 			var status = null;
 			var recordFileName = "recording.amr";
 			var isTweet = true;
+				$("#text_textarea").val('#'+localStorage.channel);
+			
 
 			//function onBodyLoad() { debugger;
 				document.addEventListener("deviceready", onDeviceReady, false);
