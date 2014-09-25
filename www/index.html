@@ -164,10 +164,9 @@
 						#{{response.Channel.Hashtag}}
 					</div>
 				</div>
-				<div ng-bind-html="<a href=http://blrbrdev.azurewebsites.net/1mcstp>#1mcstp</a>" class="ng-binding"></div>
-				<div id="profile" hidden="hidden" style="margin: 0px;">
+				<div id="profile" style="margin: 10px;">
 					<div class="row">
-						<div class="col-xs-3" style="padding:0;">
+						<div class="col-xs-3" style="padding:0;text-align: center">
 							<img src={{response.UserProfile.ProfileImageUrlBigger}} />
 						</div>
 						<div class="col-xs-9 border">
@@ -250,19 +249,19 @@
 
 				<div class='row' ng-repeat="channel in response" style="margin:0px;">
 					<div  ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
-					<div class='col-xs-4'>
-						<img src="{{channel.ProfileImg}}"  style="width: 80px;"></img>
-					</div>
-					<div class='col-xs-8' style='padding-top: 5px'>
-						<div>
-							{{channel.Name}}
+						<div class='col-xs-4'>
+							<img src="{{channel.ProfileImg}}"  style="width: 80px;"></img>
 						</div>
-						<div>
-							#{{channel.Hashtag}}
+						<div class='col-xs-8' style='padding-top: 5px'>
+							<div>
+								{{channel.Name}}
+							</div>
+							<div>
+								#{{channel.Hashtag}}
+							</div>
 						</div>
 					</div>
 				</div>
-</div>
 			</div>
 
 		</ons-template>
