@@ -266,76 +266,76 @@
 
 		</ons-template>
 
-		<script type="text/ons-template" id="create.html">
+		<ons-template id="create.html">
 
 			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
 
-			<div class='row' style="margin:0px;">
-			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
-			<div>
-			<span class="fa fa-bars"></span>
-			</div>
-			</div>
-			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden">
-			<div>
-			<span class="ion-upload"></span>
-			</div>
-			</div>
-			<div id="blrbBtnOff" class="col-xs-6" style="background-color: lightgrey;" >
-			<div>
-			<span class="ion-upload"></span>
-			</div>
-			</div>
+				<div class='row' style="margin:0px;">
+					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
+						<div>
+							<span class="fa fa-bars"></span>
+						</div>
+					</div>
+					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden">
+						<div>
+							<span class="ion-upload"></span>
+						</div>
+					</div>
+					<div id="blrbBtnOff" class="col-xs-6" style="background-color: lightgrey;" >
+						<div>
+							<span class="ion-upload"></span>
+						</div>
+					</div>
+
+				</div>
+				<div id="loading" class='row'>
+					<br>
+					<p>
+						blrbn...
+					</p>
+					<div>
+						<span class="ion-upload"></span>
+					</div>
+				</div>
+				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
+					<div style="text-align: center; font-size: xx-large; padding:0px;" class="col-xs-12">
+						<div id="twitterYes" style="background-color: #DB60A3 ;height:75px;" ng-click="twitterToggle('no');">
+							<img src="images/bird_blue_48.png" style="padding-top: 20px;"/>
+						</div>
+						<div id="twitterNo" style="background-color: lightgrey;height:75px;" ng-click="twitterToggle('yes');" hidden="hidden">
+							<img src="images/bird_white_48.png" style="padding-top: 20px;"/>
+						</div>
+
+					</div>
+					<div id="recordBtn" class="col-xs-6" style="background-color: #F26722" >
+						<div>
+							<span class="glyphicon glyphicon-record"></span>
+						</div>
+					</div>
+					<div id="stopBtn" class="col-xs-6" style="background-color: red " hidden="hidden">
+						<div>
+							<span class="glyphicon glyphicon-stop"></span>
+						</div>
+					</div>
+					<div id="playBtn" class="col-xs-6" style="background-color: #6FBF46" hidden="hidden">
+						<div>
+							<span class="glyphicon glyphicon-play"></span>
+						</div>
+					</div>
+					<div id="playBtnOff" class="col-xs-6" style="background-color: lightgrey">
+						<div>
+							<span class="glyphicon glyphicon-play"></span>
+						</div>
+					</div>
+				</div>
+
+				<div class='row' style="position: absolute;bottom: 175px;top:100px;width:100%;margin:0px;min-height: 300px;">
+					<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
+				</div>
 
 			</div>
-			<div id="loading" class='row'>
-			<br>
-			<p>
-			blrbn...
-			</p>
-			<div>
-			<span class="ion-upload"></span>
-			</div>
-			</div>
-			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
-			<div style="text-align: center; font-size: xx-large; padding:0px;" class="col-xs-12">
-			<div id="twitterYes" style="background-color: #DB60A3 ;height:75px;" onclick="twitterToggle('no');">
-			<img src="images/bird_blue_48.png" style="padding-top: 20px;"/>
-			</div>
-			<div id="twitterNo" style="background-color: lightgrey;height:75px;" onclick="twitterToggle('yes');" hidden="hidden">
-			<img src="images/bird_gray_48.png" style="padding-top: 20px;"/>
-			</div>
 
-			</div>
-			<div id="recordBtn" class="col-xs-6" style="background-color: #F26722" >
-			<div>
-			<span class="glyphicon glyphicon-record"></span>
-			</div>
-			</div>
-			<div id="stopBtn" class="col-xs-6" style="background-color: red " hidden="hidden">
-			<div>
-			<span class="glyphicon glyphicon-stop"></span>
-			</div>
-			</div>
-			<div id="playBtn" class="col-xs-6" style="background-color: #6FBF46" hidden="hidden">
-			<div>
-			<span class="glyphicon glyphicon-play"></span>
-			</div>
-			</div>
-			<div id="playBtnOff" class="col-xs-6" style="background-color: lightgrey">
-			<div>
-			<span class="glyphicon glyphicon-play"></span>
-			</div>
-			</div>
-			</div>
-
-			<div class='row' style="position: absolute;bottom: 175px;top:100px;width:100%;margin:0px;min-height: 300px;">
-			<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
-			</div>
-
-			</div>
-
-		</script>
+		</ons-template>
 
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/deviceCheck.js"></script>

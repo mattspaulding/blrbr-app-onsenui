@@ -223,6 +223,20 @@ $scope.gotoChannel=function (channel) {
 
 	app.controller('CreateCtrl', function($scope) {
 		
+		$scope.twitterToggle=function(val) {
+				if (val == "yes") {
+					isTweet = true;
+					$('#twitterYes').show();
+					$('#twitterNo').hide();
+				} else {
+					isTweet = false;
+					$('#twitterYes').hide();
+					$('#twitterNo').show();
+				}
+
+			}
+		
+		
 			var deviceready = false;
 			var mediaVar = null;
 			var status = null;
@@ -441,18 +455,7 @@ $scope.gotoChannel=function (channel) {
 
 			}
 
-			function twitterToggle(val) {
-				if (val == "yes") {
-					isTweet = true;
-					$('#twitterYes').show();
-					$('#twitterNo').hide();
-				} else {
-					isTweet = false;
-					$('#twitterYes').hide();
-					$('#twitterNo').show();
-				}
-
-			}
+			
 
 			function uploadVoice() { debugger;
 				var audioURI = "mnt/sdcard/recording.amr";
