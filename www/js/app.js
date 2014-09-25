@@ -54,8 +54,7 @@ app.controller('HomeCtrl', function($scope, $http) {
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
 				
-						$("#playlist").fadeIn("slow");
-			if(localStorage.channel==="")
+				if(localStorage.channel==="")
 				{
 					$("#profile").fadeIn("slow");
 				}
