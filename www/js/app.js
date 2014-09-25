@@ -53,7 +53,6 @@ app.controller('HomeCtrl', function($scope, $http) {
 
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
-				debugger;
 				
 				if(localStorage.channel==="")
 				{
@@ -77,7 +76,6 @@ app.controller('HomeCtrl', function($scope, $http) {
 	var res = $scope.response.get();
 
 $scope.gotoChannel=function (channel) {
-	debugger;
 				localStorage.channel=channel; 
 				ons.slidingMenu.setMainPage('stream.html', {closeMenu: true}); 
 		};

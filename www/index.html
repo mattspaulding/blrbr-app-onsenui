@@ -101,39 +101,41 @@
 			</ons-page>
 		</script>
 
-		<script type="text/ons-template" id="home.html">
+		<ons-template  id="home.html">
 			<div id="homePage" ng-controller="HomeCtrl" style="text-align: center;" >
-			<br>
-			<img src="images/blrbrfish_logo_nobubble.png" width="90%"/>
-			<br>
-			<br>
-			<img src="images/blrbr_logo_50.png"/>
-			<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
-			<div  style="font-size: 70px;text-align: center;width:100%;">
+				<br>
+				<img src="images/blrbrfish_logo_nobubble.png" width="90%"/>
+				<br>
+				<br>
+				<img src="images/blrbr_logo_50.png"/>
+				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
+					<div  style="font-size: 70px;text-align: center;width:100%;">
 
-			<div id="isLoggedInTrue" style="font-size:50px;" hidden="hidden">hi {{response.ScreenName}}</div>
+						<div id="isLoggedInTrue" style="font-size:50px;" hidden="hidden">
+							hi {{response.ScreenName}}
+						</div>
 
-			<div id="loadingBtn" style="background-color: #FFFFFF;margin:0px;ont-size: 70px;text-align: center;">
-			<div>
-			<span class="fa fa-spinner fa-spin"></span>
-			</div>
-			</div>
+						<div id="loadingBtn" style="background-color: #FFFFFF;margin:0px;ont-size: 70px;text-align: center;">
+							<div>
+								<span class="fa fa-spinner fa-spin"></span>
+							</div>
+						</div>
 
-			<div id="loginBtn" style="background-color: #F1EB55;margin:0px;ont-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
-			<div>
-			<span class="fa fa-sign-in"></span>
-			</div>
-			</div>
+						<div id="loginBtn" style="background-color: #F1EB55;margin:0px;ont-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
+							<div>
+								<span class="fa fa-sign-in"></span>
+							</div>
+						</div>
 
-			<div id="menuBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="ons.slidingMenu.toggleMenu()">
-			<div>
-			<span class="fa fa-bars"></span>
+						<div id="menuBtn" style="background-color: #4A6FB6;margin:0px;ont-size: 70px;text-align: center;" ng-click="ons.slidingMenu.toggleMenu()">
+							<div>
+								<span class="fa fa-bars"></span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			</div>
-			</div>
-			</div>
-			</div>
-		</script>
+		</ons-template>
 
 		<ons-template id="stream.html">
 
@@ -228,37 +230,42 @@
 			</div>
 
 		</ons-template>
-		<script type="text/ons-template" id="channel.html">
+		<ons-template id="channel.html">
 
 			<div id="channelPage" ng-controller="ChannelCtrl" >
 
-			<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-			<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
-			<div>
-			<span class="fa fa-bars"></span>
-			</div>
-			</div>
-			<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden">
-			<div>
-			<span class="ion-upload"></span>
-			</div>
-			</div>
-			<div id="blrbBtnOff" class="col-xs-6" style="background-color: lightgrey;" >
-			<div>
-			<span class="ion-upload"></span>
-			</div>
+				<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
+					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
+						<div>
+							<span class="fa fa-bars"></span>
+						</div>
+					</div>
+					<div id="searchBtn" class="col-xs-6" style="background-color: #F1EB55;" >
+						<div>
+							<span class="ion-search"></span>
+						</div>
+					</div>
+
+				</div>
+
+				<div class='row' ng-repeat="channel in response" style="margin:0px;">
+					<div  ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
+					<div class='col-xs-4'>
+						<img src="{{channel.ProfileImg}}"  style="width: 80px;"></img>
+					</div>
+					<div class='col-xs-8' style='padding-top: 5px'>
+						<div>
+							{{channel.Name}}
+						</div>
+						<div>
+							#{{channel.Hashtag}}
+						</div>
+					</div>
+				</div>
+</div>
 			</div>
 
-			</div>
-
-			<div class='row' ng-repeat="channel in response">
-			<img src="{{channel.BannerImg}}" width="100%" ng-click="gotoChannel(channel.Hashtag);" ></img>
-
-			</div>
-
-			</div>
-
-		</script>
+		</ons-template>
 
 		<script type="text/ons-template" id="create.html">
 
