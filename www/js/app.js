@@ -54,13 +54,14 @@ app.controller('HomeCtrl', function($scope, $http) {
 			responsePromise.success(function(data, status, headers, config) { 
 				$scope.response = data;
 				
-				if(localStorage.channel==="")
+						$("#playlist").fadeIn("slow");
+			if(localStorage.channel==="")
 				{
-					$("#profile").show();
+					$("#profile").fadeIn("slow");
 				}
 				else
 				{
-					$("#channel").show();
+					$("#channel").fadeIn("slow");
 				}
 				$state.reload();
 				
@@ -194,7 +195,7 @@ $scope.gotoChannel=function (channel) {
 
 	});
 	app.controller('ChannelCtrl', function($scope, $http) { 
-			$scope.response = {};
+					$scope.response = {};
 		$scope.response.get = function(item, event) {
 
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Channel/FeaturedChannels");

@@ -203,7 +203,7 @@
 
 				</div>
 
-				<ul class="playlist">
+				<ul class="playlist" hidden="hidden">
 					<li ng-repeat="blrb in response.BlrbStreamItems" style="background-color:#{{blrb.Color}};" class="blrbItem" id="{{blrb.Id}}">
 
 						<a href="{{blrb.Sound}}" class="clip">
@@ -247,8 +247,8 @@
 
 				</div>
 
-				<div class='row' ng-repeat="channel in response" style="margin:0px;">
-					<div  ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
+				<div id='channelBody'  class='row' ng-repeat="channel in response" style="margin:0px;">
+					<div ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
 						<div class='col-xs-4'>
 							<img src="{{channel.ProfileImg}}"  style="width: 80px;"></img>
 						</div>
