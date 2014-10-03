@@ -100,22 +100,22 @@
 		// Create a function that the hub can call back to display messages.
 		blrb.client.showBlrb = function(blrb) { debugger;
 			// Add the message to the page.
-			$scope.response.BlrbStreamItems.push(blrb);
+			$scope.response.BlrbStreamItems.unshift(blrb);
 			var val = parseInt($('#numberOfBlrbs').text());
 			var newval = val + 1;
 			$('#numberOfBlrbs').html(newval);
 			if (pagePlayer.soundCount == 0 || pagePlayer.sounds[pagePlayer.soundCount - 1].playState == 0) {
 				$('#' + blrb.Id + ' .play').click();
 			}
-	
+	$scope.$apply()
 		};
-			$.connection.hub.url = 'http://localhost:49379/signalr';
+			$.connection.hub.url = 'http://blrbrdev.azurewebsites.net/signalr';
 	
 		// Start the connection.
 		$.connection.hub.start().done(function() { debugger;
 			// $('#startStream').click(function () {
 			// // Call the Send method on the hub.
-			blrb.server.go("it works!");
+			//blrb.server.go("it works!");
 			// //$('#startStream').hide();
 			// });
 			if ($scope.response.Channel != null) {
