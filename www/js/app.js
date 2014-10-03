@@ -156,39 +156,51 @@ $scope.gotoChannel=function (channel) {
 
 
 
-        function LoadBlrbs(id) {
-            lastId = $('.blrbItem').last().attr('id');
+        $scope.LoadBlrbs=function() {
+        	debugger;
+          var lastId = $scope.response.BlrbStreamItems.slice(-1)[0].Id;
+          lastId=6161;
             if (lastId === undefined) {
                 lastId = 9999999999;
             }
-            var loadUrl = '@Url.Action("LoadBlrbs")?id=' + lastId + "&channel=@hashtag&blrbr=";
-            $.get(loadUrl)
-             .success(function (data) {
+            var loadUrl = 'http://localhost:49379/Blrb/LoadBlrbs?id=' + lastId + "&channel="+$scope.response.Channel.Hashtag;
+         	var responsePromise = $http.get(loadUrl);
+
+			responsePromise.success(function(data, status, headers, config) { 
+		         	debugger;
                  data.forEach(function (blrb) {
-                     $('.playlist').append(
-                                '<li style="background-color:#' + blrb.Color + ';"  class="blrbItem" id="' + blrb.Id + '">\
-                 <a href="'+ blrb.Sound + '" class="clip" >\
-                         <div class="row" style="background-color:white; ">\
-                              <div class="col-xs-2" style="padding:0;">\
-                <img src="../../Content/pause.png" alt="pause" class="pause" width="48" />\
-                <img src="../../Content/play.png" alt="play" class="play" width="48" />\
-            </div>\
-        <div class="col-xs-10">\
-            <img src="'+ blrb.Img + '" />\
-            '+ blrb.ScreenName + '\
-        </div>\
-    </div>\
-          </a>\
-                       <div style="background-color: white;">\
-                             <span class="raw-text">\
-                                '+ blrb.TextWithMarkup + '\
-                             </span>\
-                         </div>\
-                         </li>'
-                        );
-                 });
+                 	     	$scope.response.BlrbStreamItems.push(blrb);
+                 	   });
+             
+                     // $('.playlist').append(
+                                // '<li style="background-color:#' + blrb.Color + ';"  class="blrbItem" id="' + blrb.Id + '">\
+                 // <a href="'+ blrb.Sound + '" class="clip" >\
+                         // <div class="row" style="background-color:white; ">\
+                              // <div class="col-xs-2" style="padding:0;">\
+                // <img src="../../Content/pause.png" alt="pause" class="pause" width="48" />\
+                // <img src="../../Content/play.png" alt="play" class="play" width="48" />\
+            // </div>\
+        // <div class="col-xs-10">\
+            // <img src="'+ blrb.Img + '" />\
+            // '+ blrb.ScreenName + '\
+        // </div>\
+    // </div>\
+          // </a>\
+                       // <div style="background-color: white;">\
+                             // <span class="raw-text">\
+                                // '+ blrb.TextWithMarkup + '\
+                             // </span>\
+                         // </div>\
+                         // </li>'
+                        // );
+                 // });
 
              });
+             responsePromise.error(function(data, status, headers, config) { 
+				// alert("AJAX failed! "+status);
+				 debugger;
+				//gotoRoute("Account/Login");
+			});
         };
 
 
