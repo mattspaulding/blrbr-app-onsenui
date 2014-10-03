@@ -141,7 +141,8 @@
 		if (lastId === undefined) {
 			lastId = 9999999999;
 		}
-		var loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag;
+		debugger;
+		var loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag+"&blrbr="+$scope.response.Userprofile.Username;
 		var responsePromise = $http.get(loadUrl);
 		responsePromise.success(function(data, status, headers, config) { debugger;
 			$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
