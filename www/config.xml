@@ -8,7 +8,7 @@ version   = "1.0.0">
 
 	<name>blrbr onsenui</name>
 	<description>real-time social audio</description>
-	<author href="http://phonegap.com" email="support@phonegap.com">Matt Spaulding</author>
+	<author href="http://mattspaulding.org" email="mrmattspaulding@gmail.com">Matt Spaulding</author>
 	<preference name="permissions"                value="none"/>
 
 	<!-- Customize your app and platform with the preference element. -->

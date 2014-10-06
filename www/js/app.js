@@ -65,8 +65,8 @@
 
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				// alert("AJAX failed! "+status);
-				// debugger;
+				 alert("AJAX failed! "+status);
+				 debugger;
 				gotoRoute("Account/Login");
 			});
 
