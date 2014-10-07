@@ -314,6 +314,7 @@
 						$("#recording_textarea").css("background-color","yellow");
 					}
 					if (recTime <= 0 ) {
+						clearInterval(recInterval);
 						recordAudio();
 					}
 					// if (status != 'countdown') {
@@ -344,14 +345,7 @@
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
 						stop();
-								$("#text_textarea").show();
-				$("#recording_textarea").hide();
-	$("#recordBtn").show();
-				$("#stopBtn").hide();
-				$("#playBtn").show();
-				$("#playBtnOff").hide();
-				$("#blrbBtn").show();
-				$("#blrbBtnOff").hide();
+								
 					}
 				}, 1000);
 			});
@@ -414,7 +408,9 @@
 			$("#playBtnOff").hide();
 			$("#blrbBtn").show();
 			$("#blrbBtnOff").hide();
-			status = 'stopped';
+		$("#text_textarea").show();
+				$("#recording_textarea").hide();
+					status = 'stopped';
 		}
 
 		function play() {
