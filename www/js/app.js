@@ -31,6 +31,7 @@
 			responsePromise.success(function(data, status, headers, config) {
 				localStorage.isLoggedIn = true;
 				$('#loginBtn').hide();
+				$('#logoutBtn').show();
 				$('#loadingBtn').hide();
 				$('#isLoggedInTrue').fadeIn("slow");
 				$scope.response = data;
@@ -39,6 +40,7 @@
 				localStorage.isLoggedIn = false;
 				$('#isLoggedInTrue').hide();
 				$('#loginBtn').show();
+				$('#logoutBtn').hide();
 				$('#loadingBtn').hide();
 			});
 
@@ -424,7 +426,7 @@
 			options.mimeType = "audio/amr";
 
 			if (phoneCheck.ios != null) {
-				alert("ios");
+				//alert("ios");
 				//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
 				//		var directoryReader = fs.root.createReader();
 				//		directoryReader.readEntries(function(entries) {
