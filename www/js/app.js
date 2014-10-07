@@ -55,7 +55,9 @@
 
 			responsePromise.success(function(data, status, headers, config) {
 				$scope.response = data;
-
+			$('#streamLoad').hide();
+				$('#streamMain').fadeIn('slow');
+	
 				if (localStorage.channel === "") {
 					$("#profile").fadeIn("slow");
 				} else {
@@ -155,7 +157,6 @@
 
 			responsePromise.success(function(data, status, headers, config) {
 				$scope.response = data;
-				debugger;
 				$('#channelLoad').hide();
 				$('#channelMain').fadeIn('slow');
 			});
