@@ -55,9 +55,9 @@
 
 			responsePromise.success(function(data, status, headers, config) {
 				$scope.response = data;
-			$('#streamLoad').hide();
+				$('#streamLoad').hide();
 				$('#streamMain').fadeIn('slow');
-	
+
 				if (localStorage.channel === "") {
 					$("#profile").fadeIn("slow");
 				} else {
@@ -67,8 +67,7 @@
 
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Stream failed! " + status);
-				debugger;
+				alert("Stream failed! " + status); debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -90,7 +89,8 @@
 		// }
 		$('audio').css("visibility", "hidden");
 		$('#liveItem').css("display", "block");
-		$('#playingItem').css("display", "none"); debugger;debugger;
+		$('#playingItem').css("display", "none");
+		debugger;debugger;
 		// Reference the auto-generated proxy for the hub.
 		var blrb = $.connection.blrbHub;
 		// Create a function that the hub can call back to display messages.
@@ -136,14 +136,21 @@
 			if (lastId === undefined) {
 				lastId = 9999999999;
 			}debugger;
-			var loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag + "&blrbr=" + $scope.response.UserProfile.Username;
+			var loadUrl;
+			if ($scope.response.Channel == null)
+			{
+				loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId;
+			}
+			else
+			{
+				loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag;
+			}
 			var responsePromise = $http.get(loadUrl);
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status);
-				debugger;
+				alert("Uh oh!" + status); debugger;
 			});
 		};
 
@@ -161,8 +168,7 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status);
-				debugger;
+				alert("Channel failed! " + status); debugger;
 				gotoRoute("Account/Login");
 			});
 
