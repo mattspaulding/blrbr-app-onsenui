@@ -65,8 +65,8 @@
 
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				 alert("AJAX failed! "+status);
-				 debugger;
+				alert("Stream failed! " + status);
+				debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -81,8 +81,6 @@
 			});
 		};
 
-
-
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
 		// {
@@ -90,11 +88,7 @@
 		// }
 		$('audio').css("visibility", "hidden");
 		$('#liveItem').css("display", "block");
-		$('#playingItem').css("display", "none"); debugger;
-
-		
-		
-  debugger;
+		$('#playingItem').css("display", "none"); debugger;debugger;
 		// Reference the auto-generated proxy for the hub.
 		var blrb = $.connection.blrbHub;
 		// Create a function that the hub can call back to display messages.
@@ -107,10 +101,10 @@
 			if (pagePlayer.soundCount == 0 || pagePlayer.sounds[pagePlayer.soundCount - 1].playState == 0) {
 				$('#' + blrb.Id + ' .play').click();
 			}
-	$scope.$apply()
+			$scope.$apply()
 		};
-			$.connection.hub.url = 'http://blrbrdev.azurewebsites.net/signalr';
-	
+		$.connection.hub.url = 'http://blrbrdev.azurewebsites.net/signalr';
+
 		// Start the connection.
 		$.connection.hub.start().done(function() { debugger;
 			// $('#startStream').click(function () {
@@ -132,355 +126,355 @@
 		// return encodedValue;
 		// }
 
-			//
-			// });
+		//
+		// });
 
+		$scope.LoadBlrbs = function() { debugger;
+			var lastId = $scope.response.BlrbStreamItems.slice(-1)[0].Id;
+			if (lastId === undefined) {
+				lastId = 9999999999;
+			}debugger;
+			var loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag + "&blrbr=" + $scope.response.UserProfile.Username;
+			var responsePromise = $http.get(loadUrl);
+			responsePromise.success(function(data, status, headers, config) { debugger;
+				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
+			});
+			responsePromise.error(function(data, status, headers, config) {
+				alert("Uh oh!" + status);
+				debugger;
+			});
+		};
 
-	$scope.LoadBlrbs = function() { debugger;
-		var lastId = $scope.response.BlrbStreamItems.slice(-1)[0].Id;
-		if (lastId === undefined) {
-			lastId = 9999999999;
+	});
+
+	app.controller('ChannelCtrl', function($scope, $http) {
+		$scope.response = {};
+		$scope.response.get = function(item, event) {
+
+			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Channel/FeaturedChannels");
+
+			responsePromise.success(function(data, status, headers, config) {
+				$scope.response = data;
+				debugger;
+				$('#channelLoad').hide();
+				$('#channelMain').fadeIn('slow');
+			});
+			responsePromise.error(function(data, status, headers, config) {
+				alert("Channel failed! " + status);
+				debugger;
+				gotoRoute("Account/Login");
+			});
+
+		};
+
+		var res = $scope.response.get();
+
+		$scope.gotoChannel = function(channel) {
+			localStorage.channel = channel;
+			ons.slidingMenu.setMainPage('stream.html', {
+				closeMenu : true
+			});
+		};
+
+	});
+
+	app.controller('CreateCtrl', function($scope) {
+
+		$scope.twitterToggle = function(val) {
+			if (val == "yes") {
+				isTweet = true;
+				$('#twitterYes').show();
+				$('#twitterNo').hide();
+			} else {
+				isTweet = false;
+				$('#twitterYes').hide();
+				$('#twitterNo').show();
+			}
+
 		}
-		debugger;
-		var loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag+"&blrbr="+$scope.response.UserProfile.Username;
-		var responsePromise = $http.get(loadUrl);
-		responsePromise.success(function(data, status, headers, config) { debugger;
-			$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
-		});
-		responsePromise.error(function(data, status, headers, config) {
-			alert("Uh oh!" + status);
-			debugger;
-		});
-	};
+		var deviceready = false;
+		var mediaVar = null;
+		var status = null;
+		var recordFileName = "recording.amr";
+		var isTweet = true;
+		if (localStorage.channel != "")
+			$("#text_textarea").val('#' + localStorage.channel);
 
-});
-
-app.controller('ChannelCtrl', function($scope, $http) {
-	$scope.response = {};
-	$scope.response.get = function(item, event) {
-
-		var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Channel/FeaturedChannels");
-
-		responsePromise.success(function(data, status, headers, config) {
-			$scope.response = data;
-
-		});
-		responsePromise.error(function(data, status, headers, config) {
-			// alert("AJAX failed! "+status);
-			debugger;
-			//gotoRoute("Account/Login");
-		});
-
-	};
-
-	var res = $scope.response.get();
-
-	$scope.gotoChannel = function(channel) {
-		localStorage.channel = channel;
-		ons.slidingMenu.setMainPage('stream.html', {
-			closeMenu : true
-		});
-	};
-
-});
-
-app.controller('CreateCtrl', function($scope) {
-
-	$scope.twitterToggle = function(val) {
-		if (val == "yes") {
-			isTweet = true;
-			$('#twitterYes').show();
-			$('#twitterNo').hide();
-		} else {
-			isTweet = false;
-			$('#twitterYes').hide();
-			$('#twitterNo').show();
-		}
-
-	}
-	var deviceready = false;
-	var mediaVar = null;
-	var status = null;
-	var recordFileName = "recording.amr";
-	var isTweet = true;
-	if (localStorage.channel != "")
-		$("#text_textarea").val('#' + localStorage.channel);
-
-	//function onBodyLoad() { debugger;
-	document.addEventListener("deviceready", onDeviceReady, false);
-	deviceready = true;
-	if (phoneCheck.ios != null) {
-		recordFileName = "recording.wav";
-	}
-
-	//}
-
-	function resetView() {
-		$("#recordBtn").show();
-		$("#backBtn").show();
-		$("#stopBtn").hide();
-		$("#twitterYes").show();
-		$("#playBtn").hide();
-		$("#playBtnOff").show();
-		$("#blrbBtn").hide();
-		$("#blrbBtnOff").show();
-		$("#twitterNo").hide();
-		$("#text_textarea").show();
-		$("#text_textarea").val('');
-		$("#loading").hide();
-	};
-
-	//$(document).ready(function() {
-	//resetView();
-	try {
-		var href = decodeURIComponent(window.location.href);
-		var p = href.split('username=')[1];
-		var q = p.split('&channel=')[1];
-		window.username = p.split('&channel=')[0];
-		window.channel = q.split('&text=')[0];
-		if (window.channel == " ") {
-			window.channel = "";
-		}
-		window.text = q.split('&text=')[1];
-		if (window.text == " " || window.text == "  ") {
-			window.text = "";
+		//function onBodyLoad() { debugger;
+		document.addEventListener("deviceready", onDeviceReady, false);
+		deviceready = true;
+		if (phoneCheck.ios != null) {
+			recordFileName = "recording.wav";
 		}
 
-		$("#text_textarea").val(window.text);
-	} catch(err) {
-		//alert("data transfer error: " + err);
-		//window.location="index.html";
+		//}
 
-	}
-
-	//validation to check if device is ready is skipped
-
-	$("#recordBtn").click(function() {
-		//alert("record");
-		record();
-	});
-
-	$("#backBtn").click(function() {
-		//route('blrb/me');
-		//window.location = "index.html";
-	});
-
-	$("#playBtn").click(function() {
-		//alert("play");
-		play();
-	});
-
-	$("#stopBtn").click(function() {
-		//alert("stop");
-		stop();
-	});
-	$("#blrbBtn").click(function() {
-		uploadVoice();
-	});
-	//});
-	// Set audio position
-	//
-	function setAudioPosition(position) {
-	}
-
-	function record() {
-		createMedia(function() {
-			status = "recording";
-			mediaVar.startRecord();
-			$("#recordBtn").hide();
-			$("#stopBtn").show();
+		function resetView() {
+			$("#recordBtn").show();
+			$("#backBtn").show();
+			$("#stopBtn").hide();
+			$("#twitterYes").show();
 			$("#playBtn").hide();
 			$("#playBtnOff").show();
 			$("#blrbBtn").hide();
 			$("#blrbBtnOff").show();
+			$("#twitterNo").hide();
+			$("#text_textarea").show();
+			$("#text_textarea").val('');
+			$("#loading").hide();
+		};
 
-			// Stop recording after 6 sec
-			var recTime = 0;
-			setAudioPosition(recTime + " sec");
-			var recInterval = setInterval(function() {
-				if (status == 'recording') {
-					recTime = recTime + 1;
-					setAudioPosition(recTime + " sec");
-				}
-				if (recTime >= 6 || status != 'recording') {
-					clearInterval(recInterval);
-					stop();
-				}
-			}, 1000);
-		}, onStatusChange);
-	}
+		//$(document).ready(function() {
+		//resetView();
+		try {
+			var href = decodeURIComponent(window.location.href);
+			var p = href.split('username=')[1];
+			var q = p.split('&channel=')[1];
+			window.username = p.split('&channel=')[0];
+			window.channel = q.split('&text=')[0];
+			if (window.channel == " ") {
+				window.channel = "";
+			}
+			window.text = q.split('&text=')[1];
+			if (window.text == " " || window.text == "  ") {
+				window.text = "";
+			}
 
-	function createMedia(onMediaCreated, mediaStatusCallback) {
-		//alert("createMedia");
-		if (mediaVar != null) {
-			onMediaCreated();
-			return;
+			$("#text_textarea").val(window.text);
+		} catch(err) {
+			//alert("data transfer error: " + err);
+			//window.location="index.html";
+
 		}
 
-		if ( typeof mediaStatusCallback == 'undefined')
-			mediaStatusCallback = null;
-		if (phoneCheck.ios != null) {
-			//alert("ios");
-			//first create the file
-			window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function(fileSystem) {
-				// save the file system for later access
-				fileSystem.root.getFile(recordFileName, {
-					create : true,
-					exclusive : false
-				}, function(fileEntry) {
-					mediaVar = new Media(fileEntry.fullPath, function() {
-						//alert("File " + recordFileName + " created at " + fileEntry.fullPath);
-						//alert("Media created successfully");
-						//uploadVoice();
-					}, null, mediaStatusCallback);
-					//of new Media
-					onMediaCreated();
-				}, onError);
-				//of getFile
-			}, onError);
-			//of requestFileSystem
-		} else//it's Android
-		{
-			mediaVar = new Media(recordFileName, function() {
-				//alert("Media created successfully: " + recordFileName);
-			}, onError, mediaStatusCallback);
-			onMediaCreated();
-		}
-	}
+		//validation to check if device is ready is skipped
 
-	function stop() {
-		//alert("mediavar: "+mediaVar);
-		if (mediaVar == null)
-			return;
-		//alert("status: "+status);
-		if (status == 'recording') {
-			mediaVar.stopRecord();
-
-			log("Recording stopped");
-		} else if (status == 'playing') {
-			mediaVar.stop();
-			log("Play stopped");
-		} else {
-			log("Nothing stopped");
-		}
-		$("#recordBtn").show();
-		$("#stopBtn").hide();
-		$("#playBtn").show();
-		$("#playBtnOff").hide();
-		$("#blrbBtn").show();
-		$("#blrbBtnOff").hide();
-		status = 'stopped';
-	}
-
-	function play() {
-		//playAudio("recording.amr");
-		//alert("getting media");
-		var media = new Media(recordFileName, function() {
-			//alert( "Media Success" );
-		}, function() {
-			//alert("Media Failure, reason: " + err);
+		$("#recordBtn").click(function() {
+			//alert("record");
+			record();
 		});
-		//alert("playing");
-		media.play();
-		//alert("done");
-	}
 
-	function onStatusChange() {
-		if (arguments[0] == 4)//play stopped
-		{
+		$("#backBtn").click(function() {
+			//route('blrb/me');
+			//window.location = "index.html";
+		});
+
+		$("#playBtn").click(function() {
+			//alert("play");
+			play();
+		});
+
+		$("#stopBtn").click(function() {
+			//alert("stop");
+			stop();
+		});
+		$("#blrbBtn").click(function() {
+			uploadVoice();
+		});
+		//});
+		// Set audio position
+		//
+		function setAudioPosition(position) {
+		}
+
+		function record() {
+			createMedia(function() {
+				status = "recording";
+				mediaVar.startRecord();
+				$("#recordBtn").hide();
+				$("#stopBtn").show();
+				$("#playBtn").hide();
+				$("#playBtnOff").show();
+				$("#blrbBtn").hide();
+				$("#blrbBtnOff").show();
+
+				// Stop recording after 6 sec
+				var recTime = 0;
+				setAudioPosition(recTime + " sec");
+				var recInterval = setInterval(function() {
+					if (status == 'recording') {
+						recTime = recTime + 1;
+						setAudioPosition(recTime + " sec");
+					}
+					if (recTime >= 6 || status != 'recording') {
+						clearInterval(recInterval);
+						stop();
+					}
+				}, 1000);
+			}, onStatusChange);
+		}
+
+		function createMedia(onMediaCreated, mediaStatusCallback) {
+			//alert("createMedia");
+			if (mediaVar != null) {
+				onMediaCreated();
+				return;
+			}
+
+			if ( typeof mediaStatusCallback == 'undefined')
+				mediaStatusCallback = null;
+			if (phoneCheck.ios != null) {
+				//alert("ios");
+				//first create the file
+				window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function(fileSystem) {
+					// save the file system for later access
+					fileSystem.root.getFile(recordFileName, {
+						create : true,
+						exclusive : false
+					}, function(fileEntry) {
+						mediaVar = new Media(fileEntry.fullPath, function() {
+							//alert("File " + recordFileName + " created at " + fileEntry.fullPath);
+							//alert("Media created successfully");
+							//uploadVoice();
+						}, null, mediaStatusCallback);
+						//of new Media
+						onMediaCreated();
+					}, onError);
+					//of getFile
+				}, onError);
+				//of requestFileSystem
+			} else//it's Android
+			{
+				mediaVar = new Media(recordFileName, function() {
+					//alert("Media created successfully: " + recordFileName);
+				}, onError, mediaStatusCallback);
+				onMediaCreated();
+			}
+		}
+
+		function stop() {
+			//alert("mediavar: "+mediaVar);
+			if (mediaVar == null)
+				return;
+			//alert("status: "+status);
+			if (status == 'recording') {
+				mediaVar.stopRecord();
+
+				log("Recording stopped");
+			} else if (status == 'playing') {
+				mediaVar.stop();
+				log("Play stopped");
+			} else {
+				log("Nothing stopped");
+			}
 			$("#recordBtn").show();
 			$("#stopBtn").hide();
 			$("#playBtn").show();
 			$("#playBtnOff").hide();
 			$("#blrbBtn").show();
 			$("#blrbBtnOff").hide();
-		}
-	}
-
-	function onSuccess() {
-		//do nothing
-	}
-
-	function onError(err) {
-		if ( typeof err.message != 'undefined')
-			err = err.message;
-		alert("Error : " + err.message);
-	}
-
-	function log(message) {
-		//alert(message);
-	}
-
-	function onDeviceReady() {
-
-	}
-
-	function uploadVoice() { debugger;
-		var audioURI = "mnt/sdcard/recording.amr";
-
-		var options = new FileUploadOptions();
-		options.fileKey = "file";
-		options.fileName = "recording.amr";
-		options.mimeType = "audio/amr";
-
-		if (phoneCheck.ios != null) {
-			alert("ios");
-			//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
-			//		var directoryReader = fs.root.createReader();
-			//		directoryReader.readEntries(function(entries) {
-			//			audioURI = "cdvfile://localhost/persistent/recording.wav";
-			//				audioURI = entries[1].toURI();
-			//	alert(audioURI);
-			//		});
-			//	});
-
-			audioURI = "cdvfile://localhost/temporary/recording.wav";
-			options.fileName = "recording.wav";
-			options.mimeType = "audio/wav";
-			options.chunkedMode = false;
+			status = 'stopped';
 		}
 
-		var params = new Object();
-		//params.channel = window.channel;
-		params.channel = "";
-		params.text = $("#text_textarea").val();
-		//params.username = window.username;
-		params.username = "";
-		params.isTweet = isTweet;
-		//alert("params: "+params.username + params.channel + params.isTweet + params.text);
-		options.params = params;
-		var ft = new FileTransfer();
-		//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
-		//ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
-		ft.upload(audioURI, "http://blrbrdev.azurewebsites.net/Blrb/UploadAudio", win, fail, options);
-		$("#backBtn").hide();
-		$("#recordBtn").hide();
-		$("#stopBtn").hide();
-		$("#playBtn").hide();
-		$("#blrbBtn").hide();
-		$("#text_textarea").hide();
-		$("#twitterYes").hide();
-		$("#twitterNo").hide();
-		$("#loading").show();
-		//document.getElementById('audio_position').innerHTML = "blrbing...";
+		function play() {
+			//playAudio("recording.amr");
+			//alert("getting media");
+			var media = new Media(recordFileName, function() {
+				//alert( "Media Success" );
+			}, function() {
+				//alert("Media Failure, reason: " + err);
+			});
+			//alert("playing");
+			media.play();
+			//alert("done");
+		}
 
-	}
+		function onStatusChange() {
+			if (arguments[0] == 4)//play stopped
+			{
+				$("#recordBtn").show();
+				$("#stopBtn").hide();
+				$("#playBtn").show();
+				$("#playBtnOff").hide();
+				$("#blrbBtn").show();
+				$("#blrbBtnOff").hide();
+			}
+		}
 
-	function win(r) {
-		//alert("Code = " + r.responseCode);
-		//alert("Response = " + r.response);
-		//app.initialize();
-		ons.slidingMenu.setMainPage('stream.html', {
-			closeMenu : true
-		});
-	}
+		function onSuccess() {
+			//do nothing
+		}
 
-	function fail(error) {
-		alert("blrb error: " + error.code);
-		ons.slidingMenu.setMainPage('stream.html', {
-			closeMenu : true
-		});
-	}
+		function onError(err) {
+			if ( typeof err.message != 'undefined')
+				err = err.message;
+			alert("Error : " + err.message);
+		}
 
-});
+		function log(message) {
+			//alert(message);
+		}
+
+		function onDeviceReady() {
+
+		}
+
+		function uploadVoice() { debugger;
+			var audioURI = "mnt/sdcard/recording.amr";
+
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = "recording.amr";
+			options.mimeType = "audio/amr";
+
+			if (phoneCheck.ios != null) {
+				alert("ios");
+				//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+				//		var directoryReader = fs.root.createReader();
+				//		directoryReader.readEntries(function(entries) {
+				//			audioURI = "cdvfile://localhost/persistent/recording.wav";
+				//				audioURI = entries[1].toURI();
+				//	alert(audioURI);
+				//		});
+				//	});
+
+				audioURI = "cdvfile://localhost/temporary/recording.wav";
+				options.fileName = "recording.wav";
+				options.mimeType = "audio/wav";
+				options.chunkedMode = false;
+			}
+
+			var params = new Object();
+			//params.channel = window.channel;
+			params.channel = "";
+			params.text = $("#text_textarea").val();
+			//params.username = window.username;
+			params.username = "";
+			params.isTweet = isTweet;
+			//alert("params: "+params.username + params.channel + params.isTweet + params.text);
+			options.params = params;
+			var ft = new FileTransfer();
+			//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
+			//ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
+			ft.upload(audioURI, "http://blrbrdev.azurewebsites.net/Blrb/UploadAudio", win, fail, options);
+			$("#backBtn").hide();
+			$("#recordBtn").hide();
+			$("#stopBtn").hide();
+			$("#playBtn").hide();
+			$("#blrbBtn").hide();
+			$("#text_textarea").hide();
+			$("#twitterYes").hide();
+			$("#twitterNo").hide();
+			$("#loading").show();
+			//document.getElementById('audio_position').innerHTML = "blrbing...";
+
+		}
+
+		function win(r) {
+			//alert("Code = " + r.responseCode);
+			//alert("Response = " + r.response);
+			//app.initialize();
+			ons.slidingMenu.setMainPage('stream.html', {
+				closeMenu : true
+			});
+		}
+
+		function fail(error) {
+			alert("blrb error: " + error.code);
+			ons.slidingMenu.setMainPage('stream.html', {
+				closeMenu : true
+			});
+		}
+
+	});
 })();
