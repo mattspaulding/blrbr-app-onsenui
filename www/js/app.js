@@ -98,8 +98,8 @@
 		blrb.client.showBlrb = function(blrb) { debugger;
 			// Add the message to the page.
 			$scope.response.BlrbStreamItems.unshift(blrb);
-					$scope.$apply();
-	var val = parseInt($('#numberOfBlrbs').text());
+			$scope.$apply();
+			var val = parseInt($('#numberOfBlrbs').text());
 			var newval = val + 1;
 			$('#numberOfBlrbs').html(newval);
 			if (pagePlayer.soundCount == 0 || pagePlayer.sounds[pagePlayer.soundCount - 1].playState == 0) {
@@ -109,7 +109,7 @@
 		$.connection.hub.url = 'http://blrbrdev.azurewebsites.net/signalr';
 
 		// Start the connection.
-		$.connection.hub.start().done(function() { 
+		$.connection.hub.start().done(function() {
 			// $('#startStream').click(function () {
 			// // Call the Send method on the hub.
 			//blrb.server.go("it works!");
@@ -138,12 +138,9 @@
 				lastId = 9999999999;
 			}debugger;
 			var loadUrl;
-			if ($scope.response.Channel == null)
-			{
+			if ($scope.response.Channel == null) {
 				loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId;
-			}
-			else
-			{
+			} else {
 				loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag;
 			}
 			var responsePromise = $http.get(loadUrl);
@@ -151,7 +148,8 @@
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status); debugger;
+				alert("Uh oh!" + status);
+				debugger;
 			});
 		};
 
@@ -169,7 +167,8 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status); debugger;
+				alert("Channel failed! " + status);
+				debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -283,19 +282,52 @@
 		// Set audio position
 		//
 		function setAudioPosition(position) {
+			$("#audioPosition").html(position);
 		}
 
 		function record() {
-			createMedia(function() {
-				status = "recording";
-				mediaVar.startRecord();
+				status = "countdown";
 				$("#recordBtn").hide();
 				$("#stopBtn").show();
 				$("#playBtn").hide();
 				$("#playBtnOff").show();
 				$("#blrbBtn").hide();
 				$("#blrbBtnOff").show();
+				$("#text_textarea").hide();
+				$("#recording_textarea").show();
 
+				// Stop recording after 6 sec
+				var recTime = 3;
+				setAudioPosition(recTime + " sec");
+				var recInterval = setInterval(function() {
+					if (status == 'countdown') {
+						recTime = recTime - 1;
+						setAudioPosition(recTime + " sec");
+					}
+					if (recTime == 2) {
+						$("#recording_textarea").css("background-color","orange");
+					}
+					if (recTime == 1) {
+						$("#recording_textarea").css("background-color","yellow");
+					}
+					if (recTime <= 0 ) {
+						$("#recording_textarea").css("background-color","green");
+						recordAudio();
+					}
+					if (status != 'countdown') {
+						clearInterval(recInterval);
+						
+					}
+			}, 1000);
+		}
+
+		function recordAudio() {
+			debugger;
+			createMedia(function() {
+				debugger;
+				status = "recording";
+				mediaVar.startRecord();
+				
 				// Stop recording after 6 sec
 				var recTime = 0;
 				setAudioPosition(recTime + " sec");
@@ -313,7 +345,6 @@
 		}
 
 		function createMedia(onMediaCreated, mediaStatusCallback) {
-			//alert("createMedia");
 			if (mediaVar != null) {
 				onMediaCreated();
 				return;
@@ -322,7 +353,6 @@
 			if ( typeof mediaStatusCallback == 'undefined')
 				mediaStatusCallback = null;
 			if (phoneCheck.ios != null) {
-				//alert("ios");
 				//first create the file
 				window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function(fileSystem) {
 					// save the file system for later access
