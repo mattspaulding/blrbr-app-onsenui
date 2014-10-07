@@ -297,7 +297,8 @@
 				$("#recording_textarea").show();
 	$(".fa-microphone-slash").show();
 				$(".fa-microphone").hide();
-			
+					$("#recording_textarea").css("background-color","red");
+				
 				// Stop recording after 6 sec
 				var recTime = 3;
 				setAudioPosition(recTime);
@@ -305,9 +306,6 @@
 					if (status == 'countdown') {
 						recTime = recTime - 1;
 						setAudioPosition(recTime);
-					}
-					if (recTime == 3) {
-						$("#recording_textarea").css("background-color","red");
 					}
 					if (recTime == 2) {
 						$("#recording_textarea").css("background-color","orange");
@@ -346,6 +344,9 @@
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
 						stop();
+								$("#text_textarea").show();
+				$("#recording_textarea").hide();
+	
 					}
 				}, 1000);
 			}, onStatusChange);
