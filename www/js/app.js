@@ -295,14 +295,19 @@
 				$("#blrbBtnOff").show();
 				$("#text_textarea").hide();
 				$("#recording_textarea").show();
-
+	$(".fa-microphone-slash").show();
+				$(".fa-microphone").hide();
+			
 				// Stop recording after 6 sec
 				var recTime = 3;
-				setAudioPosition(recTime + " sec");
+				setAudioPosition(recTime);
 				var recInterval = setInterval(function() {
 					if (status == 'countdown') {
 						recTime = recTime - 1;
 						setAudioPosition(recTime);
+					}
+					if (recTime == 3) {
+						$("#recording_textarea").css("background-color","red");
 					}
 					if (recTime == 2) {
 						$("#recording_textarea").css("background-color","orange");
@@ -326,13 +331,13 @@
 				debugger;
 				status = "recording";
 				mediaVar.startRecord();
-						$("#recording_textarea").css("background-color","light-green");
+						$("#recording_textarea").css("background-color","green");
 				$(".fa-microphone-slash").hide();
 				$(".fa-microphone").show();
 				
 				// Stop recording after 6 sec
 				var recTime = 0;
-				setAudioPosition(recTime + " sec");
+				setAudioPosition(recTime);
 				var recInterval = setInterval(function() {
 					if (status == 'recording') {
 						recTime = recTime + 1;
