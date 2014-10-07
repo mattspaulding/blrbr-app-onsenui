@@ -317,10 +317,10 @@
 						clearInterval(recInterval);
 						recordAudio();
 					}
-					// if (status != 'countdown') {
-						// clearInterval(recInterval);
-// 						
-					// }
+					if (status != 'countdown') {
+						clearInterval(recInterval);
+						
+					}
 			}, 1000);
 		}
 
@@ -330,7 +330,7 @@
 				debugger;
 				status = "recording";
 				mediaVar.startRecord();
-						$("#recording_textarea").css("background-color","green");
+						$("#recording_textarea").css("background-color","#6FBF46");
 				$(".fa-microphone-slash").hide();
 				$(".fa-microphone").show();
 				
