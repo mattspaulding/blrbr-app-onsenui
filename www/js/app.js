@@ -316,10 +316,10 @@
 					if (recTime <= 0 ) {
 						recordAudio();
 					}
-					if (status != 'countdown') {
-						clearInterval(recInterval);
-						
-					}
+					// if (status != 'countdown') {
+						// clearInterval(recInterval);
+// 						
+					// }
 			}, 1000);
 		}
 
@@ -346,10 +346,15 @@
 						stop();
 								$("#text_textarea").show();
 				$("#recording_textarea").hide();
-	
+	$("#recordBtn").show();
+				$("#stopBtn").hide();
+				$("#playBtn").show();
+				$("#playBtnOff").hide();
+				$("#blrbBtn").show();
+				$("#blrbBtnOff").hide();
 					}
 				}, 1000);
-			}, onStatusChange);
+			});
 		}
 
 		function createMedia(onMediaCreated, mediaStatusCallback) {
@@ -425,18 +430,7 @@
 			//alert("done");
 		}
 
-		function onStatusChange() {
-			if (arguments[0] == 4)//play stopped
-			{
-				$("#recordBtn").show();
-				$("#stopBtn").hide();
-				$("#playBtn").show();
-				$("#playBtnOff").hide();
-				$("#blrbBtn").show();
-				$("#blrbBtnOff").hide();
-			}
-		}
-
+		
 		function onSuccess() {
 			//do nothing
 		}
