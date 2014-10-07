@@ -302,7 +302,7 @@
 				var recInterval = setInterval(function() {
 					if (status == 'countdown') {
 						recTime = recTime - 1;
-						setAudioPosition(recTime + " sec");
+						setAudioPosition(recTime);
 					}
 					if (recTime == 2) {
 						$("#recording_textarea").css("background-color","orange");
@@ -311,7 +311,6 @@
 						$("#recording_textarea").css("background-color","yellow");
 					}
 					if (recTime <= 0 ) {
-						$("#recording_textarea").css("background-color","green");
 						recordAudio();
 					}
 					if (status != 'countdown') {
@@ -327,6 +326,9 @@
 				debugger;
 				status = "recording";
 				mediaVar.startRecord();
+						$("#recording_textarea").css("background-color","light-green");
+				$(".fa-microphone-slash").hide();
+				$(".fa-microphone").show();
 				
 				// Stop recording after 6 sec
 				var recTime = 0;
@@ -334,7 +336,7 @@
 				var recInterval = setInterval(function() {
 					if (status == 'recording') {
 						recTime = recTime + 1;
-						setAudioPosition(recTime + " sec");
+						setAudioPosition(recTime);
 					}
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
