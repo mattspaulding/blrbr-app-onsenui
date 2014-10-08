@@ -490,7 +490,7 @@
 			//params.username = window.username;
 			params.username = "";
 			params.isTweet = isTweet;
-			params.inReplyToStatusId = localStorage.BlrbId;
+			params.inReplyToStatusId = localStorage.blrbId;
 			//alert("params: "+params.username + params.channel + params.isTweet + params.text);
 			options.params = params;
 			var ft = new FileTransfer();
