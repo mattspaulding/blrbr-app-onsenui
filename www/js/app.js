@@ -83,6 +83,15 @@
 				closeMenu : true
 			});
 		};
+		
+		$scope.reply = function(data) {
+			debugger;
+						localStorage.username = data.blrb.UserName;
+						localStorage.blrbId = data.blrb.Id;
+			ons.slidingMenu.setMainPage('create.html', {
+				closeMenu : true
+			});
+		};
 
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
@@ -206,6 +215,8 @@
 		var isTweet = true;
 		if (localStorage.channel != "")
 			$("#text_textarea").val('#' + localStorage.channel);
+	if (localStorage.username != "")
+			$("#text_textarea").val($("#text_textarea").val()+' @' + localStorage.username);
 
 		//function onBodyLoad() { debugger;
 		document.addEventListener("deviceready", onDeviceReady, false);
@@ -477,6 +488,7 @@
 			//params.username = window.username;
 			params.username = "";
 			params.isTweet = isTweet;
+			params.inReplyToStatusId = localStorage.BlrbId;
 			//alert("params: "+params.username + params.channel + params.isTweet + params.text);
 			options.params = params;
 			var ft = new FileTransfer();
@@ -492,6 +504,9 @@
 			$("#twitterYes").hide();
 			$("#twitterNo").hide();
 			$("#loading").show();
+			
+			localStorage.blrbId=null;
+			localStorage.username=null;
 			//document.getElementById('audio_position').innerHTML = "blrbing...";
 
 		}

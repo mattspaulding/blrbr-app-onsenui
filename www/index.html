@@ -103,10 +103,9 @@
 
 		<ons-template  id="home.html">
 			<div id="homePage" ng-controller="HomeCtrl" style="text-align: center;" >
-				<br>
-				<img src="images/blrbrfish_logo_nobubble.png" width="90%"/>
-				<br>
-				<br>
+				
+				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
+				
 				<img src="images/blrbr_logo_50.png"/>
 				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
 					<div  style="font-size: 70px;text-align: center;width:100%;">
@@ -232,6 +231,11 @@
 							<div style="background-color: white;">
 								<htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
 							</div>
+		<div class="row" style="margin:0; background-color: white;">
+							<div class="col-xs-2 col-xs-offset-10" ng-click="reply(this)">
+								<span class="fa fa-microphone"></span>
+							</div>
+						</div>
 
 						</li>
 
