@@ -31,7 +31,7 @@
 		type="reveal" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
 
 		<script type="text/ons-template" id="menu.html">
-			<ons-page ng-controller="MenuCtrl" style="background-color: white">
+			<ons-page ng-controller="MenuCtrl" style="background-color: white;margin-top: -20px;">
 
 			<ons-list style="text-align: center;height:100%;">
 			<ons-list-item
@@ -102,7 +102,7 @@
 		</script>
 
 		<ons-template  id="home.html">
-			<div id="homePage" ng-controller="HomeCtrl" style="text-align: center;" >
+			<div id="homePage" ng-controller="HomeCtrl" style="text-align: center;margin-top: -20px;" >
 				
 				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
 				
@@ -290,9 +290,9 @@
 
 		<ons-template id="create.html">
 
-			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
+			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;margin-top: -20px;">
 
-				<div class='row' style="margin:-20px 0 0 0;">
+				<div class='row' style="margin:0px;">
 					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
 						<div>
 							<span class="fa fa-bars"></span>
