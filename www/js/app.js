@@ -16,8 +16,10 @@
 	});
 
 	app.controller('MenuCtrl', function($scope) {
+	if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
 			$scope.gotoPage = function(page) {
-			alert("in gotopage");
 			localStorage.channel = "";
 			localStorage.username = "";
 			localStorage.blrbId = "";
@@ -28,7 +30,9 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
-
+if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
 		$scope.response = {};
 		$scope.response.get = function() {
 
@@ -56,7 +60,10 @@
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) {
-		$scope.response = {};
+		if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
+	$scope.response = {};
 		$scope.response.get = function(item, event) {
 
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/" + localStorage.channel);
@@ -170,6 +177,9 @@
 	});
 
 	app.controller('ChannelCtrl', function($scope, $http) {
+		if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
@@ -199,7 +209,9 @@
 	});
 
 	app.controller('CreateCtrl', function($scope) {
-
+if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
 		$scope.twitterToggle = function(val) {
 			if (val == "yes") {
 				isTweet = true;

@@ -119,9 +119,3 @@ var route = function(r) {
 	});
 
 };
-
-$(document).ready(function() {
-	if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
-}); 
