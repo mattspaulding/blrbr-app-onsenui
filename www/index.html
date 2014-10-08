@@ -31,7 +31,7 @@
 		type="reveal" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
 
 		<ons-template id="menu.html">
-			<ons-page id='MenuPage' class="page" ng-controller="MenuCtrl" style="background-color: white;">
+			<ons-page id='MenuPage' class="ons-page" ng-controller="MenuCtrl" style="background-color: white;">
 
 				<ons-list style="text-align: center;height:100%;">
 					<ons-list-item
@@ -67,42 +67,9 @@
 
 		</ons-template>
 
-		<script type="text/ons-template" id="page1.html">
-			<ons-page>
-			<ons-toolbar>
-			<div class="center">Page 1</div>
-			</ons-toolbar>
-
-			<ons-row style="margin-top: 100px;">
-			<ons-col align="center">
-			<ons-button modifier="light" ng-click="ons.slidingMenu.toggleMenu()">
-			Toggle Menu
-			</ons-button>
-			<p style="color: #999">Click "Toggle Menu" to close/open menu, You can also swipe the page left/right.</p>
-			</ons-col>
-			</ons-row>
-			</ons-page>
-		</script>
-
-		<script type="text/ons-template" id="page2.html">
-			<ons-page>
-			<ons-toolbar>
-			<div class="center">Page 2</div>
-			</ons-toolbar>
-
-			<ons-row style="margin-top: 100px;">
-			<ons-col align="center">
-			<ons-button modifier="light" ng-click="ons.slidingMenu.toggleMenu()">
-			Toggle Menu
-			</ons-button>
-			</ons-col>
-			</ons-row>
-
-			</ons-page>
-		</script>
-
+	
 		<ons-template  id="home.html">
-			<div id="homePage" ng-controller="HomeCtrl" style="text-align: center;margin-top: -20px;" >
+			<div id="homePage"  ng-controller="HomeCtrl" style="text-align: center;" >
 
 				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
 
@@ -290,7 +257,7 @@
 
 		<ons-template id="create.html">
 
-			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;margin-top: -20px;">
+			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
 
 				<div class='row' style="margin:0px;">
 					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">

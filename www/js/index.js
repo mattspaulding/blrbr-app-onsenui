@@ -121,3 +121,12 @@ var route = function(r) {
 	});
 
 };
+
+
+$(document).ready(function(){
+		
+if (phoneCheck.ios != null) {
+	
+			$('ons-page').css('margin-top', '-20px');
+		}
+	});

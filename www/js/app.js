@@ -28,12 +28,7 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
-debugger;
-if (phoneCheck.ios != null) {
-	debugger;
-			alert('ios');
-			$('ons-template').css('margin-top', '-20');
-		}
+
 		$scope.response = {};
 		$scope.response.get = function() {
 
