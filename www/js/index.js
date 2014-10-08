@@ -18,7 +18,7 @@
  */
 
 var app = {
-	debugger;
+
 	// Application Constructor
 	initialize : function() {
 		onBodyLoad();

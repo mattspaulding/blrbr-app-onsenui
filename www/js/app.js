@@ -26,9 +26,6 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
-			debugger;
-		StatusBar.hide();
-	
 		$scope.response = {};
 		$scope.response.get = function() {
 
