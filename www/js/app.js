@@ -484,6 +484,7 @@
 				options.mimeType = "audio/wav";
 				options.chunkedMode = false;
 			}
+alert('isTweet: '+isTweet);
 alert('blrbId: '+localStorage.blrbId);
 			var params = new Object();
 			//params.channel = window.channel;
@@ -492,7 +493,7 @@ alert('blrbId: '+localStorage.blrbId);
 			//params.username = window.username;
 			params.username = "";
 			params.isTweet = isTweet;
-			params.inReplyToStatusId = localStorage.blrbId;
+			params.inReplyToBlrbId = localStorage.blrbId;
 			//alert("params: "+params.username + params.channel + params.isTweet + params.text);
 			options.params = params;
 			var ft = new FileTransfer();
