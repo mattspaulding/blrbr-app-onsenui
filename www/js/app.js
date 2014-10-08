@@ -15,6 +15,7 @@
 
 	app.controller('MenuCtrl', function($scope) {
 		$scope.gotoPage = function(page) {
+			alert("in gotopage");
 			localStorage.channel = "";
 			localStorage.username = "";
 			localStorage.blrbId = "";
@@ -90,6 +91,7 @@
 			debugger;
 						localStorage.username = data.blrb.UserName;
 						localStorage.blrbId = data.blrb.Id;
+						alert('set blrbId: '+localStorage.blrbId);
 			ons.slidingMenu.setMainPage('create.html', {
 				closeMenu : true
 			});
@@ -482,7 +484,7 @@
 				options.mimeType = "audio/wav";
 				options.chunkedMode = false;
 			}
-
+alert('blrbId: '+localStorage.blrbId);
 			var params = new Object();
 			//params.channel = window.channel;
 			params.channel = "";
