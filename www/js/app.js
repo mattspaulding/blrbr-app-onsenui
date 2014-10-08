@@ -1,4 +1,6 @@
 (function() {'use strict';
+
+	
 	var app = angular.module('myApp', ['onsen.directives']);
 
 	app.directive('htmldiv', function($compile, $parse) {
@@ -14,7 +16,7 @@
 	});
 
 	app.controller('MenuCtrl', function($scope) {
-		$scope.gotoPage = function(page) {
+			$scope.gotoPage = function(page) {
 			alert("in gotopage");
 			localStorage.channel = "";
 			localStorage.username = "";
@@ -26,6 +28,12 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
+debugger;
+if (phoneCheck.ios != null) {
+	debugger;
+			alert('ios');
+			$('ons-template').css('margin-top', '-20');
+		}
 		$scope.response = {};
 		$scope.response.get = function() {
 
@@ -86,12 +94,11 @@
 				closeMenu : true
 			});
 		};
-		
-		$scope.reply = function(data) {
-			debugger;
-						localStorage.username = data.blrb.UserName;
-						localStorage.blrbId = data.blrb.Id;
-						alert('set blrbId: '+localStorage.blrbId);
+
+		$scope.reply = function(data) { debugger;
+			localStorage.username = data.blrb.UserName;
+			localStorage.blrbId = data.blrb.Id;
+			alert('set blrbId: ' + localStorage.blrbId);
 			ons.slidingMenu.setMainPage('create.html', {
 				closeMenu : true
 			});
@@ -161,8 +168,7 @@
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status);
-				debugger;
+				alert("Uh oh!" + status); debugger;
 			});
 		};
 
@@ -180,8 +186,7 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status);
-				debugger;
+				alert("Channel failed! " + status); debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -219,8 +224,8 @@
 		var isTweet = true;
 		if (localStorage.channel != "")
 			$("#text_textarea").val('#' + localStorage.channel);
-	if (localStorage.username != "")
-			$("#text_textarea").val($("#text_textarea").val()+' @' + localStorage.username);
+		if (localStorage.username != "")
+			$("#text_textarea").val($("#text_textarea").val() + ' @' + localStorage.username);
 
 		//function onBodyLoad() { debugger;
 		document.addEventListener("deviceready", onDeviceReady, false);
@@ -301,54 +306,52 @@
 		}
 
 		function record() {
-				status = "countdown";
-				$("#recordBtn").hide();
-				$("#stopBtn").show();
-				$("#playBtn").hide();
-				$("#playBtnOff").show();
-				$("#blrbBtn").hide();
-				$("#blrbBtnOff").show();
-				$("#text_textarea").hide();
-				$("#recording_textarea").show();
-	$(".fa-microphone-slash").show();
-				$(".fa-microphone").hide();
-					$("#recording_textarea").css("background-color","red");
-				
-				// Stop recording after 6 sec
-				var recTime = 3;
-				setAudioPosition(recTime);
-				var recInterval = setInterval(function() {
-					if (status == 'countdown') {
-						recTime = recTime - 1;
-						setAudioPosition(recTime);
-					}
-					if (recTime == 2) {
-						$("#recording_textarea").css("background-color","orange");
-					}
-					if (recTime == 1) {
-						$("#recording_textarea").css("background-color","yellow");
-					}
-					if (recTime <= 0 ) {
-						clearInterval(recInterval);
-						recordAudio();
-					}
-					if (status != 'countdown') {
-						clearInterval(recInterval);
-						
-					}
+			status = "countdown";
+			$("#recordBtn").hide();
+			$("#stopBtn").show();
+			$("#playBtn").hide();
+			$("#playBtnOff").show();
+			$("#blrbBtn").hide();
+			$("#blrbBtnOff").show();
+			$("#text_textarea").hide();
+			$("#recording_textarea").show();
+			$(".fa-microphone-slash").show();
+			$(".fa-microphone").hide();
+			$("#recording_textarea").css("background-color", "red");
+
+			// Stop recording after 6 sec
+			var recTime = 3;
+			setAudioPosition(recTime);
+			var recInterval = setInterval(function() {
+				if (status == 'countdown') {
+					recTime = recTime - 1;
+					setAudioPosition(recTime);
+				}
+				if (recTime == 2) {
+					$("#recording_textarea").css("background-color", "orange");
+				}
+				if (recTime == 1) {
+					$("#recording_textarea").css("background-color", "yellow");
+				}
+				if (recTime <= 0) {
+					clearInterval(recInterval);
+					recordAudio();
+				}
+				if (status != 'countdown') {
+					clearInterval(recInterval);
+
+				}
 			}, 1000);
 		}
 
-		function recordAudio() {
-			debugger;
-			createMedia(function() {
-				debugger;
+		function recordAudio() { debugger;
+			createMedia(function() { debugger;
 				status = "recording";
 				mediaVar.startRecord();
-						$("#recording_textarea").css("background-color","#6FBF46");
+				$("#recording_textarea").css("background-color", "#6FBF46");
 				$(".fa-microphone-slash").hide();
 				$(".fa-microphone").show();
-				
+
 				// Stop recording after 6 sec
 				var recTime = 0;
 				setAudioPosition(recTime);
@@ -360,7 +363,7 @@
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
 						stop();
-								
+
 					}
 				}, 1000);
 			});
@@ -423,9 +426,9 @@
 			$("#playBtnOff").hide();
 			$("#blrbBtn").show();
 			$("#blrbBtnOff").hide();
-		$("#text_textarea").show();
-				$("#recording_textarea").hide();
-					status = 'stopped';
+			$("#text_textarea").show();
+			$("#recording_textarea").hide();
+			status = 'stopped';
 		}
 
 		function play() {
@@ -441,7 +444,6 @@
 			//alert("done");
 		}
 
-		
 		function onSuccess() {
 			//do nothing
 		}
@@ -484,8 +486,8 @@
 				options.mimeType = "audio/wav";
 				options.chunkedMode = false;
 			}
-alert('isTweet: '+isTweet);
-alert('blrbId: '+localStorage.blrbId);
+			alert('isTweet: ' + isTweet);
+			alert('blrbId: ' + localStorage.blrbId);
 			var params = new Object();
 			//params.channel = window.channel;
 			params.channel = "";
@@ -509,9 +511,9 @@ alert('blrbId: '+localStorage.blrbId);
 			$("#twitterYes").hide();
 			$("#twitterNo").hide();
 			$("#loading").show();
-			
-			localStorage.blrbId="";
-			localStorage.username="";
+
+			localStorage.blrbId = "";
+			localStorage.username = "";
 			//document.getElementById('audio_position').innerHTML = "blrbing...";
 
 		}
