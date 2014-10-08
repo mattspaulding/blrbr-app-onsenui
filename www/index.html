@@ -31,7 +31,7 @@
 		type="reveal" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
 
 		<ons-template id="menu.html">
-			<ons-page id='MenuPage' class="ons-page" ng-controller="MenuCtrl" style="background-color: white;">
+			<ons-page id='MenuPage' class="ios-shift" ng-controller="MenuCtrl" style="background-color: white;">
 
 				<ons-list style="text-align: center;height:100%;">
 					<ons-list-item
@@ -69,7 +69,7 @@
 
 	
 		<ons-template  id="home.html">
-			<div id="homePage"  ng-controller="HomeCtrl" style="text-align: center;" >
+			<div id="homePage"  class="ios-shift" ng-controller="HomeCtrl" style="text-align: center;" >
 
 				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
 
@@ -111,7 +111,7 @@
 
 		<ons-template id="stream.html">
 
-			<div id="streamPage" ng-controller="StreamCtrl" >
+			<div id="streamPage" class="ios-shift" ng-controller="StreamCtrl" >
 				<div id="streamLoad">
 					<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
 						<span class="fa fa-spinner fa-spin"></span>
@@ -215,7 +215,7 @@
 		</ons-template>
 		<ons-template id="channel.html">
 
-			<div id="channelPage" ng-controller="ChannelCtrl" >
+			<div id="channelPage" class="ios-shift" ng-controller="ChannelCtrl" >
 				<div id="channelLoad">
 					<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
 						<span class="fa fa-spinner fa-spin"></span>
@@ -257,7 +257,7 @@
 
 		<ons-template id="create.html">
 
-			<div id="createPage" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
+			<div id="createPage" class="ios-shift" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
 
 				<div class='row' style="margin:0px;">
 					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">

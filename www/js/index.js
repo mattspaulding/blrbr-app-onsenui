@@ -40,8 +40,7 @@ var app = {
 	//
 	// Bind any events that are required on startup. Common events are:
 	// 'load', 'deviceready', 'offline', and 'online'.
-	bindEvents : function() {
-		debugger;
+	bindEvents : function() { debugger;
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	// deviceready Event Handler
@@ -49,8 +48,7 @@ var app = {
 	// The scope of 'this' is the event. In order to call the 'receivedEvent'
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady : function() {
-		app.receivedEvent('deviceready');
-		debugger;
+		app.receivedEvent('deviceready'); debugger;
 		StatusBar.hide();
 	},
 	// Update DOM on a Received Event
@@ -80,7 +78,7 @@ var route = function(r) {
 			$('#loadingPage').hide();
 			$('#homePage').hide();
 			$('#createPage').show();
-			var params=event.url.split('?')[1].split(/[=&]/);
+			var params = event.url.split('?')[1].split(/[=&]/);
 			//localStorage.username = params[1];
 			//localStorage.channel = params[3];
 			resetView();
@@ -122,11 +120,8 @@ var route = function(r) {
 
 };
 
-
-$(document).ready(function(){
-		
-if (phoneCheck.ios != null) {
-	
-			$('ons-page').css('margin-top', '-20px');
-		}
-	});
+$(document).ready(function() {
+	if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
+}); 
