@@ -16,6 +16,8 @@
 	app.controller('MenuCtrl', function($scope) {
 		$scope.gotoPage = function(page) {
 			localStorage.channel = "";
+			localStorage.username = "";
+			localStorage.blrbId = "";
 			ons.slidingMenu.setMainPage(page + '.html', {
 				closeMenu : true
 			});
@@ -505,8 +507,8 @@
 			$("#twitterNo").hide();
 			$("#loading").show();
 			
-			localStorage.blrbId=null;
-			localStorage.username=null;
+			localStorage.blrbId="";
+			localStorage.username="";
 			//document.getElementById('audio_position').innerHTML = "blrbing...";
 
 		}
