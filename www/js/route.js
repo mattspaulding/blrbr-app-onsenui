@@ -35,7 +35,7 @@ var gotoRoute=function(r) {
 		// }
 
 
-
+alert(event.url);
 	if (event.url.indexOf('Account') == -1) {
 			ref.close();
 			ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
