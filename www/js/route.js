@@ -35,10 +35,8 @@ var gotoRoute=function(r) {
 		// }
 
 
-alert(event.url);
-alert(event.url.indexOf('Account'));
+
 	if (event.url.indexOf('Account') == -1 && event.url.indexOf('twitter') == -1) {
-		alert('in home redirect');
 			ref.close();
 			ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
 			//window.location = "stream.html?" + event.url.split('?')[1];
