@@ -19,8 +19,7 @@
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 		slidingMenu.on("preopen", function() {
-			debugger;
-			if (localStorage.isLoggedIn == "true") {
+			if (localStorage.isLoggedIn == "false") {
 				$("#streamListItemOff").hide();
 				$("#blrbListItemOff").hide();
 				$("#streamListItem").show();
@@ -392,7 +391,10 @@
 				var recInterval = setInterval(function() {
 					if (status == 'recording') {
 						recTime = recTime + 1;
+						if(recTime>0)
 						setAudioPosition(recTime);
+						else
+						setAudioPosition("GO!");
 					}
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
@@ -567,6 +569,9 @@
 				closeMenu : true
 			});
 		}
+		
+		// start recording on page entry
+		record();
 
 	});
 })();
