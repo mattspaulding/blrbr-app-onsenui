@@ -23,12 +23,20 @@ var gotoRoute=function(r) {
 		// debugger;
 		// alert("url: " + event.url);
 		
-		if (event.url.indexOf('Blrb/Create') != -1) {
-			ref.close();
-			window.location = "create.html?" + event.url.split('?')[1];
-		}
+		// if (event.url.indexOf('Blrb/Create') != -1) {
+			// ref.close();
+			// window.location = "create.html?" + event.url.split('?')[1];
+		// }
+// 
+	// if (event.url.indexOf('Blrb/me') != -1) {
+			// ref.close();
+			// ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
+			// //window.location = "stream.html?" + event.url.split('?')[1];
+		// }
 
-	if (event.url.indexOf('Blrb/me') != -1) {
+
+
+	if (event.url.indexOf('Account') == -1) {
 			ref.close();
 			ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
 			//window.location = "stream.html?" + event.url.split('?')[1];
