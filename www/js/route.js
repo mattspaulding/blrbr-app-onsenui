@@ -36,7 +36,9 @@ var gotoRoute=function(r) {
 
 
 alert(event.url);
+alert(event.url.indexOf('Account'));
 	if (event.url.indexOf('Account') == -1) {
+		alert('in home redirect');
 			ref.close();
 			ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
 			//window.location = "stream.html?" + event.url.split('?')[1];
@@ -45,6 +47,7 @@ alert(event.url);
 
 		var segs = event.url.split("/");
 		if (segs[3] == "") {
+			alert('in segs3');
 			ref.close();
 			window.location = "index.html";
 		}
