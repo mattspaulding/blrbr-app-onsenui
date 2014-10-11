@@ -19,7 +19,8 @@
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 		slidingMenu.on("preopen", function() {
-			if (localStorage.isLoggedIn == true) {
+			debugger;
+			if (localStorage.isLoggedIn == "true") {
 				$("#streamListItemOff").hide();
 				$("#blrbListItemOff").hide();
 				$("#streamListItem").show();
@@ -82,7 +83,7 @@
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}debugger;
-		if (localStorage.isLoggedIn == true) {
+		if (localStorage.isLoggedIn == "true") {
 			$("#loginBtn").hide();
 			$("#blrbBtn").show();
 		} else {
