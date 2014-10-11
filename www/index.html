@@ -75,6 +75,17 @@
 							<span class="fa fa-bars"></span>
 						</div>
 					</div>
+						<div id="loadingBtn" class="col-xs-6" style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;">
+							<div>
+								<span class="fa fa-spinner fa-spin"></span>
+							</div>
+						</div>
+
+						<div id="loginBtn"  class="col-xs-6" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
+							<div>
+								<span class="fa fa-sign-in"></span>
+							</div>
+						</div>
 					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 						<div>
 							<span class="fa fa-microphone"></span>
@@ -89,21 +100,11 @@
 				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
 					<div  style="font-size: 70px;text-align: center;width:100%;">
 
-						<div id="accountBtn" class="isLoggedInTrue" style="background-color: #F1EB55;margin:0px;font-size: 40px;text-align: center;" hidden="hidden">
+						<div id="accountBtn" style="background-color: #F1EB55;margin:0px;font-size: 40px;text-align: center;" hidden="hidden">
 							hi {{response.ScreenName}} <span class="fa fa-angle-double-right"></span>
 						</div>
 
-						<div id="loadingBtn" style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;">
-							<div>
-								<span class="fa fa-spinner fa-spin"></span>
-							</div>
-						</div>
-
-						<div id="loginBtn" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
-							<div>
-								<span class="fa fa-sign-in"></span>
-							</div>
-						</div>
+					
 					</div>
 				</div>
 			</div>

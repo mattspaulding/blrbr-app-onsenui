@@ -41,16 +41,16 @@ if (phoneCheck.ios != null) {
 			responsePromise.success(function(data, status, headers, config) {
 				localStorage.isLoggedIn = true;
 				$('#loginBtn').hide();
-				$('#logoutBtn').show();
+				$('#blrbBtn').show();
 				$('#loadingBtn').hide();
-				$('#isLoggedInTrue').fadeIn("slow");
+				$('#accountBtn').fadeIn("slow");
 				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) {
 				localStorage.isLoggedIn = false;
-				$('#isLoggedInTrue').hide();
+				$('#accountBtn').hide();
 				$('#loginBtn').show();
-				$('#logoutBtn').hide();
+				$('#blrbBtn').hide();
 				$('#loadingBtn').hide();
 			});
 
