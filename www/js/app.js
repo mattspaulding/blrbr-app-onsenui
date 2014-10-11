@@ -18,19 +18,19 @@
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
-debugger;
-		if (localStorage.isLoggedIn == true) {
-			$("#streamListItemOff").hide();
-			$("#blrbListItemOff").hide();
-			$("#streamListItem").show();
-			$("#blrbListItem").show();
-		} else {
-			$("#streamListItemOff").show();
-			$("#blrbListItemOff").show();
-			$("#streamListItem").hide();
-			$("#blrbListItem").hide();
-		}
-
+		slidingMenu.on("preopen", function() {
+			if (localStorage.isLoggedIn == true) {
+				$("#streamListItemOff").hide();
+				$("#blrbListItemOff").hide();
+				$("#streamListItem").show();
+				$("#blrbListItem").show();
+			} else {
+				$("#streamListItemOff").show();
+				$("#blrbListItemOff").show();
+				$("#streamListItem").hide();
+				$("#blrbListItem").hide();
+			}
+		});
 		$scope.gotoPage = function(page) {
 			localStorage.channel = "";
 			localStorage.username = "";
@@ -81,16 +81,15 @@ debugger;
 	app.controller('StreamCtrl', function($scope, $http) {
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
-		}
-		debugger;
-	if (localStorage.isLoggedIn == true) {
+		}debugger;
+		if (localStorage.isLoggedIn == true) {
 			$("#loginBtn").hide();
 			$("#blrbBtn").show();
 		} else {
 			$("#loginBtn").show();
 			$("#blrbBtn").hide();
 		}
-	$scope.response = {};
+		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/" + localStorage.channel);
@@ -197,8 +196,7 @@ debugger;
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status);
-				debugger;
+				alert("Uh oh!" + status); debugger;
 			});
 		};
 
@@ -219,8 +217,7 @@ debugger;
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status);
-				debugger;
+				alert("Channel failed! " + status); debugger;
 				gotoRoute("Account/Login");
 			});
 
