@@ -59,6 +59,14 @@ if (phoneCheck.ios != null) {
 
 	});
 
+app.controller('AccountCtrl', function($scope, $http) {
+if (phoneCheck.ios != null) {
+		$('.ios-shift').css('margin-top', '-20px');
+	}
+		
+
+	});
+
 	app.controller('StreamCtrl', function($scope, $http) {
 		if (phoneCheck.ios != null) {
 		$('.ios-shift').css('margin-top', '-20px');

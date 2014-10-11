@@ -6,8 +6,8 @@ xmlns:gap = "http://phonegap.com/ns/1.0"
 id        = "com.mspaulding.blrbronsenui"
 version   = "1.0.0">
 
-	<name>blrbr onsenui</name>
-	<description>real-time social audio</description>
+	<name>blrbr</name>
+	<description>social audio</description>
 	<author href="http://mattspaulding.org" email="mrmattspaulding@gmail.com">Matt Spaulding</author>
 	<preference name="permissions"                value="none"/>
 
@@ -32,7 +32,7 @@ version   = "1.0.0">
 	<!-- ios 7: -->
 	<preference name="DisallowOverscroll" value="true" />
 	<!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
-	<preference name="exit-on-suspend"            value="true" />
+	<!-- <preference name="exit-on-suspend"            value="true" /> -->
 	<!-- ios: if set to true, app will terminate when home button is pressed -->
 	<preference name="auto-hide-splash-screen"    value="true" />
 	<!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
