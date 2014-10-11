@@ -48,7 +48,7 @@
 						<i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 					</ons-list-item>
 
-					<ons-list-item id="streamListItem" hidden="hidden" 
+					<ons-list-item id="streamListItem" hidden="hidden"
 					style="background-color: #6FBF46; height:25%;"
 					ng-click="gotoPage('stream')">
 
@@ -61,7 +61,7 @@
 						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 					</ons-list-item>
 
-					<ons-list-item id="blrbListItem" hidden="hidden" 
+					<ons-list-item id="blrbListItem" hidden="hidden"
 					style="background-color: #F1EB55; height:25%;"
 					ng-click="gotoPage('create')">
 
@@ -324,7 +324,7 @@
 				</div>
 				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
 					<div style="text-align: center; font-size: xx-large; padding:0px;" class="col-xs-12">
-						<div id="twitterYes" style="background-color: #DB60A3 ;height:75px;" ng-click="twitterToggle('no');">
+						<div id="twitterYes" style="background-color: rgb(194, 0, 211) ;height:75px;" ng-click="twitterToggle('no');">
 							<img src="images/bird_blue_48.png" style="padding-top: 20px;"/>
 						</div>
 						<div id="twitterNo" style="background-color: lightgrey;height:75px;" ng-click="twitterToggle('yes');" hidden="hidden">
@@ -357,10 +357,13 @@
 				<div class='row' style="position: absolute;bottom: 175px;top:100px;width:100%;margin:0px;">
 					<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
 					<div id="recording_textarea" hidden="hidden" style="height:100%; background-color: red;">
-						<i class="fa fa-microphone-slash col-xs-6" style="font-size:150px;padding-top: 20px; "></i>
-						<i class="fa fa-microphone col-xs-6" hidden="hidden" style="font-size:150px;padding-top: 20px; " ></i>
-						
-						<div id="audioPosition" class="col-xs-6" style="padding-top:50px;"></div>
+						<i class="fa fa-microphone-slash col-xs-12" style="font-size:150px;padding-top: 20px; "></i>
+						<i class="fa fa-microphone col-xs-12" hidden="hidden" style="font-size:150px;padding-top: 20px; " ></i>
+
+						<!-- <div id="audioPosition" class="col-xs-6" style="padding-top:50px;"></div> -->
+					</div>
+					<div id="keyboard_textarea" hidden="hidden" style="height:100%; background-color: lightyellow;">
+						<span class="fa fa-keyboard-o"></span>
 					</div>
 				</div>
 			</div>

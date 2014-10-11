@@ -19,7 +19,7 @@
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 		slidingMenu.on("preopen", function() {
-			if (localStorage.isLoggedIn == "true") {
+			if (localStorage.isLoggedIn == "false") {
 				$("#streamListItemOff").hide();
 				$("#blrbListItemOff").hide();
 				$("#streamListItem").show();
@@ -347,6 +347,7 @@
 			$("#blrbBtn").hide();
 			$("#blrbBtnOff").show();
 			$("#text_textarea").hide();
+			$("#keyboard_textarea").hide();
 			$("#recording_textarea").show();
 			$(".fa-microphone-slash").show();
 			$(".fa-microphone").hide();
@@ -462,6 +463,10 @@
 			$("#playBtnOff").hide();
 			$("#blrbBtn").show();
 			$("#blrbBtnOff").hide();
+			alert("textareaval: "+$('#text_textarea').val());
+			if($('#text_textarea').val()=="")
+			$("#keyboard_textarea").show();
+			else
 			$("#text_textarea").show();
 			$("#recording_textarea").hide();
 			status = 'stopped';
