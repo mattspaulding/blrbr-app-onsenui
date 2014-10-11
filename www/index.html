@@ -48,16 +48,29 @@
 						<i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 					</ons-list-item>
 
-					<ons-list-item
+					<ons-list-item id="streamListItem" hidden="hidden" 
 					style="background-color: #6FBF46; height:25%;"
 					ng-click="gotoPage('stream')">
 
 						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 					</ons-list-item>
+					<ons-list-item id="streamListItemOff"
+					style="background-color: lightgrey; height:25%;"
+					>
 
-					<ons-list-item
+						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+					</ons-list-item>
+
+					<ons-list-item id="blrbListItem" hidden="hidden" 
 					style="background-color: #F1EB55; height:25%;"
 					ng-click="gotoPage('create')">
+
+						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+					</ons-list-item>
+
+					<ons-list-item id="blrbListItemOff"
+					style="background-color: lightgrey; height:25%;"
+					>
 
 						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
 					</ons-list-item>
@@ -75,36 +88,32 @@
 							<span class="fa fa-bars"></span>
 						</div>
 					</div>
-						<div id="loadingBtn" class="col-xs-6" style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;">
-							<div>
-								<span class="fa fa-spinner fa-spin"></span>
-							</div>
+					<div id="loadingBtn" class="col-xs-6" style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;">
+						<div>
+							<span class="fa fa-spinner fa-spin"></span>
 						</div>
+					</div>
 
-						<div id="loginBtn"  class="col-xs-6" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
-							<div>
-								<span class="fa fa-sign-in"></span>
-							</div>
+					<div id="loginBtn"  class="col-xs-6" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
+						<div>
+							<span class="fa fa-sign-in"></span>
 						</div>
-					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+					</div>
+					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden" ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 						<div>
 							<span class="fa fa-microphone"></span>
 						</div>
 					</div>
-
 				</div>
 
 				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
 
 				<img src="images/blrbr_logo_50.png"/>
 				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
-					<div  style="font-size: 70px;text-align: center;width:100%;">
-
-						<div id="accountBtn" style="background-color: #F1EB55;margin:0px;font-size: 40px;text-align: center;" hidden="hidden"ng-click="ons.slidingMenu.setMainPage('account.html', {closeMenu: true});">
+					<div  style="text-align: center;width:100%;">
+						<div id="accountBtn" style="height: 100px;background-color: #F1EB55;margin:0px;font-size: 30px;text-align: center;" hidden="hidden"ng-click="ons.slidingMenu.setMainPage('account.html', {closeMenu: true});">
 							hi {{response.ScreenName}} <span class="fa fa-angle-double-right"></span>
 						</div>
-
-					
 					</div>
 				</div>
 			</div>
@@ -146,7 +155,12 @@
 								<span class="fa fa-bars"></span>
 							</div>
 						</div>
-						<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+						<div id="loginBtn"  class="col-xs-6" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');">
+							<div>
+								<span class="fa fa-sign-in"></span>
+							</div>
+						</div>
+						<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});" hidden="hidden">
 							<div>
 								<span class="fa fa-microphone"></span>
 							</div>

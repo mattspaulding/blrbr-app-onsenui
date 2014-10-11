@@ -1,6 +1,5 @@
 (function() {'use strict';
 
-	
 	var app = angular.module('myApp', ['onsen.directives']);
 
 	app.directive('htmldiv', function($compile, $parse) {
@@ -16,10 +15,23 @@
 	});
 
 	app.controller('MenuCtrl', function($scope) {
-	if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
-			$scope.gotoPage = function(page) {
+		if (phoneCheck.ios != null) {
+			$('.ios-shift').css('margin-top', '-20px');
+		}
+debugger;
+		if (localStorage.isLoggedIn == true) {
+			$("#streamListItemOff").hide();
+			$("#blrbListItemOff").hide();
+			$("#streamListItem").show();
+			$("#blrbListItem").show();
+		} else {
+			$("#streamListItemOff").show();
+			$("#blrbListItemOff").show();
+			$("#streamListItem").hide();
+			$("#blrbListItem").hide();
+		}
+
+		$scope.gotoPage = function(page) {
 			localStorage.channel = "";
 			localStorage.username = "";
 			localStorage.blrbId = "";
@@ -30,9 +42,9 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
-if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
+		if (phoneCheck.ios != null) {
+			$('.ios-shift').css('margin-top', '-20px');
+		}
 		$scope.response = {};
 		$scope.response.get = function() {
 
@@ -59,18 +71,25 @@ if (phoneCheck.ios != null) {
 
 	});
 
-app.controller('AccountCtrl', function($scope, $http) {
-if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
-		
+	app.controller('AccountCtrl', function($scope, $http) {
+		if (phoneCheck.ios != null) {
+			$('.ios-shift').css('margin-top', '-20px');
+		}
 
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) {
 		if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
+			$('.ios-shift').css('margin-top', '-20px');
+		}
+		debugger;
+	if (localStorage.isLoggedIn == true) {
+			$("#loginBtn").hide();
+			$("#blrbBtn").show();
+		} else {
+			$("#loginBtn").show();
+			$("#blrbBtn").hide();
+		}
 	$scope.response = {};
 		$scope.response.get = function(item, event) {
 
@@ -178,7 +197,8 @@ if (phoneCheck.ios != null) {
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status); debugger;
+				alert("Uh oh!" + status);
+				debugger;
 			});
 		};
 
@@ -186,8 +206,8 @@ if (phoneCheck.ios != null) {
 
 	app.controller('ChannelCtrl', function($scope, $http) {
 		if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
+			$('.ios-shift').css('margin-top', '-20px');
+		}
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
@@ -199,7 +219,8 @@ if (phoneCheck.ios != null) {
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status); debugger;
+				alert("Channel failed! " + status);
+				debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -217,9 +238,9 @@ if (phoneCheck.ios != null) {
 	});
 
 	app.controller('CreateCtrl', function($scope) {
-if (phoneCheck.ios != null) {
-		$('.ios-shift').css('margin-top', '-20px');
-	}
+		if (phoneCheck.ios != null) {
+			$('.ios-shift').css('margin-top', '-20px');
+		}
 		$scope.twitterToggle = function(val) {
 			if (val == "yes") {
 				isTweet = true;
