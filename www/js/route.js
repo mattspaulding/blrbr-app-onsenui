@@ -45,12 +45,12 @@ alert(event.url.indexOf('Account'));
 		}
 
 
-		var segs = event.url.split("/");
-		if (segs[3] == "") {
-			alert('in segs3');
-			ref.close();
-			window.location = "index.html";
-		}
+		// var segs = event.url.split("/");
+		// if (segs[3] == "") {
+			// alert('in segs3');
+			// ref.close();
+			// window.location = "index.html";
+		// }
 
 	});
 	ref.addEventListener('loaderror', function(event) {
