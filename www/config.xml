@@ -6,7 +6,7 @@ xmlns:gap = "http://phonegap.com/ns/1.0"
 id        = "com.mspaulding.blrbronsenui"
 version   = "1.0.0">
 
-	<name>blrbr</name>
+	<name>blrbr dev</name>
 	<description>social audio</description>
 	<author href="http://mattspaulding.org" email="mrmattspaulding@gmail.com">Matt Spaulding</author>
 	<preference name="permissions"                value="none"/>
