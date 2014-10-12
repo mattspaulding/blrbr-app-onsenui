@@ -463,10 +463,6 @@
 			$("#playBtnOff").hide();
 			$("#blrbBtn").show();
 			$("#blrbBtnOff").hide();
-			alert("textareaval: "+$('#text_textarea').val());
-			if($('#text_textarea').val()=="")
-			$("#keyboard_textarea").show();
-			else
 			$("#text_textarea").show();
 			$("#recording_textarea").hide();
 			status = 'stopped';
