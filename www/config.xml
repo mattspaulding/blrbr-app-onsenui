@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 xmlns:gap = "http://phonegap.com/ns/1.0"
-id        = "com.mspaulding.blrbronsenui"
+id        = "com.mspaulding.blrbrdev"
 version   = "1.0.0">
 
 	<name>blrbr dev</name>
