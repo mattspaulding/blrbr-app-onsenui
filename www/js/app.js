@@ -557,7 +557,7 @@
 
 		function win(r) {
 			//alert("Code = " + r.responseCode);
-			//alert("Response = " + r.response);
+			alert("Response = " + r.response);
 			//app.initialize();
 			ons.slidingMenu.setMainPage('stream.html', {
 				closeMenu : true
