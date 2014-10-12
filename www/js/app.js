@@ -19,7 +19,7 @@
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 		slidingMenu.on("preopen", function() {
-			if (localStorage.isLoggedIn == "false") {
+			if (localStorage.isLoggedIn == "true") {
 				$("#streamListItemOff").hide();
 				$("#blrbListItemOff").hide();
 				$("#streamListItem").show();
