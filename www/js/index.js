@@ -66,7 +66,7 @@ var app = {
 
 var route = function(r) {
 	//alert("route: "+r);
-	var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no,hidden=yes');
+	var ref = window.open('http://blrbr.co/' + r, '_blank', 'toolbar=no,location=no,hidden=yes');
 	ref.addEventListener('loadstart', function(event) {
 		//navigator.notification.activityStart("Please Wait", "Its loading....");
 		//alert('refurl: ' + event.url);
@@ -85,7 +85,7 @@ var route = function(r) {
 			//window.open('create.html?' + event.url.split('?')[1], '_self');
 			ref.close();
 		}
-		if (event.url == "http://blrbrdev.azurewebsites.net/") {
+		if (event.url == "http://blrbr.co/") {
 			$('#loadingPage').hide();
 			$('#createPage').hide();
 			$('#homePage').show();
@@ -98,7 +98,7 @@ var route = function(r) {
 		// ref.close();
 		//
 		// }
-		// if (event.url == "http://blrbrdev.azurewebsites.net/") {
+		// if (event.url == "http://blrbr.co/") {
 		// window.open('index.html', '_self');
 		// ref.close();
 		// }
