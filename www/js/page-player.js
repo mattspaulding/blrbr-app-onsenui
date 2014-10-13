@@ -332,7 +332,7 @@ function PagePlayer() {
       play: function () {
       	 debugger;
           var blrbId = this._data.oLI.id;
-          $.get("http://blrbrdev.azurewebsites.net/Blrb/LogListen/" + blrbId, function (result) {
+          $.get("http://blrbr.co/Blrb/LogListen/" + blrbId, function (result) {
              
           });
           $('#liveItem').css("display", "none");
