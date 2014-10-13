@@ -332,8 +332,17 @@ function PagePlayer() {
       play: function () {
       	 debugger;
           var blrbId = this._data.oLI.id;
-          $.get("http://blrbr.co/Blrb/LogListen/" + blrbId, function (result) {
-             
+          var device;
+          if (phoneCheck.ios != null) {
+			device="ios";
+			}
+			else
+			{
+			device="android";
+			}
+          $.get("http://blrbr.co/Blrb/LogListen/" + blrbId+"?device="+device, function (result) {
+          	debugger;
+             alert(result.Extra);
           });
           $('#liveItem').css("display", "none");
           $('#playingItem').css("display", "block");
