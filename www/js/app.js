@@ -68,6 +68,7 @@
 				$('#loadingBtn').hide();
 				debugger;
 				alert("fail: "+data);
+				gotoRoute('Account/Logoff');
 			});
 			
 		};
