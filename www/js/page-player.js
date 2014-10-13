@@ -337,7 +337,7 @@ function PagePlayer() {
 			} else {
 				device = "android";
 			}
-			$.get("http://blrbrdev.azurewebsites.net/Blrb/LogListen/" + blrbId + "?device=" + device, function(result) {
+			$.get("http://blrbr.co/Blrb/LogListen/" + blrbId + "?device=" + device, function(result) {
 
 			});
 			$('#liveItem').css("display", "none");
