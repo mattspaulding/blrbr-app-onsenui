@@ -330,6 +330,11 @@ function PagePlayer() {
     // handlers for sound events as they're started/stopped/played
 
       play: function () {
+      	 debugger;
+          var blrbId = this._data.oLI.id;
+          $.get("http://blrbrdev.azurewebsites.net/Blrb/LogListen/" + blrbId, function (result) {
+             
+          });
           $('#liveItem').css("display", "none");
           $('#playingItem').css("display", "block");
           pl.removeClass(this._data.oLI, this._data.className);

@@ -132,6 +132,7 @@
 			});
 		};
 
+	
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
 		// {
