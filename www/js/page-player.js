@@ -329,7 +329,7 @@ function PagePlayer() {
 
 		// handlers for sound events as they're started/stopped/played
 
-		play : function() { debugger;
+		play : function() { 
 			var blrbId = this._data.oLI.id;
 			var device;
 			if (phoneCheck.ios != null) {

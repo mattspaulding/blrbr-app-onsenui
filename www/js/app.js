@@ -57,6 +57,8 @@
 				$('#loadingBtn').hide();
 				$('#accountBtn').fadeIn("slow");
 				$scope.response = data;
+				debugger;
+				alert("win: "+data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
 				localStorage.isLoggedIn = false;
@@ -64,8 +66,10 @@
 				$('#loginBtn').show();
 				$('#blrbBtn').hide();
 				$('#loadingBtn').hide();
+				debugger;
+				alert("fail: "+data);
 			});
-
+			
 		};
 		var res = $scope.response.get();
 
