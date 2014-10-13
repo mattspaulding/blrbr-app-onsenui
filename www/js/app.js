@@ -57,8 +57,6 @@
 				$('#loadingBtn').hide();
 				$('#accountBtn').fadeIn("slow");
 				$scope.response = data;
-				debugger;
-				alert("win: "+data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
 				localStorage.isLoggedIn = false;
@@ -66,10 +64,8 @@
 				$('#loginBtn').show();
 				$('#blrbBtn').hide();
 				$('#loadingBtn').hide();
-				debugger;
-				alert("fail: "+data);
-							});
-			
+			});
+
 		};
 		var res = $scope.response.get();
 
@@ -136,7 +132,6 @@
 			});
 		};
 
-	
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
 		// {
@@ -201,7 +196,8 @@
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status); debugger;
+				alert("Uh oh!" + status);
+				debugger;
 			});
 		};
 
@@ -222,7 +218,8 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status); debugger;
+				alert("Channel failed! " + status);
+				debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -397,10 +394,10 @@
 				var recInterval = setInterval(function() {
 					if (status == 'recording') {
 						recTime = recTime + 1;
-						if(recTime>0)
-						setAudioPosition(recTime);
+						if (recTime > 0)
+							setAudioPosition(recTime);
 						else
-						setAudioPosition("GO!");
+							setAudioPosition("GO!");
 					}
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
@@ -575,7 +572,7 @@
 				closeMenu : true
 			});
 		}
-		
+
 		// start recording on page entry
 		record();
 
