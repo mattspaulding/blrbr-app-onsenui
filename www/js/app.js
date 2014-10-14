@@ -50,7 +50,18 @@
 
 			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
 
-			responsePromise.success(function(data, status, headers, config) {
+			responsePromise.success(function(data, status, headers, config) { debugger;
+				if (data == "\"Not logged in to Twitter\"") {
+					localStorage.isLoggedIn = false;
+					gotoRoute("Account/Logoff");
+				}
+				if (data == "\"Not logged in to blrbr\"") {
+					localStorage.isLoggedIn = false;
+					$('#accountBtn').hide();
+					$('#loginBtn').show();
+					$('#blrbBtn').hide();
+					$('#loadingBtn').hide();
+				}
 				localStorage.isLoggedIn = true;
 				$('#loginBtn').hide();
 				$('#blrbBtn').show();
@@ -58,7 +69,7 @@
 				$('#accountBtn').fadeIn("slow");
 				$scope.response = data;
 			});
-			responsePromise.error(function(data, status, headers, config) {
+			responsePromise.error(function(data, status, headers, config) { debugger;
 				localStorage.isLoggedIn = false;
 				$('#accountBtn').hide();
 				$('#loginBtn').show();
@@ -196,8 +207,7 @@
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status);
-				debugger;
+				alert("Uh oh!" + status); debugger;
 			});
 		};
 
@@ -218,8 +228,7 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status);
-				debugger;
+				alert("Channel failed! " + status); debugger;
 				gotoRoute("Account/Login");
 			});
 
