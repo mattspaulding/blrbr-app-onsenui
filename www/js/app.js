@@ -132,7 +132,6 @@
 			});
 		};
 
-	
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
 		// {
@@ -197,7 +196,8 @@
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status); debugger;
+				alert("Uh oh!" + status);
+				debugger;
 			});
 		};
 
@@ -218,7 +218,8 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status); debugger;
+				alert("Channel failed! " + status);
+				debugger;
 				gotoRoute("Account/Login");
 			});
 
@@ -231,6 +232,18 @@
 			ons.slidingMenu.setMainPage('stream.html', {
 				closeMenu : true
 			});
+		};
+
+		$scope.searchChannel = function() {
+			var channel = $("#channel_input").val();
+			if (channel == "") {
+				alert("enter text for search");
+			} else {
+				localStorage.channel = channel;
+				ons.slidingMenu.setMainPage('stream.html', {
+					closeMenu : true
+				});
+			}
 		};
 
 	});
@@ -393,10 +406,10 @@
 				var recInterval = setInterval(function() {
 					if (status == 'recording') {
 						recTime = recTime + 1;
-						if(recTime>0)
-						setAudioPosition(recTime);
+						if (recTime > 0)
+							setAudioPosition(recTime);
 						else
-						setAudioPosition("GO!");
+							setAudioPosition("GO!");
 					}
 					if (recTime >= 6 || status != 'recording') {
 						clearInterval(recInterval);
@@ -571,7 +584,7 @@
 				closeMenu : true
 			});
 		}
-		
+
 		// start recording on page entry
 		record();
 
