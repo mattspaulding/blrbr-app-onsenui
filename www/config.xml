@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 xmlns:gap = "http://phonegap.com/ns/1.0"
-id        = "com.mspaulding.blrbr"
+id        = "com.mspaulding.blrbrdev"
 version   = "1.0.2">
 
-	<name>blrbr</name>
+	<name>blrbr dev</name>
 	<description>social audio</description>
 	<author href="http://mattspaulding.org" email="mrmattspaulding@gmail.com">Matt Spaulding</author>
 	<preference name="permissions"                value="none"/>
