@@ -35,7 +35,7 @@ var gotoRoute=function(r) {
 		// }
 
 
-
+alert("url: "+event.url);
 	if (event.url.indexOf('Account') == -1 && event.url.indexOf('twitter') == -1) {
 			ref.close();
 			ons.slidingMenu.setMainPage('home.html', {closeMenu: true});
