@@ -52,7 +52,7 @@ var app = {
 		debugger;
 		//app.receivedEvent('deviceready'); 
 	 gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
+    gaPlugin.init(successHandler, errorHandler, "UA-47554552-1", 10);
 	},
 	// Update DOM on a Received Event
 	receivedEvent : function(id) {
