@@ -54,20 +54,20 @@
 				if (data == "\"Not logged in to Twitter\"") {
 					localStorage.isLoggedIn = false;
 					gotoRoute("Account/Logoff");
-				}
-				if (data == "\"Not logged in to blrbr\"") {
+				} else if (data == "\"Not logged in to blrbr\"") {
 					localStorage.isLoggedIn = false;
 					$('#accountBtn').hide();
 					$('#loginBtn').show();
 					$('#blrbBtn').hide();
 					$('#loadingBtn').hide();
+				} else {
+					localStorage.isLoggedIn = true;
+					$('#loginBtn').hide();
+					$('#blrbBtn').show();
+					$('#loadingBtn').hide();
+					$('#accountBtn').fadeIn("slow");
+					$scope.response = data;
 				}
-				localStorage.isLoggedIn = true;
-				$('#loginBtn').hide();
-				$('#blrbBtn').show();
-				$('#loadingBtn').hide();
-				$('#accountBtn').fadeIn("slow");
-				$scope.response = data;
 			});
 			responsePromise.error(function(data, status, headers, config) { debugger;
 				localStorage.isLoggedIn = false;
@@ -207,7 +207,8 @@
 				$scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Uh oh!" + status); debugger;
+				alert("Uh oh!" + status);
+				debugger;
 			});
 		};
 
@@ -228,7 +229,8 @@
 				$('#channelMain').fadeIn('slow');
 			});
 			responsePromise.error(function(data, status, headers, config) {
-				alert("Channel failed! " + status); debugger;
+				alert("Channel failed! " + status);
+				debugger;
 				gotoRoute("Account/Login");
 			});
 
