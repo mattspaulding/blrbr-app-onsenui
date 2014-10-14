@@ -44,7 +44,7 @@
 	app.controller('HomeCtrl', function($scope, $http) {
 		debugger;
 		if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "homepage");
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "http://google.com");
 		function nativePluginResultHandler(data)
 		{
 			alert("track success");
