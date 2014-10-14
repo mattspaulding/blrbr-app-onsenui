@@ -47,10 +47,12 @@
 		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "homepage");
 		function nativePluginResultHandler(data)
 		{
+			alert("track success");
 			debugger;
 		}
 	function nativePluginErrorHandler(error)
 		{
+			alert("track fail");
 			debugger;
 		}
 		if (phoneCheck.ios != null) {
