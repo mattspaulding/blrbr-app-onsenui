@@ -68,7 +68,7 @@ var app = {
 };
 
 function successHandler(data){
-	alert("init success");
+	//alert("init success");
 	debugger;
 }
 function errorHandler(error){

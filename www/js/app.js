@@ -15,6 +15,8 @@
 	});
 
 	app.controller('MenuCtrl', function($scope) {
+		if(gaPlugin!=undefined)
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "menu");
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -44,17 +46,8 @@
 	app.controller('HomeCtrl', function($scope, $http) {
 		debugger;
 		if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "homepage");
-		function nativePluginResultHandler(data)
-		{
-			alert("track success");
-			debugger;
-		}
-	function nativePluginErrorHandler(error)
-		{
-			alert("track fail");
-			debugger;
-		}
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "home");
+		
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -96,14 +89,18 @@
 	});
 
 	app.controller('AccountCtrl', function($scope, $http) {
-		if (phoneCheck.ios != null) {
+	if(gaPlugin!=undefined)
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "account");
+			if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) {
-		if (phoneCheck.ios != null) {
+	if(gaPlugin!=undefined)
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "stream: "+localStorage.channel);
+			if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}debugger;
 		if (localStorage.isLoggedIn == "true") {
@@ -228,6 +225,8 @@
 	});
 
 	app.controller('ChannelCtrl', function($scope, $http) {
+		if(gaPlugin!=undefined)
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "channel");
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -273,7 +272,9 @@
 	});
 
 	app.controller('CreateCtrl', function($scope) {
-		if (phoneCheck.ios != null) {
+	if(gaPlugin!=undefined)
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "create");
+			if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 		$scope.twitterToggle = function(val) {
