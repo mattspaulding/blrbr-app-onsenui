@@ -42,6 +42,17 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
+		debugger;
+		if(gaPlugin!=undefined)
+		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "homepage");
+		function nativePluginResultHandler(data)
+		{
+			debugger;
+		}
+	function nativePluginErrorHandler(error)
+		{
+			debugger;
+		}
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -50,7 +61,7 @@
 
 			var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
-			responsePromise.success(function(data, status, headers, config) { debugger;
+			responsePromise.success(function(data, status, headers, config) { 
 				if (data == "\"Not logged in to Twitter\"") {
 					localStorage.isLoggedIn = false;
 					gotoRoute("Account/Logoff");
@@ -69,7 +80,7 @@
 					$scope.response = data;
 				}
 			});
-			responsePromise.error(function(data, status, headers, config) { debugger;
+			responsePromise.error(function(data, status, headers, config) { 
 				localStorage.isLoggedIn = false;
 				$('#accountBtn').hide();
 				$('#loginBtn').show();

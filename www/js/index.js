@@ -16,12 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+var gaPlugin;
+	
 var app = {
 
 	// Application Constructor
 	initialize : function() {
-		onBodyLoad();
+		//onBodyLoad();
 		//$('#createPage').hide();
 		//$('#homePage').hide();
 		//$('#loadingPage').hide();
@@ -40,7 +41,7 @@ var app = {
 	//
 	// Bind any events that are required on startup. Common events are:
 	// 'load', 'deviceready', 'offline', and 'online'.
-	bindEvents : function() { debugger;
+	bindEvents : function() { 
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	// deviceready Event Handler
@@ -48,8 +49,10 @@ var app = {
 	// The scope of 'this' is the event. In order to call the 'receivedEvent'
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady : function() {
-		app.receivedEvent('deviceready'); debugger;
-		StatusBar.hide();
+		debugger;
+		//app.receivedEvent('deviceready'); 
+	 gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
 	},
 	// Update DOM on a Received Event
 	receivedEvent : function(id) {
@@ -64,58 +67,65 @@ var app = {
 	}
 };
 
-var route = function(r) {
-	//alert("route: "+r);
-	var ref = window.open('http://blrbr.co/' + r, '_blank', 'toolbar=no,location=no,hidden=yes');
-	ref.addEventListener('loadstart', function(event) {
-		//navigator.notification.activityStart("Please Wait", "Its loading....");
-		//alert('refurl: ' + event.url);
-		$('#createPage').hide();
-		$('#homePage').hide();
-		$('#loadingPage').show();
-
-		if (event.url.indexOf('Blrb/Create') != -1) {
-			$('#loadingPage').hide();
-			$('#homePage').hide();
-			$('#createPage').show();
-			var params = event.url.split('?')[1].split(/[=&]/);
-			//localStorage.username = params[1];
-			//localStorage.channel = params[3];
-			resetView();
-			//window.open('create.html?' + event.url.split('?')[1], '_self');
-			ref.close();
-		}
-		if (event.url == "http://blrbr.co/") {
-			$('#loadingPage').hide();
-			$('#createPage').hide();
-			$('#homePage').show();
-			ref.close();
-		}
-
+function successHandler(data){
+	debugger;
+}
+function errorHandler(error){
+	debugger;
+}
+// 
+// var route = function(r) {
+	// //alert("route: "+r);
+	// var ref = window.open('http://blrbr.co/' + r, '_blank', 'toolbar=no,location=no,hidden=yes');
+	// ref.addEventListener('loadstart', function(event) {
+		// //navigator.notification.activityStart("Please Wait", "Its loading....");
+		// //alert('refurl: ' + event.url);
+		// $('#createPage').hide();
+		// $('#homePage').hide();
+		// $('#loadingPage').show();
+// 
 		// if (event.url.indexOf('Blrb/Create') != -1) {
-		// localStorage.stuff=event.url.split('?')[1];
-		// window.open('create.html?' + event.url.split('?')[1], '_self');
-		// ref.close();
-		//
+			// $('#loadingPage').hide();
+			// $('#homePage').hide();
+			// $('#createPage').show();
+			// var params = event.url.split('?')[1].split(/[=&]/);
+			// //localStorage.username = params[1];
+			// //localStorage.channel = params[3];
+			// resetView();
+			// //window.open('create.html?' + event.url.split('?')[1], '_self');
+			// ref.close();
 		// }
 		// if (event.url == "http://blrbr.co/") {
-		// window.open('index.html', '_self');
-		// ref.close();
+			// $('#loadingPage').hide();
+			// $('#createPage').hide();
+			// $('#homePage').show();
+			// ref.close();
 		// }
-
-	});
-
-	ref.addEventListener('loadstop', function(event) {
-		ref.show();
-		//navigator.notification.activityStop();
-	});
-
-	navigator.notification.activityStop();
-	ref.addEventListener('loaderror', function(event) {
-		alert('error: ' + event.message);
-	});
-	ref.addEventListener('exit', function(event) {
-		//alert('exit: ' + event.message);
-	});
-
-};
+// 
+		// // if (event.url.indexOf('Blrb/Create') != -1) {
+		// // localStorage.stuff=event.url.split('?')[1];
+		// // window.open('create.html?' + event.url.split('?')[1], '_self');
+		// // ref.close();
+		// //
+		// // }
+		// // if (event.url == "http://blrbr.co/") {
+		// // window.open('index.html', '_self');
+		// // ref.close();
+		// // }
+// 
+	// });
+// 
+	// ref.addEventListener('loadstop', function(event) {
+		// ref.show();
+		// //navigator.notification.activityStop();
+	// });
+// 
+	// navigator.notification.activityStop();
+	// ref.addEventListener('loaderror', function(event) {
+		// alert('error: ' + event.message);
+	// });
+	// ref.addEventListener('exit', function(event) {
+		// //alert('exit: ' + event.message);
+	// });
+// 
+// };
