@@ -48,7 +48,7 @@
 		$scope.response = {};
 		$scope.response.get = function() {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Account/WhoAmI");
+			var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) { debugger;
 				if (data == "\"Not logged in to Twitter\"") {
@@ -103,7 +103,7 @@
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Blrb/StreamJson/" + localStorage.channel);
+			var responsePromise = $http.get("http://blrbr.co/Blrb/StreamJson/" + localStorage.channel);
 
 			responsePromise.success(function(data, status, headers, config) {
 				$scope.response = data;
@@ -165,7 +165,7 @@
 				$('#' + blrb.Id + ' .play').click();
 			}
 		};
-		$.connection.hub.url = 'http://blrbrdev.azurewebsites.net/signalr';
+		$.connection.hub.url = 'http://blrbr.co/signalr';
 
 		// Start the connection.
 		$.connection.hub.start().done(function() {
@@ -198,9 +198,9 @@
 			}debugger;
 			var loadUrl;
 			if ($scope.response.Channel == null) {
-				loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId;
+				loadUrl = 'http://blrbr.co/Blrb/LoadBlrbs?id=' + lastId;
 			} else {
-				loadUrl = 'http://blrbrdev.azurewebsites.net/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag;
+				loadUrl = 'http://blrbr.co/Blrb/LoadBlrbs?id=' + lastId + "&channel=" + $scope.response.Channel.Hashtag;
 			}
 			var responsePromise = $http.get(loadUrl);
 			responsePromise.success(function(data, status, headers, config) { debugger;
@@ -221,7 +221,7 @@
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
 
-			var responsePromise = $http.get("http://blrbrdev.azurewebsites.net/Channel/FeaturedChannels");
+			var responsePromise = $http.get("http://blrbr.co/Channel/FeaturedChannels");
 
 			responsePromise.success(function(data, status, headers, config) {
 				$scope.response = data;
@@ -561,9 +561,9 @@
 			//alert("params: "+params.username + params.channel + params.isTweet + params.text);
 			options.params = params;
 			var ft = new FileTransfer();
-			//ft.upload(audioURI, "http://blrbrdev.azurewebsites.net/Blrb/UploadAudio", win, fail, options);
+			//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
 			//ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
-			ft.upload(audioURI, "http://blrbrdev.azurewebsites.net/Blrb/UploadAudio", win, fail, options);
+			ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
 			$("#backBtn").hide();
 			$("#recordBtn").hide();
 			$("#stopBtn").hide();
