@@ -18,7 +18,7 @@
  */
 
 var gotoRoute=function(r) {
-	   var ref = window.open('http://blrebrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
+	   var ref = window.open('http://blrbrdev.azurewebsites.net/' + r, '_blank', 'toolbar=no,location=no');
 	ref.addEventListener('loadstart', function(event) {
 		// debugger;
 		// alert("url: " + event.url);
