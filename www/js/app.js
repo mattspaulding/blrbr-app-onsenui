@@ -15,8 +15,9 @@
 	});
 
 	app.controller('MenuCtrl', function($scope) {
-		if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "menu");
+		// debugger;
+		// if(gaPlugin!=undefined)
+		// gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "menu");
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -44,9 +45,9 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
-		debugger;
-		if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "home");
+		// debugger;
+		 if(gaPlugin!=undefined)
+		 gaPlugin.trackPage( null, null, "home");
 		
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
@@ -90,7 +91,8 @@
 
 	app.controller('AccountCtrl', function($scope, $http) {
 	if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "account");
+		gaPlugin.trackPage( null, null, "account");
+		
 			if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -98,8 +100,9 @@
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) {
+		debugger;
 	if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "stream: "+localStorage.channel);
+		gaPlugin.trackPage( null, null, "stream: "+localStorage.channel);
 			if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}debugger;
@@ -205,7 +208,7 @@
 			var lastId = $scope.response.BlrbStreamItems.slice(-1)[0].Id;
 			if (lastId === undefined) {
 				lastId = 9999999999;
-			}debugger;
+			}
 			var loadUrl;
 			if ($scope.response.Channel == null) {
 				loadUrl = 'http://blrbr.co/Blrb/LoadBlrbs?id=' + lastId;
@@ -225,8 +228,10 @@
 	});
 
 	app.controller('ChannelCtrl', function($scope, $http) {
+		debugger;
 		if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "channel");
+		gaPlugin.trackPage( null, null, "channel");
+		
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -272,8 +277,9 @@
 	});
 
 	app.controller('CreateCtrl', function($scope) {
+		debugger;
 	if(gaPlugin!=undefined)
-		gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "create");
+		gaPlugin.trackPage( null, null, "create");
 			if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
