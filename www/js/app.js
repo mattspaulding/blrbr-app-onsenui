@@ -150,7 +150,6 @@
 		$scope.reply = function(data) { debugger;
 			localStorage.username = data.blrb.UserName;
 			localStorage.blrbId = data.blrb.Id;
-			alert('set blrbId: ' + localStorage.blrbId);
 			ons.slidingMenu.setMainPage('create.html', {
 				closeMenu : true
 			});
@@ -568,8 +567,6 @@
 				options.mimeType = "audio/wav";
 				options.chunkedMode = false;
 			}
-			alert('isTweet: ' + isTweet);
-			alert('blrbId: ' + localStorage.blrbId);
 			var params = new Object();
 			//params.channel = window.channel;
 			params.channel = "";
