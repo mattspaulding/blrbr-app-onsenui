@@ -48,6 +48,7 @@ version   = "1.0.8">
 	<gap:plugin name="org.apache.cordova.file-transfer" />
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:plugin name="com.adobe.plugins.gaplugin" />
+	<gap:plugin name="com.adobe.plugins.pushplugin" />
 	<gap:config-file platform="ios" parent="UIStatusBarHidden">
 		<true/>
 	</gap:config-file>

@@ -50,6 +50,7 @@ var app = {
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady : function() {
 		debugger;
+		alert("onReady");
 		//app.receivedEvent('deviceready'); 
 	 gaPlugin = window.plugins.gaPlugin;
     gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
