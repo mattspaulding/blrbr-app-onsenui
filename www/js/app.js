@@ -75,7 +75,7 @@
 					$('#accountBtn').fadeIn("slow");
 					$scope.response = data;
 					
-						$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
+						$.get("http://blrbr.co/Account/RegisterDevice/" + localStorage.regid).success(function(data) {
 						$("#app-status-ul").append('<li>'+data+'</li>');
 				}).fail(function(data) {
 					alert("ERROR: Device not registered");

@@ -96,17 +96,9 @@ function onNotificationGCM(e) {
 				// Your GCM push server needs to know the regID before it can push to this device
 				// here is where you might want to send it the regID for later use.
 				console.log("regID = " + e.regid);
-
+localStorage.regid=e.regid;
 				$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
 						$("#app-status-ul").append('<li>'+data+'</li>');
-
-			// if (data == "\"Not logged in to blrbr\"") {
-					// localStorage.isLoggedIn = false;
-					// $('#accountBtn').hide();
-					// $('#loginBtn').show();
-					// $('#blrbBtn').hide();
-					// $('#loadingBtn').hide();
-				// }
 				}).fail(function(data) {
 					alert("ERROR: Device not registered");
 				});
