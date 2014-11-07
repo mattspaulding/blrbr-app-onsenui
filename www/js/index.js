@@ -22,7 +22,7 @@ var app = {
 
 	// Application Constructor
 	initialize : function() {
-			$("#app-status-ul").append('<li>init</li>');
+		$("#app-status-ul").append('<li>init</li>');
 
 		//onBodyLoad();
 		//$('#createPage').hide();
@@ -96,12 +96,21 @@ function onNotificationGCM(e) {
 				// Your GCM push server needs to know the regID before it can push to this device
 				// here is where you might want to send it the regID for later use.
 				console.log("regID = " + e.regid);
+
+				$.get("http://blrbrdev.azurewebsites.net/Account/RegisterDevice/" + e.regid).success(function(data) {
+					alert("Device Registered");
+				}).fail(function(data) {
+					alert("ERROR: Device not registered");
+				}).done(function(data) {
+					alert("Data Loaded: " + data);
+				});
+
 			}
 			break;
 
 		case 'message':
-				$("#app-status-ul").append('<li>--NOTIFICATION--' + '</li>');
-	// if this flag is set, this notification happened while we were in the foreground.
+			$("#app-status-ul").append('<li>--NOTIFICATION--' + '</li>');
+			// if this flag is set, this notification happened while we were in the foreground.
 			// you might want to play a sound to get the user's attention, throw up a dialog, etc.
 			if (e.foreground) {
 				$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
@@ -120,11 +129,10 @@ function onNotificationGCM(e) {
 				}
 			}
 
-			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e + '</li>');
-			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload + '</li>');
 			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 			//Only works for GCM
 			$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+			$("#app-status-ul").append('<li>MESSAGE -> SOUND: ' + e.payload.sound + '</li>');
 			//Only works on Amazon Fire OS
 			$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
 			break;
