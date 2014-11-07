@@ -22,6 +22,8 @@ var app = {
 
 	// Application Constructor
 	initialize : function() {
+			$("#app-status-ul").append('<li>init</li>');
+
 		//onBodyLoad();
 		//$('#createPage').hide();
 		//$('#homePage').hide();
@@ -51,7 +53,8 @@ var app = {
 	onDeviceReady : function() { debugger;
 		alert("onReady");
 
-		$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+		$("#app-status-ul").append('<li>registering</li>');
+		//$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 		var pushNotification = window.plugins.pushNotification;
 		pushNotification.register(pushSuccessHandler, pushErrorHandler, {
 			"senderID" : "47813446527",
