@@ -98,7 +98,14 @@ function onNotificationGCM(e) {
 				console.log("regID = " + e.regid);
 
 				$.get("http://blrbrdev.azurewebsites.net/Account/RegisterDevice/" + e.regid).success(function(data) {
-					alert("Device Registered");
+					alert(data);
+					// if (data == "\"Not logged in to blrbr\"") {
+					// localStorage.isLoggedIn = false;
+					// $('#accountBtn').hide();
+					// $('#loginBtn').show();
+					// $('#blrbBtn').hide();
+					// $('#loadingBtn').hide();
+				// }
 				}).fail(function(data) {
 					alert("ERROR: Device not registered");
 				}).done(function(data) {
