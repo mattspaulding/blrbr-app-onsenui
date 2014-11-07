@@ -97,7 +97,7 @@ function onNotificationGCM(e) {
 				// here is where you might want to send it the regID for later use.
 				console.log("regID = " + e.regid);
 
-				$.get("http://blrbrdev.azurewebsites.net/Account/RegisterDevice/" + e.regid).success(function(data) {
+				$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
 					alert(data);
 					// if (data == "\"Not logged in to blrbr\"") {
 					// localStorage.isLoggedIn = false;
