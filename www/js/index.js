@@ -51,7 +51,7 @@ var app = {
 	// The scope of 'this' is the event. In order to call the 'receivedEvent'
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady : function() { debugger;
-		alert("onReady");
+		//alert("onReady");
 
 		$("#app-status-ul").append('<li>registering</li>');
 		//$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
@@ -79,7 +79,7 @@ var app = {
 
 // result contains any message sent from the plugin call
 function pushSuccessHandler(result) {
-	alert('Callback Success! Result = ' + result)
+	//alert('Callback Success! Result = ' + result)
 }
 
 function pushErrorHandler(error) {
@@ -87,12 +87,12 @@ function pushErrorHandler(error) {
 }
 
 function onNotificationGCM(e) {
-	$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+	//$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
 	switch( e.event ) {
 		case 'registered':
 			if (e.regid.length > 0) {
-				$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+				$("#app-status-ul").append('<li>API REGISTERED</li>');
 				// Your GCM push server needs to know the regID before it can push to this device
 				// here is where you might want to send it the regID for later use.
 				console.log("regID = " + e.regid);
@@ -107,7 +107,7 @@ localStorage.regid=e.regid;
 			break;
 
 		case 'message':
-			$("#app-status-ul").append('<li>--NOTIFICATION--' + '</li>');
+			//$("#app-status-ul").append('<li>--NOTIFICATION--' + '</li>');
 			// if this flag is set, this notification happened while we were in the foreground.
 			// you might want to play a sound to get the user's attention, throw up a dialog, etc.
 			if (e.foreground) {
@@ -127,12 +127,12 @@ localStorage.regid=e.regid;
 				}
 			}
 
-			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+			//$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 			//Only works for GCM
-			$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
-			$("#app-status-ul").append('<li>MESSAGE -> SOUND: ' + e.payload.sound + '</li>');
+			//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+			//$("#app-status-ul").append('<li>MESSAGE -> SOUND: ' + e.payload.sound + '</li>');
 			//Only works on Amazon Fire OS
-			$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
+			//$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
 			break;
 
 		case 'error':
