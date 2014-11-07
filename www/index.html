@@ -43,41 +43,42 @@
 					style="background-color: #4A6FB6; height:25%;"
 					ng-click="gotoPage('home') ">
 
-						<i class="fa fa-home fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
-					</ons-list-item>
+						<i class="fa fa-home fa-5x vertical-align-middle" ><div style="font-size:x-large;">home</div></i>
+				
+						</ons-list-item>
 
 					<ons-list-item
 					style="background-color: #F26722; height:25%;"
 					ng-click="gotoPage('channel')">
 
-						<i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+						<i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle"><div style="font-size:x-large;">channels</div></i>
 					</ons-list-item>
 
 					<ons-list-item id="streamListItem" hidden="hidden"
 					style="background-color: #6FBF46; height:25%;"
 					ng-click="gotoPage('stream')">
 
-						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" ><div style="font-size:x-large;">stream</div></i>
 					</ons-list-item>
 					<ons-list-item id="streamListItemOff"
 					style="background-color: lightgrey; height:25%;"
 					>
 
-						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle" ><div style="font-size:x-large;">stream</div></i>
 					</ons-list-item>
 
 					<ons-list-item id="blrbListItem" hidden="hidden"
 					style="background-color: #F1EB55; height:25%;"
 					ng-click="gotoPage('create')">
 
-						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" ><div style="font-size:x-large;">blrb</div></i>
 					</ons-list-item>
 
 					<ons-list-item id="blrbListItemOff"
 					style="background-color: lightgrey; height:25%;"
 					>
 
-						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" style="color: #000; "></i>
+						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle" ><div style="font-size:x-large;">blrb</div></i>
 					</ons-list-item>
 				</ons-list>
 
@@ -90,7 +91,7 @@
 				<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
 					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
 						<div>
-							<span class="fa fa-bars"></span>
+							<span class="fa fa-bars" style="color: #fff; "><div style="font-size:x-large;">menu</div></span>
 						</div>
 					</div>
 					<div id="loadingBtn" class="col-xs-6" style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;">
@@ -101,12 +102,12 @@
 
 					<div id="loginBtn"  class="col-xs-6" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
 						<div>
-							<span class="fa fa-sign-in"></span>
+							<span class="fa fa-sign-in" ><div style="font-size:x-large;">login</div></span>
 						</div>
 					</div>
 					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden" ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
 						<div>
-							<span class="fa fa-microphone"></span>
+							<span class="fa fa-microphone" ><div style="font-size:x-large;">blrb</div></span>
 						</div>
 					</div>
 				</div>
@@ -129,12 +130,12 @@
 				<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
 					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
 						<div>
-							<span class="fa fa-bars"></span>
+							<span class="fa fa-bars"><div style="font-size:x-large;">menu</div></span>
 						</div>
 					</div>
 					<div id="logoutBtn" class="col-xs-6" style="background-color: #F1EB55;"onclick="gotoRoute('Account/Logoff');">
 						<div>
-							<span class="fa fa-sign-out"></span>
+							<span class="fa fa-sign-out"><div style="font-size:x-large;">logout</div></span>
 						</div>
 					</div>
 				</div>
@@ -157,17 +158,17 @@
 					<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
 						<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
 							<div>
-								<span class="fa fa-bars"></span>
+								<span class="fa fa-bars"><div style="font-size:x-large;">menu</div</span>
 							</div>
 						</div>
 						<div id="loginBtn"  class="col-xs-6" style="background-color: #F1EB55;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');">
 							<div>
-								<span class="fa fa-sign-in"></span>
+								<span class="fa fa-sign-in"><div style="font-size:x-large;">login</div</span>
 							</div>
 						</div>
 						<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;"ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});" hidden="hidden">
 							<div>
-								<span class="fa fa-microphone"></span>
+								<span class="fa fa-microphone"><div style="font-size:x-large;">blrb</div</span>
 							</div>
 						</div>
 
@@ -206,7 +207,7 @@
 									{{response.UserProfile.NumberOfBlrbrFriends}}
 								</div>
 								<div>
-									fllwng
+									following
 								</div>
 							</div>
 							<div class="col-xs-4 border">
@@ -214,7 +215,7 @@
 									{{response.UserProfile.NumberOfBlrbrFollowers}}
 								</div>
 								<div>
-									fllwrs
+									followers
 								</div>
 							</div>
 						</div>
@@ -249,7 +250,7 @@
 
 					</ul>
 					<div style=" background-color: #DB5FA5; height: 50px; padding-top:5px; font-size:xx-large; text-align:center;" ng-click="LoadBlrbs()">
-						<span class=" glyphicon glyphicon-cloud-download"></span> ld prvs blrbs <span class=" glyphicon glyphicon-cloud-download"></span>
+						<span class="fa glyphicon glyphicon-cloud-download"></span> more <span class=" glyphicon glyphicon-cloud-download"></span>
 					</div>
 				</div>
 			</div>
@@ -266,12 +267,12 @@
 					<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
 						<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
 							<div>
-								<span class="fa fa-bars"></span>
+								<span class="fa fa-bars"><div style="font-size:x-large;">menu</div</span>
 							</div>
 						</div>
 						<div id="searchBtn" class="col-xs-6" style="background-color: #F1EB55;" ng-click="searchChannel()" >
 							<div>
-								<span class="ion-search"></span>
+								<span class="fa ion-search"><div style="font-size:x-large;">search</div</span>
 							</div>
 						</div>
 
@@ -306,17 +307,17 @@
 				<div class='row' style="margin:0px;">
 					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
 						<div>
-							<span class="fa fa-bars"></span>
+							<span class="fa fa-bars"><div style="font-size:x-large;">menu</div</span>
 						</div>
 					</div>
 					<div id="blrbBtn" class="col-xs-6" style="background-color: #F1EB55;" hidden="hidden">
 						<div>
-							<span class="ion-upload"></span>
+							<span class="fa ion-upload"><div style="font-size:x-large;">send</div</span>
 						</div>
 					</div>
 					<div id="blrbBtnOff" class="col-xs-6" style="background-color: lightgrey;" >
 						<div>
-							<span class="ion-upload"></span>
+							<span class="fa ion-upload"><div style="font-size:x-large;">send</div</span>
 						</div>
 					</div>
 
