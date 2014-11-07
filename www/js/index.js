@@ -88,7 +88,7 @@ function onNotificationGCM(e) {
                 {
                     console.log("Regid " + e.regid);
                     alert('registration id = '+e.regid);
-                   prompt(e.regid);
+                   prompt("id",e.regid);
                 }
             break;
  
