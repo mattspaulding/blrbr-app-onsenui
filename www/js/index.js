@@ -51,7 +51,11 @@ var app = {
 	onDeviceReady : function() {
 		debugger;
 		alert("onReady");
-		//app.receivedEvent('deviceready'); 
+		
+		var pushNotification = window.plugins.pushNotification;
+pushNotification.register(pushSuccessHandler, pushErrorHandler,{"senderID":"47813446527","ecb":"onNotificationGCM"});
+
+
 	 gaPlugin = window.plugins.gaPlugin;
     gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
 	},
@@ -67,6 +71,14 @@ var app = {
 		console.log('Received Event: ' + id);
 	}
 };
+
+// result contains any message sent from the plugin call
+function pushSuccessHandler(result) {
+    alert('Callback Success! Result = '+result)
+}
+function pushErrorHandler(error) {
+    alert(error);
+}
 
 function successHandler(data){
 	//alert("init success");
