@@ -98,8 +98,9 @@ function onNotificationGCM(e) {
 				console.log("regID = " + e.regid);
 
 				$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
-					alert(data);
-					// if (data == "\"Not logged in to blrbr\"") {
+						$("#app-status-ul").append('<li>'+data+'</li>');
+
+			// if (data == "\"Not logged in to blrbr\"") {
 					// localStorage.isLoggedIn = false;
 					// $('#accountBtn').hide();
 					// $('#loginBtn').show();
@@ -108,8 +109,6 @@ function onNotificationGCM(e) {
 				// }
 				}).fail(function(data) {
 					alert("ERROR: Device not registered");
-				}).done(function(data) {
-					alert("Data Loaded: " + data);
 				});
 
 			}

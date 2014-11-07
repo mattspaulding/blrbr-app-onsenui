@@ -74,6 +74,13 @@
 					$('#loadingBtn').hide();
 					$('#accountBtn').fadeIn("slow");
 					$scope.response = data;
+					
+						$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
+						$("#app-status-ul").append('<li>'+data+'</li>');
+				}).fail(function(data) {
+					alert("ERROR: Device not registered");
+				});
+
 				}
 			});
 			responsePromise.error(function(data, status, headers, config) { 
