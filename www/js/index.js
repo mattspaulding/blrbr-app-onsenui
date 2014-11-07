@@ -100,7 +100,8 @@ function onNotificationGCM(e) {
 			break;
 
 		case 'message':
-			// if this flag is set, this notification happened while we were in the foreground.
+				$("#app-status-ul").append('<li>--NOTIFICATION--' + '</li>');
+	// if this flag is set, this notification happened while we were in the foreground.
 			// you might want to play a sound to get the user's attention, throw up a dialog, etc.
 			if (e.foreground) {
 				$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
@@ -119,6 +120,8 @@ function onNotificationGCM(e) {
 				}
 			}
 
+			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e + '</li>');
+			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload + '</li>');
 			$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 			//Only works for GCM
 			$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
