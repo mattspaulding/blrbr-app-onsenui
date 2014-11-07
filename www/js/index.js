@@ -53,7 +53,7 @@ var app = {
 		alert("onReady");
 		
 		var pushNotification = window.plugins.pushNotification;
-pushNotification.register(pushSuccessHandler, pushErrorHandler,{"senderID":"47813446527","ecb":"onNotificationGCM"});
+pushNotification.register(pushSuccessHandler, pushErrorHandler,{"senderID":"blrbr-app","ecb":"onNotificationGCM"});
 
 
 	 gaPlugin = window.plugins.gaPlugin;
