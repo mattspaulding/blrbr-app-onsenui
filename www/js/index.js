@@ -53,7 +53,7 @@ var app = {
 		alert("onReady");
 		
 		var pushNotification = window.plugins.pushNotification;
-pushNotification.register(pushSuccessHandler, pushErrorHandler,{"senderID":"blrbr-app","ecb":"onNotificationGCM"});
+pushNotification.register(pushSuccessHandler, pushErrorHandler,{"senderID":"47813446527","ecb":"onNotificationGCM"});
 
 
 	 gaPlugin = window.plugins.gaPlugin;
@@ -87,8 +87,7 @@ function onNotificationGCM(e) {
                 if ( e.regid.length > 0 )
                 {
                     console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
-                   prompt("id",e.regid);
+                                      prompt("id",e.regid);
                 }
             break;
  
