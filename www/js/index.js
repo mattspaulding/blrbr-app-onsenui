@@ -92,13 +92,13 @@ function onNotificationGCM(e) {
 	switch( e.event ) {
 		case 'registered':
 			if (e.regid.length > 0) {
-				$("#app-status-ul").append('<li>API REGISTERED</li>');
+				$("#app-status-ul").append('<li>API Registered</li>');
 				// Your GCM push server needs to know the regID before it can push to this device
 				// here is where you might want to send it the regID for later use.
 				console.log("regID = " + e.regid);
-localStorage.regid=e.regid;
+				localStorage.regid = e.regid;
 				$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
-						$("#app-status-ul").append('<li>'+data+'</li>');
+					$("#app-status-ul").append('<li>' + data + '</li>');
 				}).fail(function(data) {
 					alert("ERROR: Device not registered");
 				});
@@ -151,7 +151,8 @@ function successHandler(data) {
 }
 
 function errorHandler(error) {
-	alert("init fail"); debugger;
+	alert("init fail");
+	debugger;
 }
 
 //

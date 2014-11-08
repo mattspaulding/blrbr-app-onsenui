@@ -24,14 +24,14 @@
 		slidingMenu.on("preopen", function() {
 			if (localStorage.isLoggedIn == "true") {
 				$("#streamListItemOff").hide();
-				$("#blrbListItemOff").hide();
+				$("#blrbListItemOff").show();
 				$("#streamListItem").show();
-				$("#blrbListItem").show();
+				$("#blrbListItem").hide();
 			} else {
 				$("#streamListItemOff").show();
-				$("#blrbListItemOff").show();
+				$("#blrbListItemOff").hide();
 				$("#streamListItem").hide();
-				$("#blrbListItem").hide();
+				$("#blrbListItem").show();
 			}
 		});
 		$scope.gotoPage = function(page) {
@@ -46,9 +46,9 @@
 
 	app.controller('HomeCtrl', function($scope, $http) {
 		// debugger;
-		 if(gaPlugin!=undefined)
-		 gaPlugin.trackPage( null, null, "home");
-		
+		if (gaPlugin != undefined)
+			gaPlugin.trackPage(null, null, "home");
+
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -57,7 +57,7 @@
 
 			var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
-			responsePromise.success(function(data, status, headers, config) { 
+			responsePromise.success(function(data, status, headers, config) {
 				if (data == "\"Not logged in to Twitter\"") {
 					localStorage.isLoggedIn = false;
 					gotoRoute("Account/Logoff");
@@ -74,16 +74,16 @@
 					$('#loadingBtn').hide();
 					$('#accountBtn').fadeIn("slow");
 					$scope.response = data;
-					
-						$.get("http://blrbr.co/Account/RegisterDevice/" + localStorage.regid).success(function(data) {
-						$("#app-status-ul").append('<li>'+data+'</li>');
-				}).fail(function(data) {
-					alert("ERROR: Device not registered");
-				});
+
+					$.get("http://blrbr.co/Account/RegisterDevice/" + localStorage.regid).success(function(data) {
+						$("#app-status-ul").append('<li>' + data + '</li>');
+					}).fail(function(data) {
+						alert("ERROR: Device not registered");
+					});
 
 				}
 			});
-			responsePromise.error(function(data, status, headers, config) { 
+			responsePromise.error(function(data, status, headers, config) {
 				localStorage.isLoggedIn = false;
 				$('#accountBtn').hide();
 				$('#loginBtn').show();
@@ -97,22 +97,21 @@
 	});
 
 	app.controller('AccountCtrl', function($scope, $http) {
-	if(gaPlugin!=undefined)
-		gaPlugin.trackPage( null, null, "account");
-		
-			if (phoneCheck.ios != null) {
+		if (gaPlugin != undefined)
+			gaPlugin.trackPage(null, null, "account");
+
+		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) {
-		debugger;
-	if(gaPlugin!=undefined)
-		gaPlugin.trackPage( null, null, "stream: "+localStorage.channel);
-			if (phoneCheck.ios != null) {
+		if (gaPlugin != undefined)
+			gaPlugin.trackPage(null, null, "stream: " + localStorage.channel);
+		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
-		}debugger;
+		}
 		if (localStorage.isLoggedIn == "true") {
 			$("#loginBtn").hide();
 			$("#blrbBtn").show();
@@ -161,6 +160,8 @@
 				closeMenu : true
 			});
 		};
+
+		
 
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
@@ -234,10 +235,9 @@
 	});
 
 	app.controller('ChannelCtrl', function($scope, $http) {
-		debugger;
-		if(gaPlugin!=undefined)
-		gaPlugin.trackPage( null, null, "channel");
-		
+		if (gaPlugin != undefined)
+			gaPlugin.trackPage(null, null, "channel");
+
 		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
@@ -282,11 +282,10 @@
 
 	});
 
-	app.controller('CreateCtrl', function($scope) {
-		debugger;
-	if(gaPlugin!=undefined)
-		gaPlugin.trackPage( null, null, "create");
-			if (phoneCheck.ios != null) {
+	app.controller('CreateCtrl', function($scope) { 
+		if (gaPlugin != undefined)
+			gaPlugin.trackPage(null, null, "create");
+		if (phoneCheck.ios != null) {
 			$('.ios-shift').css('margin-top', '-20px');
 		}
 		$scope.twitterToggle = function(val) {
@@ -317,8 +316,12 @@
 		if (phoneCheck.ios != null) {
 			recordFileName = "recording.wav";
 		}
-
-		//}
+debugger;
+		var names = ["Jacob", "Isabella", "Ethan", "Emma", "Michael", "Olivia", "Alexander", "Sophia", "William", "Ava", "Joshua", "Emily", "Daniel", "Madison", "Jayden", "Abigail", "Noah", "Chloe", "你好", "你你你"];
+		$("#text_textarea").atwho({
+			at : "@",
+			data : names
+		});
 
 		function resetView() {
 			$("#recordBtn").show();
@@ -429,7 +432,7 @@
 			}, 1000);
 		}
 
-		function recordAudio() { debugger;
+		function recordAudio() {
 			createMedia(function() { debugger;
 				status = "recording";
 				mediaVar.startRecord();
@@ -621,7 +624,7 @@
 		}
 
 		// start recording on page entry
-		record();
+		//record();
 
 	});
 })();
