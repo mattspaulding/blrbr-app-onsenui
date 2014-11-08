@@ -73,8 +73,8 @@
 					$('#blrbBtn').show();
 					$('#loadingBtn').hide();
 					$('#accountBtn').fadeIn("slow");
-							$("#app-status-ul").append('<li>' + data.FriendsBlob + '</li>');
-				
+					$("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
+					localStorage.FriendsUsernameBlob = data.FriendsUsernameBlob;
 					$scope.response = data;
 
 					$.get("http://blrbr.co/Account/RegisterDevice/" + localStorage.regid).success(function(data) {
@@ -162,8 +162,6 @@
 				closeMenu : true
 			});
 		};
-
-		
 
 		var channel = "";
 		// @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
@@ -284,7 +282,7 @@
 
 	});
 
-	app.controller('CreateCtrl', function($scope) { 
+	app.controller('CreateCtrl', function($scope) {
 		if (gaPlugin != undefined)
 			gaPlugin.trackPage(null, null, "create");
 		if (phoneCheck.ios != null) {
@@ -317,9 +315,9 @@
 		deviceready = true;
 		if (phoneCheck.ios != null) {
 			recordFileName = "recording.wav";
-		}
-debugger;
-		var names = ["Jacob", "Isabella", "Ethan", "Emma", "Michael", "Olivia", "Alexander", "Sophia", "William", "Ava", "Joshua", "Emily", "Daniel", "Madison", "Jayden", "Abigail", "Noah", "Chloe", "你好", "你你你"];
+		}debugger;
+		//var names = ["Jacob", "Isabella", "Ethan", "Emma", "Michael", "Olivia", "Alexander", "Sophia", "William", "Ava", "Joshua", "Emily", "Daniel", "Madison", "Jayden", "Abigail", "Noah", "Chloe", "你好", "你你你"];
+		var names=localStorage.FriendsUsernameBlob;
 		$("#text_textarea").atwho({
 			at : "@",
 			data : names
