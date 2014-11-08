@@ -73,6 +73,8 @@
 					$('#blrbBtn').show();
 					$('#loadingBtn').hide();
 					$('#accountBtn').fadeIn("slow");
+							$("#app-status-ul").append('<li>' + data.FriendsBlob + '</li>');
+				
 					$scope.response = data;
 
 					$.get("http://blrbr.co/Account/RegisterDevice/" + localStorage.regid).success(function(data) {
