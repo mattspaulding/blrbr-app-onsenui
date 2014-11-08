@@ -24,14 +24,14 @@
 		slidingMenu.on("preopen", function() {
 			if (localStorage.isLoggedIn == "true") {
 				$("#streamListItemOff").hide();
-				$("#blrbListItemOff").show();
+				$("#blrbListItemOff").hide();
 				$("#streamListItem").show();
-				$("#blrbListItem").hide();
+				$("#blrbListItem").show();
 			} else {
 				$("#streamListItemOff").show();
-				$("#blrbListItemOff").hide();
+				$("#blrbListItemOff").show();
 				$("#streamListItem").hide();
-				$("#blrbListItem").show();
+				$("#blrbListItem").hide();
 			}
 		});
 		$scope.gotoPage = function(page) {
@@ -713,7 +713,7 @@
 		}
 
 		// start recording on page entry
-		//record();
+		record();
 
 	});
 })();
