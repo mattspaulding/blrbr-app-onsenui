@@ -149,6 +149,18 @@ h1 {
   transform: translateY(-50%);
 }
 
-.fa{
+.color0{
+	color:#00A0B0;
+}
+.color1{
 	color:#423333;
+}
+.color2{
+	color:#CC333F;
+}
+.color3{
+	color:#EB6841;
+}
+.color4{
+	color:#EDC951;
 }
