@@ -149,9 +149,24 @@
 						<img src="images/blrbrfish_logo_nobubble.png" style=" max-height: 100%;  padding: 10px;"/>
 					</ons-list-item>
 	<ons-list-item
-					id="homeImg"
-					class="backgroundColor5" >
-						<img src="images/blrbr_logo_50.png" style=" max-height: 100%;  padding: 10px;"/>
+					id="featuredChannel"
+					class="backgroundColor5"  >
+						<div ng-click="gotoChannel('swtampa');" style='padding: 20px;'>
+							<p>
+								featured channel
+							</p>
+							<div class='col-xs-4'>
+								<img src="http://blrbr.co/Images/swtampa-profile.jpg"  style="width: 80px;"></img>
+							</div>
+							<div class='col-xs-8' style='padding-top: 5px'>
+								<p >
+									Startup Weekend Tampa
+								</p>
+								<p >
+									#swtampa
+								</p>
+							</div>
+						</div>
 					</ons-list-item>
 
 					<!-- <ons-list-item
@@ -172,7 +187,7 @@
 					>
 						<i class="fa fa-user fa-5x vertical-align-middle color1" >
 						<div style="font-size:x-large;">
-							hi  {{response.ScreenName}} <span class="fa fa-angle-double-right color1"></span>
+							{{response.ScreenName}} 
 						</div> </i>
 
 					</ons-list-item>

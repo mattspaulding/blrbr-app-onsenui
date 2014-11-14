@@ -58,16 +58,16 @@
 			var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
 			responsePromise.success(function(data, status, headers, config) {
-				// if (data == "\"Not logged in to Twitter\"") {
-					// localStorage.isLoggedIn = false;
-					// gotoRoute("Account/Logoff");
-				// } else if (data == "\"Not logged in to blrbr\"") {
-					// localStorage.isLoggedIn = false;
-					// $('#accountBtn').hide();
-					// $('#loginBtn').show();
-					// $('#blrbBtn').hide();
-					// $('#loadingBtn').hide();
-				// } else 
+				if (data == "\"Not logged in to Twitter\"") {
+					localStorage.isLoggedIn = false;
+					gotoRoute("Account/Logoff");
+				} else if (data == "\"Not logged in to blrbr\"") {
+					localStorage.isLoggedIn = false;
+					$('#accountBtn').hide();
+					$('#loginBtn').show();
+					$('#blrbBtn').hide();
+					$('#loadingBtn').hide();
+				} else 
 				{
 					localStorage.isLoggedIn = true;
 					$('#loginBtn').hide();
@@ -95,6 +95,16 @@
 			});
 
 		};
+		
+		$scope.gotoChannel = function(channel) {
+			debugger;
+			localStorage.channel = channel;
+			ons.slidingMenu.setMainPage('stream.html', {
+				closeMenu : true
+			});
+		};
+
+		
 		var res = $scope.response.get();
 
 	});
