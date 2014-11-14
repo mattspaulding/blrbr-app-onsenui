@@ -241,12 +241,12 @@
 
 		<ons-template id="stream.html">
 			<ons-page id='StreamPage' class="ios-shift" ng-controller="StreamCtrl" style="background-color: white;">
-					<div id="streamLoad">
+				<div id="streamLoad">
 					<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
 						<span class="fa fa-spinner fa-spin color1"></span>
 					</div>
 				</div>
-			
+
 				<ons-list id="streamMain" hidden='hidden' style="text-align: center;height:100%;">
 					<ons-list-item >
 						<div
@@ -280,90 +280,189 @@
 							</div></i>
 
 						</div>
-											
+
 					</ons-list-item>
-					
+
 				</ons-list>
-<div id="channel" hidden="hidden" style="text-align: center;">
-						<img src="{{response.Channel.BannerImg}}" style="width:100%;"/>
-						<div>
-							{{response.Channel.Name}}
-						</div>
-						<div>
-							#{{response.Channel.Hashtag}}
-						</div>
+				<div id="channel" hidden="hidden" style="text-align: center;">
+					<img src="{{response.Channel.BannerImg}}" style="width:100%;"/>
+					<div>
+						{{response.Channel.Name}}
 					</div>
-					<div id="profile" hidden="hidden" style="margin: 10px;">
-						<div class="row">
-							<div class="col-xs-3" style="padding:0;text-align: center">
-								<img src={{response.UserProfile.ProfileImageUrlBigger}} />
-							</div>
-							<div class="col-xs-9 border">
-								<h3>{{response.UserProfile.ScreenName}}</h3>
-								<h5>@{{response.UserProfile.Username}}</h5>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 border">
-								<div id="numberOfBlrbs">
-									{{response.NumberOfBlrbs}}
-								</div>
-								<div>
-									blrbs
-								</div>
-							</div>
-							<div class="col-xs-4 border">
-								<div>
-									{{response.UserProfile.NumberOfBlrbrFriends}}
-								</div>
-								<div>
-									following
-								</div>
-							</div>
-							<div class="col-xs-4 border">
-								<div>
-									{{response.UserProfile.NumberOfBlrbrFollowers}}
-								</div>
-								<div>
-									followers
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-					<ul class="playlist" >
-						<li ng-repeat="blrb in response.BlrbStreamItems" style="background-color:#{{blrb.Color}};" class="blrbItem" id="{{blrb.Id}}">
-
-							<a href="{{blrb.Sound}}" class="clip">
-							<div class="row" style="background-color:white;margin:0px; ">
-								<div class="col-xs-2" style="padding:0;">
-									<img src="images/pause.png" alt="pause" class="pause" width="48" />
-									<img src="images/play.png" alt="play" class="play" width="48" />
-								</div>
-								<div class="col-xs-9">
-									<img src="{{blrb.Img}}" />
-									{{blrb.ScreenName}}
-								</div>
-							</div> </a>
-
-							<div style="background-color: white;">
-								<htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
-							</div>
-							<div class="row" style="margin:0; background-color: white;">
-								<div class="col-xs-2 col-xs-offset-10" ng-click="reply(this)">
-									<span class="fa fa-reply color1"></span>
-								</div>
-							</div>
-
-						</li>
-
-					</ul>
-					<div style=" background-color: #DB5FA5; height: 50px; padding-top:5px; font-size:xx-large; text-align:center;" ng-click="LoadBlrbs()">
-						<span class="glyphicon glyphicon-cloud-download"></span> more <span class=" glyphicon glyphicon-cloud-download"></span>
+					<div>
+						#{{response.Channel.Hashtag}}
 					</div>
 				</div>
-			</div>
+				<div id="profile" hidden="hidden" style="margin: 10px;">
+					<div class="row">
+						<div class="col-xs-3" style="padding:0;text-align: center">
+							<img src={{response.UserProfile.ProfileImageUrlBigger}} />
+						</div>
+						<div class="col-xs-9 border">
+							<h3>{{response.UserProfile.ScreenName}}</h3>
+							<h5>@{{response.UserProfile.Username}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4 border">
+							<div id="numberOfBlrbs">
+								{{response.NumberOfBlrbs}}
+							</div>
+							<div>
+								blrbs
+							</div>
+						</div>
+						<div class="col-xs-4 border">
+							<div>
+								{{response.UserProfile.NumberOfBlrbrFriends}}
+							</div>
+							<div>
+								following
+							</div>
+						</div>
+						<div class="col-xs-4 border">
+							<div>
+								{{response.UserProfile.NumberOfBlrbrFollowers}}
+							</div>
+							<div>
+								followers
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<ul class="playlist" >
+					<li ng-repeat="blrb in response.BlrbStreamItems" style="background-color:#{{blrb.Color}};" class="blrbItem" id="{{blrb.Id}}">
+
+						<a href="{{blrb.Sound}}" class="clip">
+						<div class="row" style="background-color:white;margin:0px; ">
+							<div class="col-xs-2" style="padding:0;">
+								<img src="images/pause.png" alt="pause" class="pause" width="48" />
+								<img src="images/play.png" alt="play" class="play" width="48" />
+							</div>
+							<div class="col-xs-9">
+								<img src="{{blrb.Img}}" />
+								{{blrb.ScreenName}}
+							</div>
+						</div> </a>
+
+						<div style="background-color: white;">
+							<htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
+						</div>
+						<div class="row" style="margin:0; background-color: white;">
+							<div class="col-xs-2 col-xs-offset-10" ng-click="reply(this)">
+								<span class="fa fa-reply color1"></span>
+							</div>
+						</div>
+
+					</li>
+
+				</ul>
+				<div style=" background-color: #DB5FA5; height: 50px; padding-top:5px; font-size:xx-large; text-align:center;" ng-click="LoadBlrbs()">
+					<span class="glyphicon glyphicon-cloud-download"></span> more <span class=" glyphicon glyphicon-cloud-download"></span>
+				</div>
+				</div>
+				</div>
+			</ons-page>
+
+		</ons-template>
+		<ons-template id="create.html">
+			<ons-page id='CreatePage' class="ios-shift" ng-controller="CreateCtrl" style="background-color: white;">
+				<div id="loading" class='row' hidden="hidden">
+					<br>
+					<p>
+						blrbn...
+					</p>
+					<div>
+						<span class="ion-upload"></span>
+					</div>
+				</div>
+
+				<ons-list id="createMain" style="text-align: center;height:100%;">
+					<ons-list-item >
+						<div
+						id="backBtn"
+						class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
+
+							<i class="fa fa-bars fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								menu
+							</div></i>
+
+						</div>
+
+						<div
+						id="blrbBtn"
+						class="col-xs-6 backgroundColor4" hidden="hidden" >
+
+							<i class="fa fa-cloud-upload fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								send
+							</div></i>
+
+						</div>
+						<div
+						id="blrbBtnOff"
+						class="col-xs-6" style="background-color: lightgrey;" >
+
+							<i class="fa fa-cloud-upload fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								send
+							</div></i>
+
+						</div>
+					</ons-list-item>
+
+					<ons-list-item
+					class="backgroundColor5" >
+						<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>																																				
+				<div id="recording_textarea" hidden="hidden" style="height:100%; background-color: red;">
+							<i class="fa fa-microphone-slash fa-5x vertical-align-middle color1" ></i>
+							<i class="fa fa-microphone fa-5x vertical-align-middle color1" hidden="hidden" ></i>
+		</div>
+					</ons-list-item>
+		<ons-list-item
+					 >
+			<div style="text-align: center; font-size: xx-large; padding:0px;" class="col-xs-12 " >
+						<div id="twitterYes" class="backgroundColor1" style="background-color: #423333 ;" ng-click="twitterToggle('no');">
+							<img src="images/bird_blue_48.png" style="padding-top: 50px;"/>
+						</div>
+						<div id="twitterNo" style="background-color: lightgrey;" ng-click="twitterToggle('yes');" hidden="hidden">
+							<img src="images/bird_white_48.png" style="padding-top: 50px;"/>
+						</div>
+
+					</div>
+				</ons-list-item>
+<ons-list-item>
+					<div id="recordBtn" class="col-xs-6" style="background-color: #EB6841" >
+						<i class="fa fa-microphone fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								record
+							</div></i>
+					</div>
+					<div id="stopBtn" class="col-xs-6" style="background-color: red " hidden="hidden">
+													<i class="fa fa-stop fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								stop
+							</div></i>
+											</div>
+					<div id="playBtn" class="col-xs-6" style="background-color: #EDC951" hidden="hidden">
+						<i class="fa fa-play fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								play
+							</div></i>
+					</div>
+					<div id="playBtnOff" class="col-xs-6" style="background-color: lightgrey">
+						<i class="fa fa-play fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								play
+							</div></i>
+					</div>
+				</ons-list-item>
+
+				</ons-list>
+				
 			</ons-page>
 
 		</ons-template>
@@ -525,7 +624,7 @@
 			</div>
 		</ons-template>
 
-		<ons-template id="create.html">
+		<ons-template id="crweate.html">
 
 			<div id="createPage" class="ios-shift" ng-controller="CreateCtrl" style="font-size: 70px;text-align: center;">
 
@@ -566,7 +665,8 @@
 					</div>
 				</div>
 				<div class='row' style="margin:0px;" height=25%>
-					<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>																														
+					<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>																																			
+
 
 
 

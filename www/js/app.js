@@ -681,6 +681,7 @@
 			//ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
 			//ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
 			ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
+			$("createMain").hide();
 			$("#backBtn").hide();
 			$("#recordBtn").hide();
 			$("#stopBtn").hide();
