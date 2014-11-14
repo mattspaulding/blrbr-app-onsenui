@@ -37,7 +37,7 @@
 
 				<ons-list style="text-align: center;height:100%;">
 					<ons-list-item
-					style="background-color: #00A0B0; height:25%;"
+					class="backgroundColor0"
 					ng-click="gotoPage('home') ">
 
 						<i class="fa fa-home fa-5x vertical-align-middle color1" >
@@ -48,7 +48,7 @@
 					</ons-list-item>
 
 					<ons-list-item
-					style="background-color: #CC333F; height:25%;"
+					class="backgroundColor2"
 					ng-click="gotoPage('channel')">
 
 						<i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle color1">
@@ -58,7 +58,7 @@
 					</ons-list-item>
 
 					<ons-list-item id="streamListItem" hidden="hidden"
-					style="background-color: #EB6841; height:25%;"
+					class="backgroundColor3"
 					ng-click="gotoPage('stream')">
 
 						<i class="fa fa-headphones fa-5x fa-fw vertical-align-middle color1" >
@@ -77,7 +77,7 @@
 					</ons-list-item>
 
 					<ons-list-item id="blrbListItem"
-					style="background-color: #EDC951; height:25%;"
+					class="backgroundColor4"
 					ng-click="gotoPage('create')">
 
 						<i class="fa fa-microphone fa-5x fa-fw vertical-align-middle color1" >
@@ -100,88 +100,313 @@
 			</ons-page>
 
 		</ons-template>
+		<ons-template id="home.html">
+			<ons-page id='HomePage' class="ios-shift" ng-controller="HomeCtrl" style="background-color: white;">
 
-		<ons-template  id="home.html">
-			<div id="homePage"  class="ios-shift" ng-controller="HomeCtrl" style="text-align: center;" >
-				<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-					<div id="backBtn" class="col-xs-6" style="background-color: #00A0B0;" ng-click="ons.slidingMenu.toggleMenu()">
-						<div>
-							<span class="fa fa-bars color1" >
-								<div style="font-size:x-large;">
-									menu
-								</div></span>
-						</div>
-					</div>
-					<div id="loadingBtn" class="col-xs-6" style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;">
-						<div>
-							<span class="fa fa-spinner fa-spin color1"></span>
-						</div>
-					</div>
+				<ons-list style="text-align: center;height:100%;">
+					<ons-list-item >
+						<div
+						id="backBtn"
+						class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
 
-					<div id="loginBtn"  class="col-xs-6" style="background-color: #CC333F;margin:0px;font-size: 70px;text-align: center;" onclick="gotoRoute('Account/Login');" hidden="hidden">
-						<div>
-							<span class="fa fa-sign-in color1" >
-								<div style="font-size:x-large;">
-									login
-								</div></span>
-						</div>
-					</div>
-					<div id="blrbBtn" class="col-xs-6" style="background-color: #EDC951;" hidden="hidden" ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
-						<div>
-							<span class="fa fa-microphone color1" >
-								<div style="font-size:x-large;">
-									blrb
-								</div></span>
-						</div>
-					</div>
-				</div>
+							<i class="fa fa-bars fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								menu
+							</div></i>
 
-				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
+						</div>
+						<div
+						id="loadingBtn"
+						class="col-xs-6 backgroundColor2" >
 
-				<img src="images/blrbr_logo_50.png"/>
-				<ul id='app-status-ul'>
-					<li>
-						DEBUG INFO
-					</li>
-				</ul>
-				<div class='row' style="position: absolute;bottom: 0px;width:100%;margin:0px;">
-					<div  style="text-align: center;width:100%;">
-						<div id="accountBtn" style="background-color: #CC333F;margin:0px;font-size: 30px;text-align: center;" hidden="hidden"ng-click="ons.slidingMenu.setMainPage('account.html', {closeMenu: true});">
+							<i class="fa fa-spinner fa-spin fa-5x vertical-align-middle color2" > </i>
+
+						</div>
+						<div
+						id="loginBtn"
+						class="col-xs-6 backgroundColor2" onclick="gotoRoute('Account/Login');" hidden="hidden">
+
+							<i class="fa fa-sign-in fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								login
+							</div></i>
+
+						</div>
+						<div
+						id="blrbBtn"
+						class="col-xs-6 backgroundColor4" hidden="hidden" ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+
+							<i class="fa fa-microphone fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								blrb
+							</div></i>
+
+						</div>
+					</ons-list-item>
+					<ons-list-item
+					id="homeImg"
+					class="backgroundColor5" >
+						<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
+					</ons-list-item>
+
+					<ons-list-item
+					id="homeImg"
+					class="backgroundColor5" >
+						<ul id='app-status-ul'>
+							<li>
+								DEBUG INFO
+							</li>
+						</ul>
+					</ons-list-item>
+
+					<ons-list-item
+					id="accountBtn"
+					class="backgroundColor3"
+					hidden="hidden"
+					ng-click="ons.slidingMenu.setMainPage('account.html', {closeMenu: true});"
+					>
+						<i class="fa fa-user fa-5x vertical-align-middle color1" >
+						<div style="font-size:x-large;">
 							hi {{response.ScreenName}} <span class="fa fa-angle-double-right color1"></span>
-						</div>
-					</div>
-				</div>
-			</div>
+						</div> </i>
+
+					</ons-list-item>
+				</ons-list>
+
+			</ons-page>
+
 		</ons-template>
 
-		<ons-template  id="account.html">
-			<div id="accountPage"  class="ios-shift" ng-controller="AccountCtrl" style="text-align: center;" >
-				<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-					<div id="backBtn" class="col-xs-6" style="background-color: #4A6FB6;" ng-click="ons.slidingMenu.toggleMenu()">
-						<div>
-							<span class="fa fa-bars color1">
-								<div style="font-size:x-large;">
-									menu
-								</div></span>
-						</div>
-					</div>
-					<div id="logoutBtn" class="col-xs-6" style="background-color: #F1EB55;"onclick="gotoRoute('Account/Logoff');">
-						<div>
-							<span class="fa fa-sign-out color1">
-								<div style="font-size:x-large;">
-									logout
-								</div></span>
-						</div>
+		<ons-template id="channel.html">
+			<ons-page id='ChannelPage' class="ios-shift" ng-controller="ChannelCtrl" style="background-color: white;">
+				<div id="channelLoad">
+					<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
+						<span class="fa fa-spinner fa-spin color1"></span>
 					</div>
 				</div>
 
-				<img src="images/blrbrfish_logo_nobubble.png" width="100%" style="padding: 30px;"/>
+				<ons-list id="channelMain" hidden='hidden' style="text-align: center;height:100%;">
+					<ons-list-item >
+						<div
+						id="backBtn"
+						class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
 
-				<img src="images/blrbr_logo_50.png"/>
-			</div>
+							<i class="fa fa-bars fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								menu
+							</div></i>
+
+						</div>
+
+						<div
+						id="searchBtn"
+						class="col-xs-6 backgroundColor4"  ng-click="searchChannel()">
+
+							<i class="fa fa-search fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								search
+							</div></i>
+
+						</div>
+					</ons-list-item>
+					<ons-list-item
+					id="searchInput"
+					class="backgroundColor5" >
+						<input id="channel_input" placeholder="search channels" style="width: 100%; height: 100%; text-align: center; font-size: xx-large;" />
+					</ons-list-item>
+
+					<ons-list-item
+					id="channels"
+					class="backgroundColor5" ng-repeat="channel in response" style="height:100px;" >
+						<div ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
+							<div class='col-xs-4'>
+								<img src="{{channel.ProfileImg}}"  style="width: 80px;"></img>
+							</div>
+							<div class='col-xs-8' style='padding-top: 5px'>
+								<div style="height:25px;">
+									{{channel.Name}}
+								</div>
+								<div style="height:25px;">
+									#{{channel.Hashtag}}
+								</div>
+							</div>
+						</div>
+					</ons-list-item>
+
+				</ons-list>
+
+			</ons-page>
+
 		</ons-template>
 
 		<ons-template id="stream.html">
+			<ons-page id='StreamPage' class="ios-shift" ng-controller="StreamCtrl" style="background-color: white;">
+					<div id="streamLoad">
+					<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
+						<span class="fa fa-spinner fa-spin color1"></span>
+					</div>
+				</div>
+			
+				<ons-list id="streamMain" hidden='hidden' style="text-align: center;height:100%;">
+					<ons-list-item >
+						<div
+						id="backBtn"
+						class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
+
+							<i class="fa fa-bars fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								menu
+							</div></i>
+
+						</div>
+
+						<div
+						id="loginBtn"
+						class="col-xs-6 backgroundColor2" onclick="gotoRoute('Account/Login');" hidden="hidden">
+
+							<i class="fa fa-sign-in fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								login
+							</div></i>
+
+						</div>
+						<div
+						id="blrbBtn"
+						class="col-xs-6 backgroundColor4" hidden="hidden" ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
+
+							<i class="fa fa-microphone fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								blrb
+							</div></i>
+
+						</div>
+											
+					</ons-list-item>
+					
+				</ons-list>
+<div id="channel" hidden="hidden" style="text-align: center;">
+						<img src="{{response.Channel.BannerImg}}" style="width:100%;"/>
+						<div>
+							{{response.Channel.Name}}
+						</div>
+						<div>
+							#{{response.Channel.Hashtag}}
+						</div>
+					</div>
+					<div id="profile" hidden="hidden" style="margin: 10px;">
+						<div class="row">
+							<div class="col-xs-3" style="padding:0;text-align: center">
+								<img src={{response.UserProfile.ProfileImageUrlBigger}} />
+							</div>
+							<div class="col-xs-9 border">
+								<h3>{{response.UserProfile.ScreenName}}</h3>
+								<h5>@{{response.UserProfile.Username}}</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-4 border">
+								<div id="numberOfBlrbs">
+									{{response.NumberOfBlrbs}}
+								</div>
+								<div>
+									blrbs
+								</div>
+							</div>
+							<div class="col-xs-4 border">
+								<div>
+									{{response.UserProfile.NumberOfBlrbrFriends}}
+								</div>
+								<div>
+									following
+								</div>
+							</div>
+							<div class="col-xs-4 border">
+								<div>
+									{{response.UserProfile.NumberOfBlrbrFollowers}}
+								</div>
+								<div>
+									followers
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<ul class="playlist" >
+						<li ng-repeat="blrb in response.BlrbStreamItems" style="background-color:#{{blrb.Color}};" class="blrbItem" id="{{blrb.Id}}">
+
+							<a href="{{blrb.Sound}}" class="clip">
+							<div class="row" style="background-color:white;margin:0px; ">
+								<div class="col-xs-2" style="padding:0;">
+									<img src="images/pause.png" alt="pause" class="pause" width="48" />
+									<img src="images/play.png" alt="play" class="play" width="48" />
+								</div>
+								<div class="col-xs-9">
+									<img src="{{blrb.Img}}" />
+									{{blrb.ScreenName}}
+								</div>
+							</div> </a>
+
+							<div style="background-color: white;">
+								<htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
+							</div>
+							<div class="row" style="margin:0; background-color: white;">
+								<div class="col-xs-2 col-xs-offset-10" ng-click="reply(this)">
+									<span class="fa fa-reply color1"></span>
+								</div>
+							</div>
+
+						</li>
+
+					</ul>
+					<div style=" background-color: #DB5FA5; height: 50px; padding-top:5px; font-size:xx-large; text-align:center;" ng-click="LoadBlrbs()">
+						<span class="glyphicon glyphicon-cloud-download"></span> more <span class=" glyphicon glyphicon-cloud-download"></span>
+					</div>
+				</div>
+			</div>
+			</ons-page>
+
+		</ons-template>
+
+		<ons-template id="account.html">
+			<ons-page id='AccountPage' class="ios-shift" ng-controller="AccountCtrl" style="background-color: white;">
+
+				<ons-list style="text-align: center;height:100%;">
+					<ons-list-item >
+						<div
+						id="backBtn"
+						class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
+
+							<i class="fa fa-bars fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								menu
+							</div></i>
+
+						</div>
+						<div
+						id="logoutBtn"
+						class="col-xs-6 backgroundColor2" onclick="gotoRoute('Account/Logoff');">
+
+							<i class="fa fa-sign-out fa-5x vertical-align-middle color1" >
+							<div style="font-size:x-large;">
+								logout
+							</div></i>
+
+						</div>
+
+					</ons-list-item>
+					<ons-list-item
+					id="homeImg"
+					class="backgroundColor5" >
+						account page coming soon
+					</ons-list-item>
+
+				</ons-list>
+
+			</ons-page>
+
+		</ons-template>
+		<ons-template id="strweam.html">
 
 			<div id="streamPage" class="ios-shift" ng-controller="StreamCtrl" >
 				<div id="streamLoad">
@@ -299,57 +524,6 @@
 				</div>
 			</div>
 		</ons-template>
-		<ons-template id="channel.html">
-
-			<div id="channelPage" class="ios-shift" ng-controller="ChannelCtrl" >
-				<div id="channelLoad">
-					<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
-						<span class="fa fa-spinner fa-spin color1"></span>
-					</div>
-				</div>
-				<div id="channelMain" hidden='hidden'>
-					<div class='row' style="margin:0px;font-size: 70px;text-align: center;">
-						<div id="backBtn" class="col-xs-6" style="background-color: #00A0B0;" ng-click="ons.slidingMenu.toggleMenu()">
-							<div>
-								<span class="fa fa-bars color1" >
-									<div style="font-size:x-large;">
-										menu
-									</div></span>
-							</div>
-						</div>
-
-						<div id="searchBtn" class="col-xs-6" style="background-color: #CC333F;" ng-click="searchChannel()" >
-							<div>
-								<span class="fa ion-search color1">
-									<div style="font-size:x-large;">
-										search
-									</div></span>
-							</div>
-						</div>
-
-					</div>
-
-					<div class='row' style="margin:0px;">
-						<input id="channel_input" placeholder="search channels" style="width: 100%; height: 50px; text-align: center;" />
-					</div>
-					<div class='row' ng-repeat="channel in response" style="margin:0px;">
-						<div ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
-							<div class='col-xs-4'>
-								<img src="{{channel.ProfileImg}}"  style="width: 80px;"></img>
-							</div>
-							<div class='col-xs-8' style='padding-top: 5px'>
-								<div>
-									{{channel.Name}}
-								</div>
-								<div>
-									#{{channel.Hashtag}}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</ons-template>
 
 		<ons-template id="create.html">
 
@@ -392,7 +566,13 @@
 					</div>
 				</div>
 				<div class='row' style="margin:0px;" height=25%>
-					<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>
+					<textarea id="text_textarea" class="input-xlarge" style="width:100%;height:100%;border:white;font-size: xx-large;"></textarea>																														
+
+
+
+
+
+
 
 					<div id="recording_textarea" hidden="hidden" style="height:100%; background-color: red;">
 						<i class="fa fa-microphone-slash col-xs-12 color1" style="font-size:150px;padding-top: 20px; "></i>

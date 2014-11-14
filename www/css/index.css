@@ -149,18 +149,49 @@ h1 {
   transform: translateY(-50%);
 }
 
+
+ons-list-item{
+	padding:0% !important;
+	height:25%;
+}
+ons-list-item div{
+	padding:0%;
+	height:100%;
+}
+
 .color0{
-	color:#00A0B0;
+	color:#00A0B0 !important;
 }
 .color1{
-	color:#423333;
+	color:#423333 !important;
 }
 .color2{
-	color:#CC333F;
+	color:#CC333F !important;
 }
 .color3{
-	color:#EB6841;
+	color:#EB6841 !important;
 }
 .color4{
-	color:#EDC951;
+	color:#EDC951 !important;
+}
+.color5{
+	color:#FFFFFF !important;
+}
+.backgroundColor0{
+	background-color:#00A0B0 !important;
+}
+.backgroundColor1{
+	background-color:#423333 !important;
+}
+.backgroundColor2{
+	background-color:#CC333F !important;
+}
+.backgroundColor3{
+	background-color:#EB6841 !important;
+}
+.backgroundColor4{
+	background-color:#EDC951 !important;
+}
+.backgroundColor5{
+	background-color:#FFFFFF !important;
 }
