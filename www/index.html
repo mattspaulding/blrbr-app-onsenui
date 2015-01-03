@@ -284,8 +284,8 @@
 						<span class="fa fa-spinner fa-spin color1"></span>
 					</div>
 				</div>
-
-				<ons-list id="streamMain" hidden='hidden' style="text-align: center;height:25%;">
+<div id="streamMain">
+				<ons-list hidden='hidden' style="text-align: center;height:25%;">
 					<ons-list-item style="height: 100%" >
 						<div
 						id="backBtn"
@@ -296,8 +296,6 @@
 								menu
 							</div></i>
 
-						</div>
-
 						<div
 						id="loginBtn"
 						class="col-xs-6 backgroundColor2" onclick="gotoRoute('Account/Login');" hidden="hidden">
@@ -307,7 +305,6 @@
 								login
 							</div></i>
 
-						</div>
 						<div
 						id="blrbBtn"
 						class="col-xs-6 backgroundColor4" hidden="hidden" ng-click="ons.slidingMenu.setMainPage('create.html', {closeMenu: true});">
@@ -316,8 +313,6 @@
 							<div style="font-size:x-large;">
 								blrb
 							</div></i>
-
-						</div>
 
 					</ons-list-item>
 
@@ -401,7 +396,7 @@
 					<span class="glyphicon glyphicon-cloud-download"></span> more <span class=" glyphicon glyphicon-cloud-download"></span>
 				</div>
 				</div>
-				</div>
+				
 			</ons-page>
 
 		</ons-template>
