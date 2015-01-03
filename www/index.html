@@ -135,9 +135,9 @@
 						</div>
 						<div
 						id="loadingBtn"
-						class="col-xs-6" style="background-color: lightgrey" >
+						class="col-xs-6" style="background-color: lightgrey;padding-top: 30px;" >
 
-							<i class="fa fa-spinner fa-spin fa-5x vertical-align-middle color1" > </i>
+							<i class="fa fa-spinner fa-spin fa-5x color1" > </i>
 
 						</div>
 						<div
@@ -222,6 +222,7 @@
 						<span class="fa fa-spinner fa-spin color1"></span>
 					</div>
 				</div>
+	
 
 				<ons-list id="channelMain" hidden='hidden' style="text-align: center;height:100%;">
 					<ons-list-item >
@@ -402,13 +403,15 @@
 		</ons-template>
 		<ons-template id="create.html">
 			<ons-page id='CreatePage' class="ios-shift" ng-controller="CreateCtrl" style="background-color: white;">
-				<div id="loading" class='row' hidden="hidden">
+				<div id="loading" hidden="hidden" >
 					<br>
-					<p>
+					
+						<div style="background-color: #FFFFFF;margin:0px;font-size: 70px;text-align: center;padding-top:150px;">
+						<p>
 						blrbn...
 					</p>
-					<div>
-						<span class="fa fa-paper-plane fa-5x vertical-align-middle color1"></span>
+					<br>
+						<span class="fa fa-paper-plane color1"></span>
 					</div>
 				</div>
 
