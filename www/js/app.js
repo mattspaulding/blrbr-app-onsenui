@@ -643,7 +643,7 @@
 		function onError(err) {
 			if ( typeof err.message != 'undefined')
 				err = err.message;
-			alert("Error : " + err.message);
+			//alert("Error : " + err.message);
 		}
 
 		function log(message) {
@@ -719,7 +719,7 @@
 		}
 
 		function fail(error) {
-			alert("blrb error: " + error.code);
+			//alert("blrb error: " + error.code);
 			ons.slidingMenu.setMainPage('stream.html', {
 				closeMenu : true
 			});
