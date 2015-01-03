@@ -285,10 +285,10 @@
 					</div>
 				</div>
 				<div id="streamMain" style="height: 100%;">
-						
+
 					<ons-list style="text-align: center;height:25%;">
 						<ons-list-item style="height: 100%" >
-														<div
+							<div
 							id="backBtn"
 							class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
 
@@ -539,7 +539,45 @@
 					<ons-list-item
 					id="homeImg"
 					class="backgroundColor5" >
-						account page coming soon
+						<div id="profile" style="margin: 10px;">
+							<div class="row">
+								<div class="col-xs-3" style="padding:0;text-align: center">
+									<img src={{response.UserProfile.ProfileImageUrlBigger}} />
+								</div>
+								<div class="col-xs-9 border">
+									<h3>{{response.UserProfile.ScreenName}}</h3>
+									<h5>@{{response.UserProfile.Username}}</h5>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 border">
+									<div id="numberOfBlrbs">
+										{{response.NumberOfBlrbs}}
+									</div>
+									<div>
+										blrbs
+									</div>
+								</div>
+								<div class="col-xs-4 border">
+									<div>
+										{{response.UserProfile.NumberOfBlrbrFriends}}
+									</div>
+									<div>
+										following
+									</div>
+								</div>
+								<div class="col-xs-4 border">
+									<div>
+										{{response.UserProfile.NumberOfBlrbrFollowers}}
+									</div>
+									<div>
+										followers
+									</div>
+								</div>
+							</div>
+
+						</div>
+
 					</ons-list-item>
 
 				</ons-list>
