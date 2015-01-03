@@ -511,69 +511,69 @@
 
 		<ons-template id="account.html">
 			<ons-page id='AccountPage' class="ios-shift" ng-controller="AccountCtrl" style="background-color: white;">
+				<div id="accountMain" style="height: 100%;">
 
-				<ons-list style="text-align: center;">
-					<ons-list-item >
-						<div
-						id="backBtn"
-						class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
+					<ons-list style="text-align: center;height:25%;">
+						<ons-list-item style="height: 100%" >
+							<div
+							id="backBtn"
+							class="col-xs-6 backgroundColor0" ng-click="ons.slidingMenu.toggleMenu()">
 
-							<i class="fa fa-bars fa-5x vertical-align-middle color1" >
-							<div style="font-size:x-large;">
-								menu
-							</div></i>
-
-						</div>
-						<div
-						id="logoutBtn"
-						class="col-xs-6 backgroundColor2" onclick="gotoRoute('Account/Logoff');">
-
-							<i class="fa fa-sign-out fa-5x vertical-align-middle color1" >
-							<div style="font-size:x-large;">
-								logout
-							</div></i>
-
-						</div>
-					</ons-list-item>
-				</ons-list>
-				<div id="profile" style="margin: 10px;">
-					<div class="row">
-						<div class="col-xs-3" style="padding:0;text-align: center">
-							<img src={{response.UserProfile.ProfileImageUrlBigger}} />
-						</div>
-						<div class="col-xs-9 border">
-							<h3>{{response.UserProfile.ScreenName}}</h3>
-							<h5>@{{response.UserProfile.Username}}</h5>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4 border">
-							<div id="numberOfBlrbs">
-								{{response.NumberOfBlrbs}}
+								<i class="fa fa-bars fa-5x vertical-align-middle color1" >
+								<div style="font-size:x-large;">
+									menu
+								</div></i>
 							</div>
-							<div>
-								blrbs
+							<div
+							id="logoutBtn"
+							class="col-xs-6 backgroundColor2" onclick="gotoRoute('Account/Logoff');">
+
+								<i class="fa fa-sign-out fa-5x vertical-align-middle color1" >
+								<div style="font-size:x-large;">
+									logout
+								</div></i>
+
+							</div>
+						</ons-list-item>
+					</ons-list>
+					<div id="profile" style="margin: 10px;">
+						<div class="row">
+							<div class="col-xs-3" style="padding:0;text-align: center">
+								<img src={{response.UserProfile.ProfileImageUrlBigger}} />
+							</div>
+							<div class="col-xs-9 border">
+								<h3>{{response.UserProfile.ScreenName}}</h3>
+								<h5>@{{response.UserProfile.Username}}</h5>
 							</div>
 						</div>
-						<div class="col-xs-4 border">
-							<div>
-								{{response.UserProfile.NumberOfBlrbrFriends}}
+						<div class="row">
+							<div class="col-xs-4 border">
+								<div id="numberOfBlrbs">
+									{{response.NumberOfBlrbs}}
+								</div>
+								<div>
+									blrbs
+								</div>
 							</div>
-							<div>
-								following
+							<div class="col-xs-4 border">
+								<div>
+									{{response.UserProfile.NumberOfBlrbrFriends}}
+								</div>
+								<div>
+									following
+								</div>
 							</div>
-						</div>
-						<div class="col-xs-4 border">
-							<div>
-								{{response.UserProfile.NumberOfBlrbrFollowers}}
-							</div>
-							<div>
-								followers
+							<div class="col-xs-4 border">
+								<div>
+									{{response.UserProfile.NumberOfBlrbrFollowers}}
+								</div>
+								<div>
+									followers
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</ons-page>
 
 		</ons-template>
