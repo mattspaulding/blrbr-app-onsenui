@@ -45,7 +45,6 @@
 	});
 
 	app.controller('HomeCtrl', function($scope, $http) {
-		// debugger;
 		if (gaPlugin != undefined)
 			gaPlugin.trackPage(null, null, "home");
 
