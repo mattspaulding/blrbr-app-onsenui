@@ -119,6 +119,7 @@
 	});
 
 	app.controller('StreamCtrl', function($scope, $http) {
+		$('#streamMain').hide();
 		if (gaPlugin != undefined)
 			gaPlugin.trackPage(null, null, "stream: " + localStorage.channel);
 		if (phoneCheck.ios != null) {
@@ -245,6 +246,7 @@
 	});
 
 	app.controller('ChannelCtrl', function($scope, $http) {
+		$('#channelMain').hide();
 		if (gaPlugin != undefined)
 			gaPlugin.trackPage(null, null, "channel");
 
@@ -253,7 +255,7 @@
 		}
 		$scope.response = {};
 		$scope.response.get = function(item, event) {
-
+		
 			var responsePromise = $http.get("http://blrbr.co/Channel/FeaturedChannels");
 
 			responsePromise.success(function(data, status, headers, config) {
