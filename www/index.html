@@ -168,21 +168,25 @@
 					</ons-list-item>
 					<ons-list-item
 					id="featuredChannel"
-					class="backgroundColor5"  >
-						<div ng-click="gotoChannel('swtampa');" style='padding: 10px;'>
-							<p>
-								featured channel
-							</p>
-							<div class='col-xs-4'>
-								<img src="http://blrbr.co/Images/swtampa-profile.jpg"  style="width: 80px;"></img>
+					class="backgroundColor5 "  >
+						<div ng-click="gotoChannel('swtampa');">
+							<div class="row ">
+							<div class='col-xs-4 '>
+								<img src="http://blrbr.co/Images/swtampa-profile.jpg" class="vertical-align-middle"  style="width: 80px;"></img>
 							</div>
 							<div class='col-xs-8' style='padding-top: 5px'>
+								<div class="vertical-align-middle" style="height: 100px;">
+								<p style="color:lightgrey;">
+									featured channel
+								</p>
 								<p >
 									Startup Weekend Tampa
 								</p>
 								<p >
 									#swtampa
 								</p>
+								</div>
+							</div>
 							</div>
 						</div>
 					</ons-list-item>
@@ -199,8 +203,8 @@
 
 					<ons-list-item
 					id="accountBtn"
-					class="backgroundColor3"
-					hidden="hidden"
+					class="col-xs-12 backgroundColor3"
+					hidden='hidden'
 					ng-click="ons.slidingMenu.setMainPage('account.html', {closeMenu: true});"
 					>
 						<i class="fa fa-user fa-5x vertical-align-middle color1" >
