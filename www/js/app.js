@@ -452,7 +452,7 @@
         function showLoadingScreen() {
             $('#loading').show();
             $('#createMain').hide();
-              
+
         };
 
         //$(document).ready(function() {
@@ -484,7 +484,7 @@
         $('#holdToRecordBtn').bind('touchstart', function (e) {
             $('#holdToRecordText').html('wait');
             $('#holdToRecordBtn').css("background-color", "#EDC951");
-            timeoutId = setTimeout(record, 750);
+            timeoutId = setTimeout(record, 500);
         });
 
         $('#holdToRecordBtn').bind('touchend', function (e) {
