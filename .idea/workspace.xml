@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e1ae9498-ea30-4beb-908d-4ebe206e71ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/index.css" afterPath="$PROJECT_DIR$/www/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="blrbr-app-onsenui.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,8 +50,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3413793">
-              <caret line="571" column="9" selection-start-line="571" selection-start-column="9" selection-end-line="571" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.59172416">
+              <caret line="495" column="0" selection-start-line="495" selection-start-column="0" selection-end-line="495" selection-end-column="0" />
               <folding>
                 <element signature="e#13533#16057#0" expanded="false" />
               </folding>
@@ -75,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/www/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
+              <caret line="191" column="25" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -352,15 +350,15 @@
     <entry file="file://$PROJECT_DIR$/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="191" column="29" selection-start-line="191" selection-start-column="29" selection-end-line="191" selection-end-column="29" />
+          <caret line="191" column="25" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3413793">
-          <caret line="571" column="9" selection-start-line="571" selection-start-column="9" selection-end-line="571" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.59172416">
+          <caret line="495" column="0" selection-start-line="495" selection-start-column="0" selection-end-line="495" selection-end-column="0" />
           <folding>
             <element signature="e#13533#16057#0" expanded="false" />
           </folding>

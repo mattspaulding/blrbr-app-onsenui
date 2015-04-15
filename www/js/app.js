@@ -477,23 +477,40 @@
 
         }
 
-        //validation to check if device is ready is skipped
-
         var timeoutId = 0;
-
-        $('#holdToRecordBtn').mousedown(function () {
+        $('#holdToRecordBtn').bind('touchstart mousedown', function (e) {
             $('#holdToRecordText').html('wait');
             $('#holdToRecordBtn').css("background-color", "yellow");
-
             timeoutId = setTimeout(record, 1000);
-        }).bind('mouseup', function () {
-            $('#holdToRecordText').html('hold to record');
-            $('#holdToRecordBtn').css("background-color", "red");
-            clearTimeout(timeoutId);
-            if(status=='recording') {
-                stop();
-            }
         });
+
+        $('#holdToRecordBtn').bind('touchend mouseup', function (e) {
+                $('#holdToRecordText').html('hold to record');
+                $('#holdToRecordBtn').css("background-color", "#CC333F");
+            clearTimeout(timeoutId);
+                if (status == 'recording') {
+                    stop();
+                }
+        });
+
+
+
+
+        //var timeoutId = 0;
+        //
+        //$('#holdToRecordBtn').mousedown(function () {
+        //    $('#holdToRecordText').html('wait');
+        //    $('#holdToRecordBtn').css("background-color", "yellow");
+        //
+        //    timeoutId = setTimeout(record, 1000);
+        //}).bind('mouseup', function () {
+        //    $('#holdToRecordText').html('hold to record');
+        //    $('#holdToRecordBtn').css("background-color", "#CC333F");
+        //    clearTimeout(timeoutId);
+        //    if (status == 'recording') {
+        //        stop();
+        //    }
+        //});
 
         $("#recordBtn").click(function () {
             $('#beforeRecord').show();
@@ -528,7 +545,7 @@
             status = "countdown";
             $('#holdToRecordText').html('recording');
             $('#holdToRecordBtn').css("background-color", "#6FBF46");
-           // alert('recording');
+            // alert('recording');
             //$("#recordBtn").hide();
             //$("#stopBtn").show();
             //$("#playBtn").hide();
@@ -733,15 +750,17 @@
             //ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
             //ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
             ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
-            $("createMain").hide();
-            $("#backBtn").hide();
-            $("#recordBtn").hide();
-            $("#stopBtn").hide();
-            $("#playBtn").hide();
-            $("#blrbBtn").hide();
-            $("#text_textarea").hide();
-            $("#twitterYes").hide();
-            $("#twitterNo").hide();
+            //$("createMain").hide();
+            //$("#backBtn").hide();
+            //$("#recordBtn").hide();
+            //$("#stopBtn").hide();
+            //$("#playBtn").hide();
+            //$("#blrbBtn").hide();
+            //$("#text_textarea").hide();
+            //$("#twitterYes").hide();
+            //$("#twitterNo").hide();
+            $('#afterRecord').hide();
+
             $("#loading").show();
 
             localStorage.blrbId = "";
