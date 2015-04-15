@@ -478,13 +478,13 @@
         }
 
         var timeoutId = 0;
-        $('#holdToRecordBtn').bind('touchstart mousedown', function (e) {
+        $('#holdToRecordBtn').bind('touchstart', function (e) {
             $('#holdToRecordText').html('wait');
             $('#holdToRecordBtn').css("background-color", "yellow");
             timeoutId = setTimeout(record, 1000);
         });
 
-        $('#holdToRecordBtn').bind('touchend mouseup', function (e) {
+        $('#holdToRecordBtn').bind('touchend', function (e) {
                 $('#holdToRecordText').html('hold to record');
                 $('#holdToRecordBtn').css("background-color", "#CC333F");
             clearTimeout(timeoutId);
