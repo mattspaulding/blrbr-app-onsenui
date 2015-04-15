@@ -451,8 +451,8 @@
         };
         function showLoadingScreen() {
             $('#loading').show();
-            $('#beforeRecord').hide();
-            $('#afterRecord').hide();
+            $('#createMain').hide();
+              
         };
 
         //$(document).ready(function() {
@@ -484,7 +484,7 @@
         $('#holdToRecordBtn').bind('touchstart', function (e) {
             $('#holdToRecordText').html('wait');
             $('#holdToRecordBtn').css("background-color", "#EDC951");
-            timeoutId = setTimeout(record, 1000);
+            timeoutId = setTimeout(record, 750);
         });
 
         $('#holdToRecordBtn').bind('touchend', function (e) {
