@@ -439,19 +439,20 @@
             return (arrData );
         }
 
-        function resetView() {
-            $("#recordBtn").show();
-            $("#backBtn").show();
-            $("#stopBtn").hide();
-            $("#twitterYes").show();
-            $("#playBtn").hide();
-            $("#playBtnOff").show();
-            $("#blrbBtn").hide();
-            $("#blrbBtnOff").show();
-            $("#twitterNo").hide();
-            $("#text_textarea").show();
-            $("#text_textarea").val('');
-            $("#loading").hide();
+        function showAfterRecordScreen() {
+            $('#loading').hide();
+            $('#beforeRecord').hide();
+            $('#afterRecord').show();
+        };
+        function showBeforeRecordScreen() {
+            $('#loading').hide();
+            $('#beforeRecord').show();
+            $('#afterRecord').hide();
+        };
+        function showLoadingScreen() {
+            $('#loading').show();
+            $('#beforeRecord').hide();
+            $('#afterRecord').hide();
         };
 
         //$(document).ready(function() {
@@ -477,10 +478,12 @@
 
         }
 
+
+
         var timeoutId = 0;
         $('#holdToRecordBtn').bind('touchstart', function (e) {
             $('#holdToRecordText').html('wait');
-            $('#holdToRecordBtn').css("background-color", "yellow");
+            $('#holdToRecordBtn').css("background-color", "#EDC951");
             timeoutId = setTimeout(record, 1000);
         });
 
@@ -513,8 +516,7 @@
         //});
 
         $("#recordBtn").click(function () {
-            $('#beforeRecord').show();
-            $('#afterRecord').hide();
+            showBeforeRecordScreen();
         });
 
         $("#backBtn").click(function () {
@@ -666,15 +668,13 @@
                 log("Nothing stopped");
             }
 
-            $('#beforeRecord').hide();
-            $('#afterRecord').show();
-
+         showAfterRecordScreen();
             //$("#recordBtn").show();
             //$("#stopBtn").hide();
             //$("#playBtn").show();
             //$("#playBtnOff").hide();
-            //$("#blrbBtn").show();
-            //$("#blrbBtnOff").hide();
+            $("#blrbBtn").show();
+            $("#blrbBtnOff").hide();
             //$("#text_textarea").show();
             //$("#recording_textarea").hide();
             status = 'stopped';
@@ -759,9 +759,7 @@
             //$("#text_textarea").hide();
             //$("#twitterYes").hide();
             //$("#twitterNo").hide();
-            $('#afterRecord').hide();
-
-            $("#loading").show();
+            showLoadingScreen();
 
             localStorage.blrbId = "";
             localStorage.username = "";
