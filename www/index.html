@@ -176,43 +176,66 @@
                     class="backgroundColor5">
                 <img src="images/blrbrfish_logo_nobubble.png" style=" max-height: 100%;  padding: 10px;"/>
             </ons-list-item>
+            <!--<ons-list-item-->
+                    <!--id="featuredChannel"-->
+                    <!--class="backgroundColor5 ">-->
+                <!--<div ng-click="gotoChannel('swtampa');">-->
+                    <!--<div class="row ">-->
+                        <!--<div class='col-xs-4 '>-->
+                            <!--<img src="http://blrbr.co/Images/swtampa-profile.jpg" class="vertical-align-middle"-->
+                                 <!--style="width: 80px;"></img>-->
+                        <!--</div>-->
+                        <!--<div class='col-xs-8' style='padding-top: 5px'>-->
+                            <!--<div class="vertical-align-middle" style="height: 100px;">-->
+                                <!--<p style="color:lightgrey;">-->
+                                    <!--featured channel-->
+                                <!--</p>-->
+
+                                <!--<p>-->
+                                    <!--Startup Weekend Tampa-->
+                                <!--</p>-->
+
+                                <!--<p>-->
+                                    <!--#swtampa-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</ons-list-item>-->
+
             <ons-list-item
                     id="featuredChannel"
-                    class="backgroundColor5 ">
-                <div ng-click="gotoChannel('swtampa');">
-                    <div class="row ">
-                        <div class='col-xs-4 '>
-                            <img src="http://blrbr.co/Images/swtampa-profile.jpg" class="vertical-align-middle"
-                                 style="width: 80px;"></img>
-                        </div>
-                        <div class='col-xs-8' style='padding-top: 5px'>
-                            <div class="vertical-align-middle" style="height: 100px;">
-                                <p style="color:lightgrey;">
-                                    featured channel
-                                </p>
+                    class="backgroundColor5" ng-repeat="channel in featuredChannelResponse" style="height:120px;">
+                <div ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
+                    <div class='col-xs-4'>
+                        <img src="{{channel.ProfileImg}}" style="width: 80px;"></img>
+                    </div>
+                    <div class='col-xs-8' style='padding-top: 5px'>
+                        <p style="color:lightgrey;">
+                            featured channel
+                        </p>
+                        <p>
+                            {{channel.Name}}
+                        </p>
 
-                                <p>
-                                    Startup Weekend Tampa
-                                </p>
-
-                                <p>
-                                    #swtampa
-                                </p>
-                            </div>
-                        </div>
+                        <p>
+                            #{{channel.Hashtag}}
+                        </p>
                     </div>
                 </div>
             </ons-list-item>
 
-            <!-- <ons-list-item
-            id="homeImg"
-            class="backgroundColor5" >
-            <ul id='app-status-ul'>
-            <li>
-            DEBUG INFO
-            </li>
-            </ul>
-            </ons-list-item> -->
+            <ons-list-item id="homeChannelBtn"
+                    class="backgroundColor2"
+                    ng-click="gotoPage('channel')">
+
+                <i class="fa fa-list-ul fa-5x fa-fw vertical-align-middle color1">
+                    <div style="font-size:x-large;">
+                        more channels
+                    </div>
+                </i>
+            </ons-list-item>
 
             <ons-list-item
                     id="accountBtn"

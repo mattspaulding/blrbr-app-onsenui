@@ -64,6 +64,7 @@
                 } else if (data == "\"Not logged in to blrbr\"") {
                     localStorage.isLoggedIn = false;
                     $('#accountBtn').hide();
+                    $('#homeChannelBtn').show();
                     $('#loginBtn').show();
                     $('#blrbBtn').hide();
                     $('#loadingBtn').hide();
@@ -72,6 +73,7 @@
                     $('#loginBtn').hide();
                     $('#blrbBtn').show();
                     $('#loadingBtn').hide();
+                    $('#homeChannelBtn').hide();
                     $('#accountBtn').fadeIn("slow");
                     $("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
                     localStorage.FriendsUsernameBlob = data.FriendsUsernameBlob;
@@ -89,12 +91,33 @@
             responsePromise.error(function (data, status, headers, config) {
                 localStorage.isLoggedIn = false;
                 $('#accountBtn').hide();
+                $('#homeChannelBtn').show();
                 $('#loginBtn').show();
                 $('#blrbBtn').hide();
                 $('#loadingBtn').hide();
             });
 
         };
+
+        $scope.featuredChannelResponse = {};
+        $scope.featuredChannelResponse.get = function (item, event) {
+
+            var responsePromise = $http.get("http://blrbr.co/Channel/FeaturedChannels");
+
+            responsePromise.success(function (data, status, headers, config) {
+                data=data.slice(0,1);
+                $scope.featuredChannelResponse = data;
+
+            });
+            responsePromise.error(function (data, status, headers, config) {
+                alert("Channel failed! " + status);
+                debugger;
+               // gotoRoute("Account/Login");
+            });
+
+        };
+
+        $scope.featuredChannelResponse.get();
 
         $scope.gotoChannel = function (channel) {
             localStorage.channel = channel;

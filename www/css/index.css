@@ -87,6 +87,10 @@ h1 {
     text-align:center;
 }
 
+i{
+    width:100% !important;
+}
+
 /*
 .event {
 	border-radius: 4px;
