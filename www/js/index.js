@@ -66,11 +66,8 @@ var app = {
 		gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
 
 debugger;
-		
-		private AudioManager m_amAudioManager;
-		m_amAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-		m_amAudioManager.setMode(AudioManager.MODE_IN_CALL);
-		m_amAudioManager.setSpeakerphoneOn(false);
+
+
 	},
 	// Update DOM on a Received Event
 	receivedEvent : function(id) {
