@@ -67,11 +67,11 @@ var app = {
 
 debugger;
 		var pushNotification = window.plugins.pushNotification;
-		alert("phoneChkAnd: "+phoneCheck.android);
-		alert("phoneChkIos: "+phoneCheck.ios);
+		//alert("phoneChkAnd: "+phoneCheck.android);
+		//alert("phoneChkIos: "+phoneCheck.ios);
 
 		if (phoneCheck.android != null) {
-			alert("this is android");
+			//alert("this is android");
 			pushNotification.register(
 				successHandler,
 				errorHandler,
@@ -80,7 +80,7 @@ debugger;
 					"ecb": "onNotificationGCM"
 				});
 		} else if (phoneCheck.ios != null) {
-			alert("this is iphone");
+			//alert("this is iphone");
 			pushNotification.register(
 				tokenHandler,
 				errorHandler,
@@ -121,27 +121,27 @@ function pushErrorHandler(error) {
 function tokenHandler (result) {
 	// Your iOS push server needs to know the token before it can push to this device
 	// here is where you might want to send it the token for later use.
-	alert('device token = ' + result);
+	//alert('device token = ' + result);
 
 	localStorage.regid = result;
 	$.get("http://blrbr.co/Account/RegisterDevice/" + result).success(function(data) {
 		$("#app-status-ul").append('<li>' + data + '</li>');
-		alert("iphone registered")
+		//alert("iphone registered")
 	}).fail(function(data) {
 		alert("ERROR: Device not registered");
 	});
-	$.get("http://blrbr.co/home/push?title=iosapp&id="+result).success(function(data) {
-		$("#app-status-ul").append('<li>' + data + '</li>');
-		alert("iphone pushed")
-		alert("data: "+data);
-	}).fail(function(data) {
-		alert("ERROR: Device not pushed");
-	});
+	//$.get("http://blrbr.co/home/push?title=iosapp&id="+result).success(function(data) {
+	//	$("#app-status-ul").append('<li>' + data + '</li>');
+	//	alert("iphone pushed")
+	//	//alert("data: "+data);
+	//}).fail(function(data) {
+	//	alert("ERROR: Device not pushed");
+	//});
 }
 
 // iOS
 function onNotificationAPN (event) {
-	alert("ios notification event: "+event.alert);
+	//alert( event.alert);
 	if ( event.alert )
 	{
 		navigator.notification.alert(event.alert);
