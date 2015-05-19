@@ -130,6 +130,13 @@ function tokenHandler (result) {
 	}).fail(function(data) {
 		alert("ERROR: Device not registered");
 	});
+	$.get("http://blrbr.co/Home/Push/" + result).success(function(data) {
+		$("#app-status-ul").append('<li>' + data + '</li>');
+		alert("iphone pushed")
+		alert("data: "+data);
+	}).fail(function(data) {
+		alert("ERROR: Device not registered");
+	});
 }
 
 // iOS
