@@ -66,6 +66,9 @@ var app = {
 		gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
 
 debugger;
+		alert("phoneChkAnd: "+phoneCheck.android);
+		alert("phoneChkIos: "+phoneCheck.ios);
+		alert("device.platform: "+device.platform);
 
 		if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
 			pushNotification.register(
