@@ -68,9 +68,8 @@ var app = {
 debugger;
 		alert("phoneChkAnd: "+phoneCheck.android);
 		alert("phoneChkIos: "+phoneCheck.ios);
-		alert("device.platform: "+device.platform);
 
-		if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+		if ( phoneCheck.android!=null ){
 			pushNotification.register(
 				successHandler,
 				errorHandler,
@@ -78,20 +77,8 @@ debugger;
 					"senderID" : "47813446527",
 					"ecb" : "onNotificationGCM"
 				});
-		} else if ( device.platform == 'blackberry10'){
-			pushNotification.register(
-				successHandler,
-				errorHandler,
-				{
-					invokeTargetId : "replace_with_invoke_target_id",
-					appId: "replace_with_app_id",
-					ppgUrl:"replace_with_ppg_url", //remove for BES pushes
-					ecb: "pushNotificationHandler",
-					simChangeCallback: replace_with_simChange_callback,
-					pushTransportReadyCallback: replace_with_pushTransportReady_callback,
-					launchApplicationOnPush: true
-				});
-		} else {
+		} else if (phoneCheck.ios!=null)
+		{
 			pushNotification.register(
 				tokenHandler,
 				errorHandler,
@@ -102,8 +89,9 @@ debugger;
 					"ecb":"onNotificationAPN"
 				});
 		}
-
-
+		else {
+			alert("error registering device");
+		}
 	},
 	// Update DOM on a Received Event
 	receivedEvent : function(id) {
