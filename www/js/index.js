@@ -66,10 +66,11 @@ var app = {
 		gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
 
 debugger;
+		var pushNotification = window.plugins.pushNotification;
 		alert("phoneChkAnd: "+phoneCheck.android);
 		alert("phoneChkIos: "+phoneCheck.ios);
 
-		if ( phoneCheck.android!=null ){
+		if ( phoneCheck.android!='null' ){
 			pushNotification.register(
 				successHandler,
 				errorHandler,
@@ -77,7 +78,7 @@ debugger;
 					"senderID" : "47813446527",
 					"ecb" : "onNotificationGCM"
 				});
-		} else if (phoneCheck.ios!=null)
+		} else if (phoneCheck.ios!='null')
 		{
 			alert("this is iphone");
 			pushNotification.register(
