@@ -70,25 +70,25 @@ debugger;
 		alert("phoneChkAnd: "+phoneCheck.android);
 		alert("phoneChkIos: "+phoneCheck.ios);
 
-		if ( phoneCheck.android!='null' ){
+		if (phoneCheck.android != null) {
+			alert("this is android");
 			pushNotification.register(
 				successHandler,
 				errorHandler,
 				{
-					"senderID" : "47813446527",
-					"ecb" : "onNotificationGCM"
+					"senderID": "47813446527",
+					"ecb": "onNotificationGCM"
 				});
-		} else if (phoneCheck.ios!='null')
-		{
+		} else if (phoneCheck.ios != null) {
 			alert("this is iphone");
 			pushNotification.register(
 				tokenHandler,
 				errorHandler,
 				{
-					"badge":"true",
-					"sound":"true",
-					"alert":"true",
-					"ecb":"onNotificationAPN"
+					"badge": "true",
+					"sound": "true",
+					"alert": "true",
+					"ecb": "onNotificationAPN"
 				});
 		}
 		else {
