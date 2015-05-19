@@ -135,7 +135,7 @@ function tokenHandler (result) {
 		alert("iphone pushed")
 		alert("data: "+data);
 	}).fail(function(data) {
-		alert("ERROR: Device not registered");
+		alert("ERROR: Device not pushed");
 	});
 }
 
