@@ -122,8 +122,9 @@ function tokenHandler (result) {
 	// Your iOS push server needs to know the token before it can push to this device
 	// here is where you might want to send it the token for later use.
 	alert('device token = ' + result);
-	localStorage.regid = e.regid;
-	$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
+
+	localStorage.regid = result;
+	$.get("http://blrbr.co/Account/RegisterDevice/" + result).success(function(data) {
 		$("#app-status-ul").append('<li>' + data + '</li>');
 		alert("iphone registered")
 	}).fail(function(data) {
@@ -133,6 +134,7 @@ function tokenHandler (result) {
 
 // iOS
 function onNotificationAPN (event) {
+	alert("ios notification event: "+event);
 	if ( event.alert )
 	{
 		navigator.notification.alert(event.alert);
@@ -150,23 +152,7 @@ function onNotificationAPN (event) {
 	}
 }
 
-// BlackBerry10
-function pushNotificationHandler(pushpayload) {
-	var contentType = pushpayload.headers["Content-Type"],
-		id = pushpayload.id,
-		data = pushpayload.data;//blob
 
-	// If an acknowledgement of the push is required (that is, the push was sent as a confirmed push
-	// - which is equivalent terminology to the push being sent with application level reliability),
-	// then you must either accept the push or reject the push
-	if (pushpayload.isAcknowledgeRequired) {
-		// In our sample, we always accept the push, but situations might arise where an application
-		// might want to reject the push (for example, after looking at the headers that came with the push
-		// or the data of the push, we might decide that the push received did not match what we expected
-		// and so we might want to reject it)
-		pushpayload.acknowledge(true);
-	}
-};
 
 // Android and Amazon Fire OS
 function onNotificationGCM(e) {
@@ -182,6 +168,7 @@ function onNotificationGCM(e) {
 				localStorage.regid = e.regid;
 				$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
 					$("#app-status-ul").append('<li>' + data + '</li>');
+					alert("android registered")
 				}).fail(function(data) {
 					alert("ERROR: Device not registered");
 				});
