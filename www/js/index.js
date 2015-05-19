@@ -79,6 +79,7 @@ debugger;
 				});
 		} else if (phoneCheck.ios!=null)
 		{
+			alert("this is iphone");
 			pushNotification.register(
 				tokenHandler,
 				errorHandler,
@@ -123,6 +124,7 @@ function tokenHandler (result) {
 	localStorage.regid = e.regid;
 	$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
 		$("#app-status-ul").append('<li>' + data + '</li>');
+		alert("iphone registered")
 	}).fail(function(data) {
 		alert("ERROR: Device not registered");
 	});
