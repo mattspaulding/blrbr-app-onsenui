@@ -54,18 +54,51 @@ var app = {
 		debugger;
 		//alert("onReady");
 
-		$("#app-status-ul").append('<li>registering</li>');
-		//$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
-		var pushNotification = window.plugins.pushNotification;
-		pushNotification.register(pushSuccessHandler, pushErrorHandler, {
-			"senderID" : "47813446527",
-			"ecb" : "onNotificationGCM"
-		});
+		//$("#app-status-ul").append('<li>registering</li>');
+		////$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+		//var pushNotification = window.plugins.pushNotification;
+		//pushNotification.register(pushSuccessHandler, pushErrorHandler, {
+		//	"senderID" : "47813446527",
+		//	"ecb" : "onNotificationGCM"
+		//});
 
 		gaPlugin = window.plugins.gaPlugin;
 		gaPlugin.init(successHandler, errorHandler, "UA-47554552-3", 10);
 
 debugger;
+
+		if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+			pushNotification.register(
+				successHandler,
+				errorHandler,
+				{
+					"senderID" : "47813446527",
+					"ecb" : "onNotificationGCM"
+				});
+		} else if ( device.platform == 'blackberry10'){
+			pushNotification.register(
+				successHandler,
+				errorHandler,
+				{
+					invokeTargetId : "replace_with_invoke_target_id",
+					appId: "replace_with_app_id",
+					ppgUrl:"replace_with_ppg_url", //remove for BES pushes
+					ecb: "pushNotificationHandler",
+					simChangeCallback: replace_with_simChange_callback,
+					pushTransportReadyCallback: replace_with_pushTransportReady_callback,
+					launchApplicationOnPush: true
+				});
+		} else {
+			pushNotification.register(
+				tokenHandler,
+				errorHandler,
+				{
+					"badge":"true",
+					"sound":"true",
+					"alert":"true",
+					"ecb":"onNotificationAPN"
+				});
+		}
 
 
 	},
@@ -91,6 +124,57 @@ function pushErrorHandler(error) {
 	alert(error);
 }
 
+// for iOS tokens
+function tokenHandler (result) {
+	// Your iOS push server needs to know the token before it can push to this device
+	// here is where you might want to send it the token for later use.
+	alert('device token = ' + result);
+	localStorage.regid = e.regid;
+	$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
+		$("#app-status-ul").append('<li>' + data + '</li>');
+	}).fail(function(data) {
+		alert("ERROR: Device not registered");
+	});
+}
+
+// iOS
+function onNotificationAPN (event) {
+	if ( event.alert )
+	{
+		navigator.notification.alert(event.alert);
+	}
+
+	if ( event.sound )
+	{
+		var snd = new Media(event.sound);
+		snd.play();
+	}
+
+	if ( event.badge )
+	{
+		pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+	}
+}
+
+// BlackBerry10
+function pushNotificationHandler(pushpayload) {
+	var contentType = pushpayload.headers["Content-Type"],
+		id = pushpayload.id,
+		data = pushpayload.data;//blob
+
+	// If an acknowledgement of the push is required (that is, the push was sent as a confirmed push
+	// - which is equivalent terminology to the push being sent with application level reliability),
+	// then you must either accept the push or reject the push
+	if (pushpayload.isAcknowledgeRequired) {
+		// In our sample, we always accept the push, but situations might arise where an application
+		// might want to reject the push (for example, after looking at the headers that came with the push
+		// or the data of the push, we might decide that the push received did not match what we expected
+		// and so we might want to reject it)
+		pushpayload.acknowledge(true);
+	}
+};
+
+// Android and Amazon Fire OS
 function onNotificationGCM(e) {
 	//$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
