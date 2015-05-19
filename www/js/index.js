@@ -141,7 +141,7 @@ function tokenHandler (result) {
 
 // iOS
 function onNotificationAPN (event) {
-	alert("ios notification event: "+event);
+	alert("ios notification event: "+event.alert);
 	if ( event.alert )
 	{
 		navigator.notification.alert(event.alert);
