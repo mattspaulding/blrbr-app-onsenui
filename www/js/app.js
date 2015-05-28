@@ -525,24 +525,6 @@
         });
 
 
-
-
-        //var timeoutId = 0;
-        //
-        //$('#holdToRecordBtn').mousedown(function () {
-        //    $('#holdToRecordText').html('wait');
-        //    $('#holdToRecordBtn').css("background-color", "yellow");
-        //
-        //    timeoutId = setTimeout(record, 1000);
-        //}).bind('mouseup', function () {
-        //    $('#holdToRecordText').html('hold to record');
-        //    $('#holdToRecordBtn').css("background-color", "#CC333F");
-        //    clearTimeout(timeoutId);
-        //    if (status == 'recording') {
-        //        stop();
-        //    }
-        //});
-
         $("#recordBtn").click(function () {
             showBeforeRecordScreen();
         });
