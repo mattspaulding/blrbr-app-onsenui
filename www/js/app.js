@@ -376,7 +376,6 @@
                 $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
-            alert("isTweet: "+isTweet);
 
         }
         //function onBodyLoad() { debugger;
@@ -576,43 +575,7 @@
             status = "countdown";
             $('#holdToRecordText').html('recording');
             $('#holdToRecordBtn').css("background-color", "#6FBF46");
-            // alert('recording');
-            //$("#recordBtn").hide();
-            //$("#stopBtn").show();
-            //$("#playBtn").hide();
-            //$("#playBtnOff").show();
-            //$("#blrbBtn").hide();
-            //$("#blrbBtnOff").show();
-            //$("#text_textarea").hide();
-            //$("#keyboard_textarea").hide();
-            //$("#recording_textarea").show();
-            //$(".fa-microphone-slash").show();
-            //$(".fa-microphone").hide();
-            //$("#recording_textarea").css("background-color", "red");
 
-            //// Stop recording after 6 sec
-            //var recTime = 3;
-            //setAudioPosition(recTime);
-            //var recInterval = setInterval(function() {
-            //	if (status == 'countdown') {
-            //		recTime = recTime - 1;
-            //		setAudioPosition(recTime);
-            //	}
-            //	if (recTime == 2) {
-            //		$("#recording_textarea").css("background-color", "orange");
-            //	}
-            //	if (recTime == 1) {
-            //		$("#recording_textarea").css("background-color", "yellow");
-            //	}
-            //	if (recTime <= 0) {
-            //		clearInterval(recInterval);
-            //		recordAudio();
-            //	}
-            //	if (status != 'countdown') {
-            //		clearInterval(recInterval);
-            //
-            //	}
-            //}, 1000);
             recordAudio();
         }
 
@@ -621,9 +584,6 @@
                 debugger;
                 status = "recording";
                 mediaVar.startRecord();
-                //$("#recording_textarea").css("background-color", "#6FBF46");
-                //$(".fa-microphone-slash").hide();
-                //$(".fa-microphone").show();
 
                 // Stop recording after 6 sec
                 var recTime = 0;
@@ -662,9 +622,6 @@
                         exclusive: false
                     }, function (fileEntry) {
                         mediaVar = new Media(fileEntry.fullPath, function () {
-                            //alert("File " + recordFileName + " created at " + fileEntry.fullPath);
-                            //alert("Media created successfully");
-                            //uploadVoice();
                         }, null, mediaStatusCallback);
                         //of new Media
                         onMediaCreated();
@@ -675,17 +632,14 @@
             } else//it's Android
             {
                 mediaVar = new Media(recordFileName, function () {
-                    //alert("Media created successfully: " + recordFileName);
                 }, onError, mediaStatusCallback);
                 onMediaCreated();
             }
         }
 
         function stop() {
-            //alert("mediavar: "+mediaVar);
             if (mediaVar == null)
                 return;
-            //alert("status: "+status);
             if (status == 'recording') {
                 mediaVar.stopRecord();
 
@@ -698,28 +652,17 @@
             }
 
          showAfterRecordScreen();
-            //$("#recordBtn").show();
-            //$("#stopBtn").hide();
-            //$("#playBtn").show();
-            //$("#playBtnOff").hide();
-            $("#blrbBtn").show();
+             $("#blrbBtn").show();
             $("#blrbBtnOff").hide();
-            //$("#text_textarea").show();
-            //$("#recording_textarea").hide();
-            status = 'stopped';
+             status = 'stopped';
         }
 
         function play() {
-            //playAudio("recording.amr");
-            //alert("getting media");
-            var media = new Media(recordFileName, function () {
-                //alert( "Media Success" );
+             var media = new Media(recordFileName, function () {
             }, function () {
                 //alert("Media Failure, reason: " + err);
             });
-            //alert("playing");
-            media.play();
-            //alert("done");
+             media.play();
         }
 
         function onSuccess() {
@@ -750,15 +693,7 @@
             options.mimeType = "audio/amr";
 
             if (phoneCheck.ios != null) {
-                //alert("ios");
-                //	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
-                //		var directoryReader = fs.root.createReader();
-                //		directoryReader.readEntries(function(entries) {
-                //			audioURI = "cdvfile://localhost/persistent/recording.wav";
-                //				audioURI = entries[1].toURI();
-                //	alert(audioURI);
-                //		});
-                //	});
+
 
                 audioURI = "cdvfile://localhost/temporary/recording.wav";
                 options.fileName = "recording.wav";
@@ -772,7 +707,6 @@
             //params.username = window.username;
             params.username = "";
             params.isTweet = isTweet;
-            alert("isTweet: "+isTweet);
             params.inReplyToBlrbId = localStorage.blrbId;
             //alert("params: "+params.username + params.channel + params.isTweet + params.text);
             options.params = params;
@@ -780,26 +714,17 @@
             //ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
             //ft.upload(audioURI, "http://localhost:49379/Blrb/UploadAudio", win, fail, options);
             ft.upload(audioURI, "http://blrbr.co/Blrb/UploadAudio", win, fail, options);
-            //$("createMain").hide();
-            //$("#backBtn").hide();
-            //$("#recordBtn").hide();
-            //$("#stopBtn").hide();
-            //$("#playBtn").hide();
-            //$("#blrbBtn").hide();
-            //$("#text_textarea").hide();
-            //$("#twitterYes").hide();
-            //$("#twitterNo").hide();
+
             showLoadingScreen();
 
             localStorage.blrbId = "";
             localStorage.username = "";
-            //document.getElementById('audio_position').innerHTML = "blrbing...";
 
         }
 
         function win(r) {
-            alert("Code = " + r.responseCode);
-            alert("Response = " + r.response);
+            //alert("Code = " + r.responseCode);
+            //alert("Response = " + r.response);
             //app.initialize();
             ons.slidingMenu.setMainPage('stream.html', {
                 closeMenu: true
