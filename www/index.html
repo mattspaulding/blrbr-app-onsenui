@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+<div id="mainApp" hidden="hidden">
 <ons-sliding-menu var="slidingMenu"
                   menu-page="menu.html" main-page="home.html" side="left"
                   type="reveal" max-slide-distance="100%" swipable="true"></ons-sliding-menu>
@@ -151,37 +151,11 @@
                     class="backgroundColor5">
                 <img ng-click="gotoChannel('ocean');" src="images/blrbrfish_logo_nobubble.png" style=" max-height: 100%;  padding: 10px;"/>
             </ons-list-item>
-            <!--<ons-list-item-->
-                    <!--id="featuredChannel"-->
-                    <!--class="backgroundColor5 ">-->
-                <!--<div ng-click="gotoChannel('swtampa');">-->
-                    <!--<div class="row ">-->
-                        <!--<div class='col-xs-4 '>-->
-                            <!--<img src="http://blrbr.co/Images/swtampa-profile.jpg" class="vertical-align-middle"-->
-                                 <!--style="width: 80px;"></img>-->
-                        <!--</div>-->
-                        <!--<div class='col-xs-8' style='padding-top: 5px'>-->
-                            <!--<div class="vertical-align-middle" style="height: 100px;">-->
-                                <!--<p style="color:lightgrey;">-->
-                                    <!--featured channel-->
-                                <!--</p>-->
 
-                                <!--<p>-->
-                                    <!--Startup Weekend Tampa-->
-                                <!--</p>-->
-
-                                <!--<p>-->
-                                    <!--#swtampa-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</ons-list-item>-->
 
             <ons-list-item
                     id="featuredChannel"
-                    class="backgroundColor5" ng-repeat="channel in featuredChannelResponse" style="height:120px;">
+                    class="backgroundColor5" ng-repeat="channel in featuredChannelResponse" >
                 <div ng-click="gotoChannel(channel.Hashtag);" style='padding: 20px;'>
                     <div class='col-xs-4'>
                         <img src="{{channel.ProfileImg}}" style="width: 80px;"></img>
@@ -622,6 +596,10 @@
     </ons-page>
 
 </ons-template>
+</div>
+
+</body>
+
 
 
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -653,10 +631,9 @@
 <!--SignalR script to update the chat page and send messages.-->
 <script type="text/javascript">
     $(document).ready(function () {
+        $('#mainApp').show();
         app.initialize();
     });
 
 </script>
-</body>
-
 </html>
