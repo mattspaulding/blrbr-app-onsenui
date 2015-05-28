@@ -366,18 +366,30 @@
         if (localStorage.username != "")
             $("#text_textarea").val($("#text_textarea").val() + ' @' + localStorage.username);
 
-        $scope.twitterToggle = function (val) {
-            if (val == "yes") {
-                isTweet = "true";
-                $('#twitterYes').show();
-                $('#twitterNo').hide();
-            } else {
+        $('#twitterYes').click(function () {
                 isTweet = "false";
                 $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
-
-        }
+        );
+        $('#twitterNo').click(function () {
+                   isTweet = "true";
+                $('#twitterYes').show();
+                $('#twitterNo').hide();
+            }
+        );
+        //$scope.twitterToggle = function (val) {
+        //    if (val == "yes") {
+        //        isTweet = "true";
+        //        $('#twitterYes').show();
+        //        $('#twitterNo').hide();
+        //    } else {
+        //        isTweet = "false";
+        //        $('#twitterYes').hide();
+        //        $('#twitterNo').show();
+        //    }
+        //
+        //}
         //function onBodyLoad() { debugger;
         document.addEventListener("deviceready", onDeviceReady, false);
         deviceready = true;
