@@ -52,6 +52,11 @@
         if (phoneCheck.ios != null) {
             $('.ios-shift').css('margin-top', '-20px');
         }
+
+        localStorage.channel = "";
+        localStorage.username = "";
+        localStorage.blrbId = "";
+
         $scope.response = {};
         $scope.response.get = function () {
 
