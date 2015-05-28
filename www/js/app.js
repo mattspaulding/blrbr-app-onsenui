@@ -791,8 +791,8 @@
         }
 
         function win(r) {
-            //alert("Code = " + r.responseCode);
-            //alert("Response = " + r.response);
+            alert("Code = " + r.responseCode);
+            alert("Response = " + r.response);
             //app.initialize();
             ons.slidingMenu.setMainPage('stream.html', {
                 closeMenu: true
@@ -800,7 +800,7 @@
         }
 
         function fail(error) {
-            //alert("blrb error: " + error.code);
+            alert("blrb error: " + error.code);
             ons.slidingMenu.setMainPage('stream.html', {
                 closeMenu: true
             });
