@@ -368,12 +368,14 @@
 
         $('#twitterYes').click(function () {
                 isTweet = "false";
+                alert(isTweet);
                 $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
         );
         $('#twitterNo').click(function () {
                    isTweet = "true";
+                alert(isTweet);
                 $('#twitterYes').show();
                 $('#twitterNo').hide();
             }
