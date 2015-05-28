@@ -763,7 +763,7 @@
                 audioURI = "cdvfile://localhost/temporary/recording.wav";
                 options.fileName = "recording.wav";
                 options.mimeType = "audio/wav";
-                options.chunkedMode = false;
+                //options.chunkedMode = false;
             }
             var params = new Object();
             //params.channel = window.channel;

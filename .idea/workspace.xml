@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e1ae9498-ea30-4beb-908d-4ebe206e71ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blrbr-app-onsenui.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +70,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26211014">
-              <caret line="766" column="13" selection-start-line="766" selection-start-column="13" selection-end-line="766" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.43729264">
+              <caret line="765" column="18" selection-start-line="765" selection-start-column="18" selection-end-line="765" selection-end-column="18" />
               <folding>
                 <element signature="e#1646#4920#0" expanded="false" />
                 <element signature="e#4983#6086#0" expanded="false" />
@@ -1026,8 +1025,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26211014">
-          <caret line="766" column="13" selection-start-line="766" selection-start-column="13" selection-end-line="766" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.43729264">
+          <caret line="765" column="18" selection-start-line="765" selection-start-column="18" selection-end-line="765" selection-end-column="18" />
           <folding>
             <element signature="e#1646#4920#0" expanded="false" />
             <element signature="e#4983#6086#0" expanded="false" />
