@@ -482,7 +482,7 @@
         function showAfterRecordScreen() {
             $('#loading').hide();
             $('#beforeRecord').hide();
-            $('#afterRecord').show('slow');
+            $('#afterRecord').show();
         };
         function showBeforeRecordScreen() {
             $('#loading').hide();
