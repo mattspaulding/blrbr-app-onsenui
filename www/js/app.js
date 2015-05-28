@@ -356,29 +356,29 @@
         if (phoneCheck.ios != null) {
             $('.ios-shift').css('margin-top', '-20px');
         }
+             var deviceready = false;
+        var mediaVar = null;
+        var status = null;
+        var recordFileName = "recording.amr";
+        var isTweet = "true";
+        if (localStorage.channel != "")
+            $("#text_textarea").val('#' + localStorage.channel);
+        if (localStorage.username != "")
+            $("#text_textarea").val($("#text_textarea").val() + ' @' + localStorage.username);
+
         $scope.twitterToggle = function (val) {
             if (val == "yes") {
-                isTweet = true;
+                isTweet = "true";
                 $('#twitterYes').show();
                 $('#twitterNo').hide();
             } else {
-                isTweet = false;
+                isTweet = "false";
                 $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
             alert("isTweet: "+isTweet);
 
         }
-        var deviceready = false;
-        var mediaVar = null;
-        var status = null;
-        var recordFileName = "recording.amr";
-        var isTweet = true;
-        if (localStorage.channel != "")
-            $("#text_textarea").val('#' + localStorage.channel);
-        if (localStorage.username != "")
-            $("#text_textarea").val($("#text_textarea").val() + ' @' + localStorage.username);
-
         //function onBodyLoad() { debugger;
         document.addEventListener("deviceready", onDeviceReady, false);
         deviceready = true;
