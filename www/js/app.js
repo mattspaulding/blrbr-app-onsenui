@@ -366,6 +366,7 @@
                 $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
+            alert("isTweet: "+isTweet);
 
         }
         var deviceready = false;
@@ -771,6 +772,7 @@
             //params.username = window.username;
             params.username = "";
             params.isTweet = isTweet;
+            alert("isTweet: "+isTweet);
             params.inReplyToBlrbId = localStorage.blrbId;
             //alert("params: "+params.username + params.channel + params.isTweet + params.text);
             options.params = params;
