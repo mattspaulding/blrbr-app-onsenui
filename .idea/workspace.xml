@@ -38,13 +38,13 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19655173">
-              <caret line="362" column="29" selection-start-line="362" selection-start-column="29" selection-end-line="362" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.76551723">
+              <caret line="376" column="10" selection-start-line="376" selection-start-column="10" selection-end-line="376" selection-end-column="10" />
               <folding>
                 <element signature="e#4983#6086#0" expanded="false" />
                 <element signature="e#6148#10884#0" expanded="false" />
                 <element signature="e#10947#12458#0" expanded="false" />
-                <element signature="e#14935#17459#0" expanded="false" />
+                <element signature="e#14872#17396#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -414,7 +414,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -503,7 +503,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,7 +592,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -671,7 +671,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,7 +750,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -829,7 +829,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,7 +898,7 @@
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1037,13 +1037,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19655173">
-          <caret line="362" column="29" selection-start-line="362" selection-start-column="29" selection-end-line="362" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.76551723">
+          <caret line="376" column="10" selection-start-line="376" selection-start-column="10" selection-end-line="376" selection-end-column="10" />
           <folding>
             <element signature="e#4983#6086#0" expanded="false" />
             <element signature="e#6148#10884#0" expanded="false" />
             <element signature="e#10947#12458#0" expanded="false" />
-            <element signature="e#14935#17459#0" expanded="false" />
+            <element signature="e#14872#17396#0" expanded="false" />
           </folding>
         </state>
       </provider>

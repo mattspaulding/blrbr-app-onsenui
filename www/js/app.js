@@ -368,14 +368,12 @@
 
         $('#twitterYes').click(function () {
                 isTweet = "false";
-                alert(isTweet);
-                $('#twitterYes').hide();
+                 $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
         );
         $('#twitterNo').click(function () {
                    isTweet = "true";
-                alert(isTweet);
                 $('#twitterYes').show();
                 $('#twitterNo').hide();
             }
@@ -484,7 +482,7 @@
         function showAfterRecordScreen() {
             $('#loading').hide();
             $('#beforeRecord').hide();
-            $('#afterRecord').show();
+            $('#afterRecord').show('slow');
         };
         function showBeforeRecordScreen() {
             $('#loading').hide();
@@ -527,9 +525,7 @@
             $('#holdToRecordText').html('wait');
             $('#holdToRecordBtn').css("background-color", "#EDC951");
             timeoutId = setTimeout(record, 500);
-        });
-
-        $('#holdToRecordBtn').bind('touchend', function (e) {
+        }).bind('touchend', function (e) {
                 $('#holdToRecordText').html('hold to record');
                 $('#holdToRecordBtn').css("background-color", "#CC333F");
             clearTimeout(timeoutId);
