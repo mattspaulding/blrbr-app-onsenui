@@ -63,11 +63,6 @@
             var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
             responsePromise.success(function (data, status, headers, config) {
-                alert("data: "+data);
-                alert("status: "+status);
-                alert("headers: "+headers);
-                alert("config: "+config);
-                if (data == "\"Not logged in to Twitter\"") {
                       localStorage.isLoggedIn = false;
                     gotoRoute("Account/Logoff");
                 } else if (data == "\"Not logged in to blrbr\"") {
@@ -98,11 +93,7 @@
                 }
             });
             responsePromise.error(function (data, status, headers, config) {
-                alert("WhoAmIError: "+data);
-                alert("status: "+status);
-                alert("headers: "+headers);
-                alert("config: "+config);
-                localStorage.isLoggedIn = false;
+                 localStorage.isLoggedIn = false;
                 $('#accountBtn').hide();
                 $('#homeChannelBtn').show();
                 $('#loginBtn').show();
