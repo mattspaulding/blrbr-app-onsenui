@@ -63,7 +63,8 @@
             var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
             responsePromise.success(function (data, status, headers, config) {
-                      localStorage.isLoggedIn = false;
+             if (data == "\"Not logged in to twitter\"") {
+                localStorage.isLoggedIn = false;
                     gotoRoute("Account/Logoff");
                 } else if (data == "\"Not logged in to blrbr\"") {
                     localStorage.isLoggedIn = false;
