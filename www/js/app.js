@@ -177,7 +177,7 @@
         if (gaPlugin != undefined)
             gaPlugin.trackPage(null, null, "stream: " + localStorage.channel);
         if (phoneCheck.ios != null) {
-            //$('.ios-shift').css('margin-top', '-20px');
+            $('.ios-shift').css('margin-top', '-20px');
         }
         if (localStorage.isLoggedIn == "true") {
             $("#loginBtn").hide();
