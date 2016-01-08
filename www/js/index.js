@@ -55,7 +55,7 @@ var app = {
 		//alert("onReady");
 
 		//$("#app-status-ul").append('<li>registering</li>');
-		////$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+		//$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 		//var pushNotification = window.plugins.pushNotification;
 		//pushNotification.register(pushSuccessHandler, pushErrorHandler, {
 		//	"senderID" : "47813446527",
@@ -67,8 +67,8 @@ var app = {
 
 debugger;
 		var pushNotification = window.plugins.pushNotification;
-		alert("phoneChkAnd: "+phoneCheck.android);
-		alert("phoneChkIos: "+phoneCheck.ios);
+		//alert("phoneChkAnd: "+phoneCheck.android);
+		//alert("phoneChkIos: "+phoneCheck.ios);
 
 		if (phoneCheck.android != null) {
 			//alert("this is android");
@@ -125,7 +125,7 @@ function tokenHandler (result) {
 
 	localStorage.regid = result;
 	$.get("http://blrbr.co/Account/RegisterDevice/" + result).success(function(data) {
-		$("#app-status-ul").append('<li>' + data + '</li>');
+		$("#app-status-ul").append('<li>register: ' + data + '</li>');
 		alert("iphone registered")
 	}).fail(function(data) {
 		alert("ERROR: Device not registered");
