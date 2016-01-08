@@ -35,6 +35,7 @@ version   = "1.0.12">
 	<!-- <preference name="exit-on-suspend"            value="true" /> -->
 	<!-- ios: if set to true, app will terminate when home button is pressed -->
 	<preference name="auto-hide-splash-screen"    value="true" />
+	<preference name="SplashScreenDelay" value="10000" />
 	<!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 	<preference name="disable-cursor"             value="false" />
 	<!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->

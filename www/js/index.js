@@ -54,6 +54,8 @@ var app = {
 		debugger;
 		//alert("onReady");
 
+
+
 		//$("#app-status-ul").append('<li>registering</li>');
 		//$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 		//var pushNotification = window.plugins.pushNotification;
