@@ -126,7 +126,7 @@ function tokenHandler (result) {
 	localStorage.regid = result;
 	$.get("http://blrbr.co/Account/RegisterDevice/" + result).success(function(data) {
 		$("#app-status-ul").append('<li>' + data + '</li>');
-		//alert("iphone registered")
+		alert("iphone registered")
 	}).fail(function(data) {
 		alert("ERROR: Device not registered");
 	});
@@ -141,7 +141,7 @@ function tokenHandler (result) {
 
 // iOS
 function onNotificationAPN (event) {
-	//alert( event.alert);
+	alert( event.alert);
 	if ( event.alert )
 	{
 		navigator.notification.alert(event.alert);
@@ -223,7 +223,7 @@ function onNotificationGCM(e) {
 }
 
 function successHandler(data) {
-	//alert("init success");
+	alert("init success");
 	debugger;
 }
 
