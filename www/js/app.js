@@ -53,6 +53,8 @@
             $('.ios-shift').css('margin-top', '-20px');
         }
 
+        $('#AccountPage').show();
+
         localStorage.channel = "";
         localStorage.username = "";
         localStorage.blrbId = "";
