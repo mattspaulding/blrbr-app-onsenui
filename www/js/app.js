@@ -478,6 +478,7 @@
             // Return the parsed data.
             return (arrData );
         }
+        $('.afterRecord').hide();
 
         function showAfterRecordScreen() {
             $('#loading').hide();
