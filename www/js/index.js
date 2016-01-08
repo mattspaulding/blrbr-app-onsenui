@@ -67,8 +67,8 @@ var app = {
 
 debugger;
 		var pushNotification = window.plugins.pushNotification;
-		//alert("phoneChkAnd: "+phoneCheck.android);
-		//alert("phoneChkIos: "+phoneCheck.ios);
+		alert("phoneChkAnd: "+phoneCheck.android);
+		alert("phoneChkIos: "+phoneCheck.ios);
 
 		if (phoneCheck.android != null) {
 			//alert("this is android");
@@ -80,7 +80,7 @@ debugger;
 					"ecb": "onNotificationGCM"
 				});
 		} else if (phoneCheck.ios != null) {
-			//alert("this is iphone");
+			alert("this is iphone");
 			pushNotification.register(
 				tokenHandler,
 				errorHandler,
