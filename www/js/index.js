@@ -54,7 +54,11 @@ var app = {
 		debugger;
 		//alert("onReady");
 
-
+		setTimeout(function() {
+			alert('no splash');
+				navigator.splashscreen.hide();
+			},
+			6000);
 
 		//$("#app-status-ul").append('<li>registering</li>');
 		//$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
