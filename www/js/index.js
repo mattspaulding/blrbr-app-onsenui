@@ -80,7 +80,7 @@ debugger;
 					"ecb": "onNotificationGCM"
 				});
 		} else if (phoneCheck.ios != null) {
-			alert("this is iphone");
+			//alert("this is iphone");
 			pushNotification.register(
 				tokenHandler,
 				errorHandler,
@@ -110,7 +110,7 @@ debugger;
 
 // result contains any message sent from the plugin call
 function pushSuccessHandler(result) {
-	alert('Callback Success! Result = ' + result)
+	//alert('Callback Success! Result = ' + result)
 }
 
 function pushErrorHandler(error) {
@@ -126,9 +126,9 @@ function tokenHandler (result) {
 	localStorage.regid = result;
 	$.get("http://blrbr.co/Account/RegisterDevice/" + result).success(function(data) {
 		$("#app-status-ul").append('<li>register: ' + data + '</li>');
-		alert("iphone registered")
+		//alert("iphone registered")
 	}).fail(function(data) {
-		alert("ERROR: Device not registered");
+		//alert("ERROR: Device not registered");
 	});
 	//$.get("http://blrbr.co/home/push?title=iosapp&id="+result).success(function(data) {
 	//	$("#app-status-ul").append('<li>' + data + '</li>');
@@ -175,9 +175,9 @@ function onNotificationGCM(e) {
 				localStorage.regid = e.regid;
 				$.get("http://blrbr.co/Account/RegisterDevice/" + e.regid).success(function(data) {
 					$("#app-status-ul").append('<li>' + data + '</li>');
-					alert("android registered")
+					//alert("android registered")
 				}).fail(function(data) {
-					alert("ERROR: Device not registered");
+					//alert("ERROR: Device not registered");
 				});
 
 			}
@@ -223,12 +223,12 @@ function onNotificationGCM(e) {
 }
 
 function successHandler(data) {
-	alert("init success");
+	//alert("init success");
 	debugger;
 }
 
 function errorHandler(error) {
-	alert("init fail");
+	//alert("init fail");
 	debugger;
 }
 
