@@ -110,7 +110,7 @@ debugger;
 
 // result contains any message sent from the plugin call
 function pushSuccessHandler(result) {
-	//alert('Callback Success! Result = ' + result)
+	alert('Callback Success! Result = ' + result)
 }
 
 function pushErrorHandler(error) {
