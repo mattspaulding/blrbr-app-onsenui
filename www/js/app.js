@@ -53,7 +53,6 @@
             $('.ios-shift').css('margin-top', '-20px');
         }
 
-        $('#AccountPage').show();
 
         localStorage.channel = "";
         localStorage.username = "";
@@ -82,7 +81,9 @@
                     $('#loadingBtn').hide();
                     $('#homeChannelBtn').hide();
                     $('#accountBtn').fadeIn("slow");
-                    $("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
+                 $('#AccountPage').show();
+
+                 $("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
                     localStorage.FriendsUsernameBlob = data.FriendsUsernameBlob;
                     $scope.response = data;
 
