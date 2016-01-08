@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1ae9498-ea30-4beb-908d-4ebe206e71ea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
     </list>
     <ignored path="blrbr-app-onsenui.iws" />
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.344828">
-              <caret line="488" column="38" selection-start-line="488" selection-start-column="38" selection-end-line="488" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.48140043">
+              <caret line="485" column="40" selection-start-line="485" selection-start-column="40" selection-end-line="485" selection-end-column="40" />
               <folding>
                 <element signature="e#4977#6080#0" expanded="false" />
                 <element signature="e#6142#10878#0" expanded="false" />
@@ -61,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48955917">
+            <state vertical-scroll-proportion="-3.8363636">
               <caret line="464" column="22" selection-start-line="464" selection-start-column="22" selection-end-line="464" selection-end-column="22" />
               <folding>
                 <element signature="n#ons-template#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1041,22 +1040,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.344828">
-          <caret line="488" column="38" selection-start-line="488" selection-start-column="38" selection-end-line="488" selection-end-column="38" />
-          <folding>
-            <element signature="e#4977#6080#0" expanded="false" />
-            <element signature="e#6142#10878#0" expanded="false" />
-            <element signature="e#10941#12452#0" expanded="false" />
-            <element signature="e#14866#17390#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48955917">
+        <state vertical-scroll-proportion="-3.8363636">
           <caret line="464" column="22" selection-start-line="464" selection-start-column="22" selection-end-line="464" selection-end-column="22" />
           <folding>
             <element signature="n#ons-template#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1085,6 +1071,19 @@
             <element signature="n#style#0;n#div#0;n#i#0;n#div#1;n#ons-list-item#4;n#ons-list#0;n#ons-page#0;n#ons-template#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#ons-template#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#ons-page#0;n#ons-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48140043">
+          <caret line="485" column="40" selection-start-line="485" selection-start-column="40" selection-end-line="485" selection-end-column="40" />
+          <folding>
+            <element signature="e#4977#6080#0" expanded="false" />
+            <element signature="e#6142#10878#0" expanded="false" />
+            <element signature="e#10941#12452#0" expanded="false" />
+            <element signature="e#14866#17390#0" expanded="false" />
           </folding>
         </state>
       </provider>

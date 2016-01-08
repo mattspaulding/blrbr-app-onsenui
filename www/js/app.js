@@ -32,7 +32,7 @@
                 $("#streamListItemOff").show();
                 $("#blrbListItemOff").show();
                 $("#streamListItem").hide();
-                $("#blrbListItem").show();
+                $("#blrbListItem").hide();
             }
         });
         $scope.gotoPage = function (page) {
@@ -482,7 +482,8 @@
         function showAfterRecordScreen() {
             $('#loading').hide();
             $('.beforeRecord').hide();
-            $('.afterRecord').show();
+
+            $('.afterRecord').show('slow');
         };
         function showBeforeRecordScreen() {
             $('#loading').hide();
