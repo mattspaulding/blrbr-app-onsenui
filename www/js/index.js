@@ -56,7 +56,7 @@ var app = {
 
 		setTimeout(function() {
 			alert('no splash');
-				navigator.splashscreen.hide();
+				$('#HomePage').show();
 			},
 			6000);
 
