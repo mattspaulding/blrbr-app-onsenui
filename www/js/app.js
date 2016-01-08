@@ -32,7 +32,7 @@
                 $("#streamListItemOff").show();
                 $("#blrbListItemOff").show();
                 $("#streamListItem").hide();
-                $("#blrbListItem").hide();
+                $("#blrbListItem").show();
             }
         });
         $scope.gotoPage = function (page) {
@@ -481,13 +481,13 @@
 
         function showAfterRecordScreen() {
             $('#loading').hide();
-            $('#beforeRecord').hide();
-            $('#afterRecord').show();
+            $('.beforeRecord').hide();
+            $('.afterRecord').show();
         };
         function showBeforeRecordScreen() {
             $('#loading').hide();
-            $('#beforeRecord').show();
-            $('#afterRecord').hide();
+            $('.beforeRecord').show();
+            $('.afterRecord').hide();
         };
         function showLoadingScreen() {
             $('#loading').show();
