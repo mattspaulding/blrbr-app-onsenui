@@ -81,8 +81,7 @@
                     $('#loadingBtn').hide();
                     $('#homeChannelBtn').hide();
                     $('#accountBtn').fadeIn("slow");
-                 $('#AccountPage').show();
-
+                 $('account.html').show();
                  $("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
                     localStorage.FriendsUsernameBlob = data.FriendsUsernameBlob;
                     $scope.response = data;
