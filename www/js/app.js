@@ -231,6 +231,17 @@
             });
         };
 
+        $scope.flag = function (data) {
+        var responsePromise = $http.get('http://blrbr.co/Flag/Create?blrbId=' + data.blrb.Id );
+        responsePromise.success(function (data, status, headers, config) {
+            $scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
+        });
+        responsePromise.error(function (data, status, headers, config) {
+            alert("Uh oh!" + status);
+            debugger;
+        });
+        };
+
         var channel = "";
         // @if(Model.Channel!=null&&Model.Channel.Hashtag!=null)
         // {
