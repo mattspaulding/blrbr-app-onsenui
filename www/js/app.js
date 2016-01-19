@@ -232,15 +232,25 @@
         };
 
         $scope.flag = function (data) {
-            alert('blrbId=' + data.blrb.Id);
-            var responsePromise = $http.get('http://blrbr.co/Flags/Create?blrbId=' + data.blrb.Id );
-        responsePromise.success(function (data, status, headers, config) {
-            $scope.response.BlrbStreamItems = $scope.response.BlrbStreamItems.concat(data);
-        });
-        responsePromise.error(function (data, status, headers, config) {
-            alert("Uh oh! " + status);
-            debugger;
-        });
+            if($('#flag-'+data.blrb.Id).text().indexOf("flagged")>0)
+            {
+                var responsePromise = $http.get('http://blrbr.co/Flags/DeleteFlag?blrbId=' + data.blrb.Id);
+                responsePromise.success(function (status, headers, config) {
+                    $('#flag-' + data.blrb.Id).text("");
+                });
+                responsePromise.error(function (data, status, headers, config) {
+                });
+
+            }
+else {
+                var responsePromise = $http.get('http://blrbr.co/Flags/Create?blrbId=' + data.blrb.Id);
+                responsePromise.success(function (status, headers, config) {
+                    alert('You have flagged this blrb as inappropriate. We will evaluate this user shortly. Click the flag again to undo this action.')
+                    $('#flag-' + data.blrb.Id).text(" flagged");
+                });
+                responsePromise.error(function (data, status, headers, config) {
+                });
+            }
         };
 
         var channel = "";
