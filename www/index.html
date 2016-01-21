@@ -332,8 +332,8 @@
                         <img src={{response.UserProfile.ProfileImageUrlBigger}}/>
                     </div>
                     <div class="col-xs-9 border">
-                        <h3>{{response.UserProfile.ScreenName}}</h3>
-                        <h5>@{{response.UserProfile.Username}}</h5>
+                        <h3>{{response.UserProfile.Name}}</h3>
+                        <h5>@{{response.UserProfile.ScreenName}}</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -387,7 +387,7 @@
                     <div style="background-color: white;">
                         <htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
                     </div>
-                    <div class="row blrbControls" style="margin:0; background-color: white; color:grey;" >
+                    <div class="row blrbControls" ng-if="blrb.UserName!=response.UserProfile.UserName" style="margin:0; background-color: white; color:grey;" >
                         <div class="col-xs-2" ng-click="flag(this)">
                             <span id="flag-{{blrb.Id}}" class="fa fa-flag color1"></span>
                         </div>
