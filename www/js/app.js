@@ -181,16 +181,7 @@
         if (phoneCheck.ios != null) {
             $('.ios-shift').css('margin-top', '-20px');
         }
-        if (localStorage.isLoggedIn == "true") {
-            $("#loginBtn").hide();
-            $("#blrbBtn").show();
-            $(".blrbControls").show();
 
-        } else {
-            $("#loginBtn").show();
-            $("#blrbBtn").hide();
-            $(".blrbControls").hide();
-        }
         $scope.response = {};
         $scope.response.get = function (item, event) {
 
@@ -206,7 +197,18 @@
                 } else {
                     $("#channel").fadeIn("slow");
                 }
-                $state.reload();
+
+                $scope.$apply();
+                if (localStorage.isLoggedIn == "true") {
+                    $("#loginBtn").hide();
+                    $("#blrbBtn").show();
+                    $(".blrbControls").show();
+
+                } else {
+                    $("#loginBtn").show();
+                    $("#blrbBtn").hide();
+                    $(".blrbControls").hide();
+                }
 
             });
             responsePromise.error(function (data, status, headers, config) {
