@@ -198,7 +198,7 @@
                     $("#channel").fadeIn("slow");
                 }
 
-                $scope.$apply();
+                //$scope.$apply();
                 if (localStorage.isLoggedIn == "true") {
                     $("#loginBtn").hide();
                     $("#blrbBtn").show();
@@ -249,9 +249,9 @@
             else {
                 var responsePromise = $http.get('http://blrbr.co/Flags/Create?blrbId=' + data.blrb.Id);
                 responsePromise.success(function (status, headers, config) {
-                    ons.notification.alert({
-                        message: 'You have flagged this blrb as inappropriate. We will evaluate this user shortly. Click the flag again to undo this action.'
-                    });
+                    //ons.notification.alert({
+                    //    message: 'You have flagged this blrb as inappropriate. We will evaluate this user shortly. Click the flag again to undo this action.'
+                    //});
                     $('#flag-' + data.blrb.Id).text(" flagged");
                 });
                 responsePromise.error(function (data, status, headers, config) {
@@ -272,9 +272,9 @@
             else {
                 var responsePromise = $http.get('http://blrbr.co/Blocks/Create?blockeeUsername=' + data.blrb.UserName);
                 responsePromise.success(function (status, headers, config) {
-                    ons.notification.alert({
-                        message: 'You have blocked this user. Click the block again to undo this action.'
-                    });
+                    //ons.notification.alert({
+                    //    message: 'You have blocked this user. Click the block again to undo this action.'
+                    //});
                     $('#block-' + data.blrb.Id).text(" blocked");
                 });
                 responsePromise.error(function (data, status, headers, config) {
