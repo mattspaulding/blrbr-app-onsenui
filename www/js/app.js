@@ -198,7 +198,7 @@
                     $("#channel").fadeIn("slow");
                 }
 
-                //$scope.$apply();
+                $scope.$apply();
                 if (localStorage.isLoggedIn == "true") {
                     $("#loginBtn").hide();
                     $("#blrbBtn").show();
