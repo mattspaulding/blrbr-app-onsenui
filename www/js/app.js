@@ -207,7 +207,7 @@
                 } else {
                     $("#loginBtn").show();
                     $("#blrbBtn").hide();
-                    $(".blrbControls").show();
+                    $(".blrbControls").hide();
                 }
 
             });
