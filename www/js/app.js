@@ -174,13 +174,14 @@
 
     });
 
-    app.controller('StreamCtrl', function ($scope, $http) {
+    app.controller('StreamCtrl', function ($scope, $http, $timeout) {
         $('#streamMain').hide();
         if (gaPlugin != undefined)
             gaPlugin.trackPage(null, null, "stream: " + localStorage.channel);
         if (phoneCheck.ios != null) {
             $('.ios-shift').css('margin-top', '-20px');
         }
+
 
         $scope.response = {};
         $scope.response.get = function (item, event) {
@@ -198,18 +199,19 @@
                     $("#channel").fadeIn("slow");
                 }
 
-                $scope.$apply();
-                if (localStorage.isLoggedIn == "true") {
-                    $("#loginBtn").hide();
-                    $("#blrbBtn").show();
-                    $(".blrbControls").show();
+                //$scope.$apply();
+                $timeout(function() {
+                    if (localStorage.isLoggedIn == "true") {
+                        $("#loginBtn").hide();
+                        $("#blrbBtn").show();
+                        $(".blrbControls").show();
 
-                } else {
-                    $("#loginBtn").show();
-                    $("#blrbBtn").hide();
-                    $(".blrbControls").hide();
-                }
-
+                    } else {
+                        $("#loginBtn").show();
+                        $("#blrbBtn").hide();
+                        $(".blrbControls").hide();
+                    }
+                });
             });
             responsePromise.error(function (data, status, headers, config) {
                 //alert("Stream failed! " + status); debugger;
