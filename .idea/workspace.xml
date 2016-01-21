@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e1ae9498-ea30-4beb-908d-4ebe206e71ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
     </list>
     <ignored path="blrbr-app-onsenui.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,16 +48,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37199125">
-              <caret line="209" column="43" selection-start-line="209" selection-start-column="43" selection-end-line="209" selection-end-column="43" />
+            <state vertical-scroll-proportion="-4.1034484">
+              <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
               <folding>
                 <element signature="e#1646#4971#0" expanded="false" />
                 <element signature="e#5034#6137#0" expanded="false" />
-                <element signature="e#13528#15039#0" expanded="false" />
-                <element signature="e#15094#28057#0" expanded="false" />
+                <element signature="e#13530#15041#0" expanded="false" />
+                <element signature="e#15096#28059#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -82,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.709091">
-              <caret line="310" column="40" selection-start-line="310" selection-start-column="40" selection-end-line="310" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.19953597">
+              <caret line="378" column="31" selection-start-line="378" selection-start-column="31" selection-end-line="378" selection-end-column="31" />
               <folding>
                 <element signature="n#ons-template#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#ons-page#0;n#ons-template#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -100,7 +101,6 @@
                 <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -138,8 +138,8 @@
         <option value="$PROJECT_DIR$/www/css/index.css" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
         <option value="$PROJECT_DIR$/www/config.xml" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
@@ -427,7 +427,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -470,8 +469,8 @@
           <folding>
             <element signature="e#1646#4971#0" expanded="false" />
             <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,7 +525,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -569,8 +567,8 @@
           <folding>
             <element signature="e#1646#4971#0" expanded="false" />
             <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -625,7 +623,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -658,8 +655,8 @@
           <folding>
             <element signature="e#1646#4971#0" expanded="false" />
             <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,7 +711,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -747,8 +743,8 @@
           <folding>
             <element signature="e#1646#4971#0" expanded="false" />
             <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -803,7 +799,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -836,8 +831,8 @@
           <folding>
             <element signature="e#1646#4971#0" expanded="false" />
             <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -882,7 +877,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -915,8 +909,8 @@
           <folding>
             <element signature="e#1646#4971#0" expanded="false" />
             <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -961,7 +955,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1058,10 +1051,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1034484">
+          <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+          <folding>
+            <element signature="e#1646#4971#0" expanded="false" />
+            <element signature="e#5034#6137#0" expanded="false" />
+            <element signature="e#13530#15041#0" expanded="false" />
+            <element signature="e#15096#28059#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.709091">
-          <caret line="310" column="40" selection-start-line="310" selection-start-column="40" selection-end-line="310" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.19953597">
+          <caret line="378" column="31" selection-start-line="378" selection-start-column="31" selection-end-line="378" selection-end-column="31" />
           <folding>
             <element signature="n#ons-template#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#ons-page#0;n#ons-template#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1075,7 +1081,6 @@
             <element signature="n#ons-template#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#i#0;n#div#2;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#ons-page#0;n#ons-template#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1097,19 +1102,6 @@
             <element signature="n#style#0;n#ons-page#0;n#ons-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ons-list#0;n#div#0;n#ons-page#0;n#ons-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#ons-page#0;n#ons-template#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37199125">
-          <caret line="209" column="43" selection-start-line="209" selection-start-column="43" selection-end-line="209" selection-end-column="43" />
-          <folding>
-            <element signature="e#1646#4971#0" expanded="false" />
-            <element signature="e#5034#6137#0" expanded="false" />
-            <element signature="e#13528#15039#0" expanded="false" />
-            <element signature="e#15094#28057#0" expanded="false" />
           </folding>
         </state>
       </provider>
