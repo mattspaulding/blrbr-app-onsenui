@@ -385,9 +385,12 @@
                     <div style="background-color: white;">
                         <htmldiv content="blrb.TextWithCordovaMarkup"></htmldiv>
                     </div>
-                    <div class="row" style="margin:0; background-color: white;">
+                    <div class="row blrbControls" style="margin:0; background-color: white;" hidden>
                         <div class="col-xs-2" ng-click="flag(this)">
                             <span id="flag-{{blrb.Id}}" class="fa fa-flag color1"></span>
+                        </div>
+                        <div class="col-xs-8" ng-click="block(this)">
+                            <span id="block-{{blrb.Id}}" class="fa fa-ban color1"></span>
                         </div>
                         <div class="col-xs-2 " ng-click="reply(this)">
                             <span class="fa fa-reply color1"></span>

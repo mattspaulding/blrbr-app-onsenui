@@ -64,8 +64,8 @@
             var responsePromise = $http.get("http://blrbr.co/Account/WhoAmI");
 
             responsePromise.success(function (data, status, headers, config) {
-             if (data == "\"Not logged in to twitter\"") {
-                localStorage.isLoggedIn = false;
+                if (data == "\"Not logged in to twitter\"") {
+                    localStorage.isLoggedIn = false;
                     gotoRoute("Account/Logoff");
                 } else if (data == "\"Not logged in to blrbr\"") {
                     localStorage.isLoggedIn = false;
@@ -81,8 +81,8 @@
                     $('#loadingBtn').hide();
                     $('#homeChannelBtn').hide();
                     $('#accountBtn').fadeIn("slow");
-                 $('account.html').show();
-                 $("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
+                    $('account.html').show();
+                    $("#app-status-ul").append('<li>' + data.FriendsUsernameBlob + '</li>');
                     localStorage.FriendsUsernameBlob = data.FriendsUsernameBlob;
                     $scope.response = data;
 
@@ -96,7 +96,7 @@
                 }
             });
             responsePromise.error(function (data, status, headers, config) {
-                 localStorage.isLoggedIn = false;
+                localStorage.isLoggedIn = false;
                 $('#accountBtn').hide();
                 $('#homeChannelBtn').show();
                 $('#loginBtn').show();
@@ -112,14 +112,14 @@
             var responsePromise = $http.get("http://blrbr.co/Channel/FeaturedChannels");
 
             responsePromise.success(function (data, status, headers, config) {
-                data=data.slice(0,1);
+                data = data.slice(0, 1);
                 $scope.featuredChannelResponse = data;
 
             });
             responsePromise.error(function (data, status, headers, config) {
                 alert("Channel failed! " + status);
                 debugger;
-               // gotoRoute("Account/Login");
+                // gotoRoute("Account/Login");
             });
 
         };
@@ -184,9 +184,12 @@
         if (localStorage.isLoggedIn == "true") {
             $("#loginBtn").hide();
             $("#blrbBtn").show();
+            $(".blrbControls").show();
+
         } else {
             $("#loginBtn").show();
             $("#blrbBtn").hide();
+            $(".blrbControls").hide();
         }
         $scope.response = {};
         $scope.response.get = function (item, event) {
@@ -232,8 +235,7 @@
         };
 
         $scope.flag = function (data) {
-            if($('#flag-'+data.blrb.Id).text().indexOf("flagged")>0)
-            {
+            if ($('#flag-' + data.blrb.Id).text().indexOf("flagged") > 0) {
                 var responsePromise = $http.get('http://blrbr.co/Flags/DeleteFlag?blrbId=' + data.blrb.Id);
                 responsePromise.success(function (status, headers, config) {
                     $('#flag-' + data.blrb.Id).text("");
@@ -242,11 +244,32 @@
                 });
 
             }
-else {
+            else {
                 var responsePromise = $http.get('http://blrbr.co/Flags/Create?blrbId=' + data.blrb.Id);
                 responsePromise.success(function (status, headers, config) {
                     alert('You have flagged this blrb as inappropriate. We will evaluate this user shortly. Click the flag again to undo this action.')
                     $('#flag-' + data.blrb.Id).text(" flagged");
+                });
+                responsePromise.error(function (data, status, headers, config) {
+                });
+            }
+        };
+
+        $scope.block = function (data) {
+            if ($('#block-' + data.blrb.Id).text().indexOf("blocked") > 0) {
+                var responsePromise = $http.get('http://blrbr.co/Blocks/DeleteBlock?blockeeUsername=' + data.blrb.UserName);
+                responsePromise.success(function (status, headers, config) {
+                    $('#block-' + data.blrb.Id).text("");
+                });
+                responsePromise.error(function (data, status, headers, config) {
+                });
+
+            }
+            else {
+                var responsePromise = $http.get('http://blrbr.co/Blocks/Create?blockeeUsername=' + data.blrb.UserName);
+                responsePromise.success(function (status, headers, config) {
+                    alert('You have blocked this user. Click the block again to undo this action.')
+                    $('#block-' + data.blrb.Id).text(" blocked");
                 });
                 responsePromise.error(function (data, status, headers, config) {
                 });
@@ -261,46 +284,48 @@ else {
         $('audio').css("visibility", "hidden");
         $('#liveItem').css("display", "block");
         $('#playingItem').css("display", "none");
-        // Reference the auto-generated proxy for the hub.
-        var blrb = $.connection.blrbHub;
-        // Create a function that the hub can call back to display messages.
-        blrb.client.showBlrb = function (blrb) {
-            debugger;
-            // Add the message to the page.
-            $scope.response.BlrbStreamItems.unshift(blrb);
-            $scope.$apply();
-            var val = parseInt($('#numberOfBlrbs').text());
-            var newval = val + 1;
-            $('#numberOfBlrbs').html(newval);
-            if (pagePlayer.soundCount == 0 || pagePlayer.sounds[pagePlayer.soundCount - 1].playState == 0) {
-                $('#' + blrb.Id + ' .play').click();
-            }
-        };
-        $.connection.hub.url = 'http://blrbr.co/signalr';
 
-        // Start the connection.
-        $.connection.hub.start().done(function () {
-            // $('#startStream').click(function () {
-            // // Call the Send method on the hub.
-            //blrb.server.go("it works!");
-            // //$('#startStream').hide();
-            // });
-            if ($scope.response.Channel != null) {
-                blrb.server.subscribeToChannel($scope.response.Channel.Hashtag);
-            } else if ($scope.response.UserProfile != null) {
-                blrb.server.subscribe($scope.response.UserProfile.TwitterId.ToString());
-            }
 
-        });
-
-        // This optional function html-encodes messages for display in the page.
-        // function htmlEncode(value) {
-        // var encodedValue = $('<div />').text(value).html();
-        // return encodedValue;
-        // }
-
+        //// Reference the auto-generated proxy for the hub.
+        //var blrb = $.connection.blrbHub;
+        //// Create a function that the hub can call back to display messages.
+        //blrb.client.showBlrb = function (blrb) {
+        //    debugger;
+        //    // Add the message to the page.
+        //    $scope.response.BlrbStreamItems.unshift(blrb);
+        //    $scope.$apply();
+        //    var val = parseInt($('#numberOfBlrbs').text());
+        //    var newval = val + 1;
+        //    $('#numberOfBlrbs').html(newval);
+        //    if (pagePlayer.soundCount == 0 || pagePlayer.sounds[pagePlayer.soundCount - 1].playState == 0) {
+        //        $('#' + blrb.Id + ' .play').click();
+        //    }
+        //};
+        //$.connection.hub.url = 'http://blrbr.co/signalr';
         //
-        // });
+        //// Start the connection.
+        //$.connection.hub.start().done(function () {
+        //    // $('#startStream').click(function () {
+        //    // // Call the Send method on the hub.
+        //    //blrb.server.go("it works!");
+        //    // //$('#startStream').hide();
+        //    // });
+        //    if ($scope.response.Channel != null) {
+        //        blrb.server.subscribeToChannel($scope.response.Channel.Hashtag);
+        //    } else if ($scope.response.UserProfile != null) {
+        //        blrb.server.subscribe($scope.response.UserProfile.TwitterId.ToString());
+        //    }
+        //
+        //});
+        //
+        //// This optional function html-encodes messages for display in the page.
+        //// function htmlEncode(value) {
+        //// var encodedValue = $('<div />').text(value).html();
+        //// return encodedValue;
+        //// }
+        //
+        ////
+        //// });
 
         $scope.LoadBlrbs = function () {
             var lastId = $scope.response.BlrbStreamItems.slice(-1)[0].Id;
@@ -380,7 +405,7 @@ else {
         if (phoneCheck.ios != null) {
             $('.ios-shift').css('margin-top', '-20px');
         }
-             var deviceready = false;
+        var deviceready = false;
         var mediaVar = null;
         var status = null;
         var recordFileName = "recording.amr";
@@ -392,12 +417,12 @@ else {
 
         $('#twitterYes').click(function () {
                 isTweet = "false";
-                 $('#twitterYes').hide();
+                $('#twitterYes').hide();
                 $('#twitterNo').show();
             }
         );
         $('#twitterNo').click(function () {
-                   isTweet = "true";
+                isTweet = "true";
                 $('#twitterYes').show();
                 $('#twitterNo').hide();
             }
@@ -440,13 +465,13 @@ else {
             // Create a regular expression to parse the CSV values.
             var objPattern = new RegExp((
                 // Delimiters.
-            "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
 
-                // Quoted fields.
-            "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+                    // Quoted fields.
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
 
-                // Standard fields.
-            "([^\"\\" + strDelimiter + "\\r\\n]*))"
+                    // Standard fields.
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"
             ), "gi");
 
             // Create an array to hold our data. Give the array
@@ -502,6 +527,7 @@ else {
             // Return the parsed data.
             return (arrData );
         }
+
         $('.afterRecord').hide();
 
         function showAfterRecordScreen() {
@@ -545,19 +571,18 @@ else {
         }
 
 
-
         var timeoutId = 0;
         $('#holdToRecordBtn').bind('touchstart', function (e) {
             $('#holdToRecordText').html('wait');
             $('#holdToRecordBtn').css("background-color", "#EDC951");
             timeoutId = setTimeout(record, 500);
         }).bind('touchend', function (e) {
-                $('#holdToRecordText').html('hold to record');
-                $('#holdToRecordBtn').css("background-color", "#CC333F");
+            $('#holdToRecordText').html('hold to record');
+            $('#holdToRecordBtn').css("background-color", "#CC333F");
             clearTimeout(timeoutId);
-                if (status == 'recording') {
-                    stop();
-                }
+            if (status == 'recording') {
+                stop();
+            }
         });
 
 
@@ -669,18 +694,18 @@ else {
                 log("Nothing stopped");
             }
 
-         showAfterRecordScreen();
-             $("#blrbBtn").show();
+            showAfterRecordScreen();
+            $("#blrbBtn").show();
             $("#blrbBtnOff").hide();
-             status = 'stopped';
+            status = 'stopped';
         }
 
         function play() {
-             var media = new Media(recordFileName, function () {
+            var media = new Media(recordFileName, function () {
             }, function () {
                 //alert("Media Failure, reason: " + err);
             });
-             media.play();
+            media.play();
         }
 
         function onSuccess() {
